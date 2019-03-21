@@ -11,9 +11,13 @@
 /*
  * CURRENT STATE:
  *
- * Timer is working to send an output to TRGO. Is the timing right? Idk.
- * TRGO works after I call HAL_ADC_Start()
- * DMA seems to be set up, not sure if anything needs to be done.
+ * Working for channel 2
+ *
+ * Overall TODO:
+ * - Get 3 DMA ADCs going
+ * - Get ADC going for peak detector
+ * - Get UAVCAN integrated/working
+ * - Re-implement ping detection + gain control
  */
 
 #include "stm32f3xx.h"
