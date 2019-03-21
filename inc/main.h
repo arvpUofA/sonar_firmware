@@ -10,8 +10,11 @@
 
 
 // Peripheral handles
+DMA_HandleTypeDef hdma1;
 DMA_HandleTypeDef hdma2;
+
 ADC_HandleTypeDef hadc3;
+
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
 

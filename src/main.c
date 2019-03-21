@@ -18,17 +18,12 @@
 
 #include "stm32f3xx.h"
 
+#include "main.h"
+#include "clocks.h"
+#include "dma.h"
+
 // Setup ADC1, channel 1.
 // This lives on PA0, which is also A0 on the arduino pinout
-
-static void clocks(void) {
-	__HAL_RCC_DMA2_CLK_ENABLE();
-	__HAL_RCC_ADC12_CLK_ENABLE();
-	__HAL_RCC_ADC34_CLK_ENABLE();
-	__HAL_RCC_GPIOB_CLK_ENABLE();
-	__HAL_RCC_TIM3_CLK_ENABLE();
-	__HAL_RCC_TIM4_CLK_ENABLE();
-}
 
 static void setup_adc_gpio(void) {
 	// Set up gpio for analog input
@@ -42,68 +37,6 @@ static void setup_adc_gpio(void) {
 	HAL_GPIO_Init(GPIOA, &gpio);
 }
 
-// Set up timer to operate as TRGO trigger for ADCs
-static void setup_timer(void) {
-
-	// Need to set up timer to get the correct update frequency
-	htim3.Instance = TIM3;
-	// 64MHz clock, we want 500kHz sample rate (probably overkill)
-	//
-	htim3.Init.Prescaler = (64000000 / 500000);
-	htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-	htim3.Init.Period = 1; // Not sure if this is valud
-	htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-
-	HAL_TIM_Base_Init(&htim3);
-
-	// Configure to output on TRGO on update event
-	// (TRGO should update at 500kHz)
-	TIM_MasterConfigTypeDef master;
-	master.MasterOutputTrigger = TIM_TRGO_UPDATE;
-	master.MasterOutputTrigger2 = TIM_TRGO2_RESET;
-	master.MasterSlaveMode = TIM_MASTERSLAVEMODE_ENABLE;
-	HAL_TIMEx_MasterConfigSynchronization(&htim3, &master);
-
-	// Setting up TIM4 as slave
-	// Leaving this in for debugging
-	htim4.Instance = TIM4;
-	htim4.Init.Prescaler = 0;
-	htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-	htim4.Init.Period = 10000;
-	htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-	HAL_TIM_Base_Init(&htim4);
-
-	TIM_SlaveConfigTypeDef slave;
-	slave.SlaveMode = TIM_SLAVEMODE_EXTERNAL1;
-	slave.InputTrigger = TIM_TS_ITR2; // ???
-	slave.TriggerPolarity = TIM_TRIGGERPOLARITY_RISING;
-	slave.TriggerPrescaler = TIM_TRIGGERPRESCALER_DIV1;
-	slave.TriggerFilter = 0;
-	HAL_TIM_SlaveConfigSynchronization(&htim4, &slave);
-
-	__HAL_TIM_ENABLE(&htim4);
-
-
-}
-
-void dma_cmplt_callback(DMA_HandleTypeDef *_hdma) {
-	// stop TIM3
-	HAL_TIM_Base_Stop(&htim3);
-}
-
-void dma_all_callback(DMA_HandleTypeDef *_hdma) {
-	uint8_t thing = 0;
-	thing++;
-}
-
-// IRQ handler for DMA channel 1
-void DMA2_CH5_IRQHandler(void) {
-
-
-	// Call HAL handler because it gives nice function
-	HAL_DMA_IRQHandler(&hdma2);
-	// I think this function clears the interrupts
-}
 
 void ADC3_IRQHandler(void) {
 	__HAL_ADC_CLEAR_FLAG(&hadc3, ADC_IT_EOC);
@@ -161,43 +94,17 @@ static void setup_adc(void) {
 }
 
 static void systemclock_config(void) {
-	RCC_OscInitTypeDef RCC_OscInitStruct;
-	RCC_ClkInitTypeDef RCC_ClkInitStruct;
-	RCC_PeriphCLKInitTypeDef PeriphClkInit;
-
-	// Configure HSE to use external clock source, and enable PLL with x8 multiplication
-	RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-	RCC_OscInitStruct.HSEState = RCC_HSE_ON; // On nucleo boards, the HSE is sued through the MCO feature
-	RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
-	RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-	RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-	RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-	RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL8;
-	HAL_RCC_OscConfig(&RCC_OscInitStruct);
-
-	// Enable internal clocks and switch over sources
-	RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
-								| RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
-	RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
-	RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-	RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2; // APB1 has max 36MHz clock speed
-	RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
-	HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2);
-
-	// Enable ADC12 peripheral clock
-	PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC12;
-	PeriphClkInit.Adc12ClockSelection = RCC_ADC12PLLCLK_DIV1;
-	HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit);
 }
 
 int main(void)
 {
-
+	// Initialize clocks
 	systemclock_config();
+	periph_clocks_init();
 
-	clocks();
+	// Peripheral init
 	setup_adc_gpio();
-	setup_timer();
+	trigger_timer_init();
 	setup_adc();
 	setup_dma();
 
@@ -217,28 +124,9 @@ int main(void)
 		rc = HAL_DMA_Start_IT(&hdma2, (uint32_t) &(ADC3->DR), (uint32_t) fft_x_buffer, FFT_LEN); // Set up DMA transfer
 		rc = HAL_TIM_Base_Start(&htim3); // start conversions
 
+		// TODO figure out what exactly this does that I'm not doing
 		HAL_ADC_Start(&hadc3);
-
-		// wait for data to be ready
-		//while (!(ADC3->ISR & ADC_ISR_ADRDY_Pos));
 
 		HAL_Delay(2000); // poll once every 2s
 	}
-}
-
-
-void ADC_DMAConvCmplt(ADC_HandleTypeDef* hadc) {
-	// do nothing
-}
-
-void ADC_DMAConvHalfCplt(ADC_HandleTypeDef* hadc) {
-	// do nothing
-}
-
-void ADC_DMALevelOutOfWindow(ADC_HandleTypeDef* hadc) {
-	// do nothing
-}
-
-void ADC_DMAError(ADC_HandleTypeDef* hadc) {
-	// do nothing
 }

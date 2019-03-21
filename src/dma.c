@@ -13,10 +13,14 @@
  * as well as any little helper functions we need.
  */
 
+#include "stm32f3xx.h"
+
 #include "main.h"
 
+// Callbacks
+static void adc1_cmplt_callback(DMA_HandleTypeDef *_hdma);
 
-static void setup_dma(void) {
+void setup_dma(void) {
 	uint32_t rc;
 	// Enable DMA IRQ
 	NVIC_SetPriority(DMA2_Channel5_IRQn, 0);
@@ -43,7 +47,26 @@ static void setup_dma(void) {
 	// Configure DMA
 	rc = HAL_DMA_Init(&hdma2);
 
-	// Register callback
-	HAL_DMA_RegisterCallback(&hdma2, HAL_DMA_XFER_CPLT_CB_ID, dma_cmplt_callback);
-	HAL_DMA_RegisterCallback(&hdma2, HAL_DMA_XFER_ALL_CB_ID, dma_all_callback);
+	/*
+	 * We only need to register one callback (which we'll do for ADC1)
+	 * because the ADC conversions are all synced up, and run off one timer,
+	 * so once one is complete, they all are.
+	 */
+	HAL_DMA_RegisterCallback(&hdma2, HAL_DMA_XFER_CPLT_CB_ID, adc1_cmplt_callback);
+}
+
+static void adc1_cmplt_callback(DMA_HandleTypeDef *_hdma) {
+	// stop TIM3
+	HAL_TIM_Base_Stop(&htim3);
+}
+
+/* ------------- Interrupt Handlers ------------- */
+
+// ADC3 DMA Interrupt
+void DMA2_CH5_IRQHandler(void) {
+
+
+	// Call HAL handler because it gives nice function
+	HAL_DMA_IRQHandler(&hdma2);
+	// I think this function clears the interrupts
 }
