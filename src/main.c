@@ -18,28 +18,12 @@
 
 #include "stm32f3xx.h"
 
-// Stuff required for FFT
-#define ARM_MATH_CM4
-#include "arm_math.h"
-
-#define FFT_LEN 1024
-
-// Peripheral handles
-DMA_HandleTypeDef hdma2;
-ADC_HandleTypeDef hadc3;
-TIM_HandleTypeDef htim3;
-TIM_HandleTypeDef htim4;
-
-// FFT data structures
-arm_rfft_instance_q15 fft;
-uint16_t fft_x_buffer[FFT_LEN];
-uint16_t fft_x_output[FFT_LEN];
-			
 // Setup ADC1, channel 1.
 // This lives on PA0, which is also A0 on the arduino pinout
 
 static void clocks(void) {
 	__HAL_RCC_DMA2_CLK_ENABLE();
+	__HAL_RCC_ADC12_CLK_ENABLE();
 	__HAL_RCC_ADC34_CLK_ENABLE();
 	__HAL_RCC_GPIOB_CLK_ENABLE();
 	__HAL_RCC_TIM3_CLK_ENABLE();
@@ -105,10 +89,6 @@ static void setup_timer(void) {
 void dma_cmplt_callback(DMA_HandleTypeDef *_hdma) {
 	// stop TIM3
 	HAL_TIM_Base_Stop(&htim3);
-
-
-	// deal with FFT
-	arm_rfft_q15(&fft, (q15_t *) fft_x_buffer, (q15_t *) fft_x_output);
 }
 
 void dma_all_callback(DMA_HandleTypeDef *_hdma) {
@@ -133,37 +113,6 @@ void ADC3_IRQHandler(void) {
 
 }
 
-static void setup_dma(void) {
-	uint32_t rc;
-	// Enable DMA IRQ
-	NVIC_SetPriority(DMA2_Channel5_IRQn, 0);
-	NVIC_EnableIRQ(DMA2_Channel5_IRQn);
-
-	/*
-	 * From the STM32F303 Reference manual:
-	 *
-	 * These are wrong because I did a global search and replace
-	 * ADC1 is available on DMA2, channel 1
-	 * ADC2 is on DMA2, channels 2 and 3, DMA2, channels 1 and 2
-	 * ADC3 is on DMA2, channel 5
-	 * ADC4 is on DMA2, channels 2 and 4
-	 */
-	hdma2.Instance = DMA2_Channel5;
-	hdma2.Init.Direction = DMA_PERIPH_TO_MEMORY;
-	hdma2.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
-	hdma2.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
-	hdma2.Init.PeriphInc = DMA_PINC_DISABLE; // I don't think this needs to increment
-	hdma2.Init.MemInc = DMA_MINC_ENABLE; // Data should be incremented
-	hdma2.Init.Mode = DMA_NORMAL; // Shouldn't re-start transfer at the end.
-	hdma2.Init.Priority = DMA_PRIORITY_VERY_HIGH; // Nothing else should be using this channel anyways
-
-	// Configure DMA
-	rc = HAL_DMA_Init(&hdma2);
-
-	// Register callback
-	HAL_DMA_RegisterCallback(&hdma2, HAL_DMA_XFER_CPLT_CB_ID, dma_cmplt_callback);
-	HAL_DMA_RegisterCallback(&hdma2, HAL_DMA_XFER_ALL_CB_ID, dma_all_callback);
-}
 
 static void setup_adc(void) {
 	NVIC_SetPriority(ADC3_IRQn, 0);
@@ -251,11 +200,6 @@ int main(void)
 	setup_timer();
 	setup_adc();
 	setup_dma();
-
-	// FFT setup
-	// Uses too much flash for the K8!!!
-	arm_rfft_init_q15(&fft, FFT_LEN, 0, 0);
-
 
 	/*
 	 * Steps required to start conversion:
