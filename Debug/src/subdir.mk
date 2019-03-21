@@ -4,22 +4,34 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../src/adc.c \
+../src/clocks.c \
+../src/dma.c \
 ../src/main.c \
 ../src/stm32f3xx_it.c \
 ../src/syscalls.c \
-../src/system_stm32f3xx.c 
+../src/system_stm32f3xx.c \
+../src/timers.c 
 
 OBJS += \
+./src/adc.o \
+./src/clocks.o \
+./src/dma.o \
 ./src/main.o \
 ./src/stm32f3xx_it.o \
 ./src/syscalls.o \
-./src/system_stm32f3xx.o 
+./src/system_stm32f3xx.o \
+./src/timers.o 
 
 C_DEPS += \
+./src/adc.d \
+./src/clocks.d \
+./src/dma.d \
 ./src/main.d \
 ./src/stm32f3xx_it.d \
 ./src/syscalls.d \
-./src/system_stm32f3xx.d 
+./src/system_stm32f3xx.d \
+./src/timers.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

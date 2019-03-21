@@ -1,4 +1,4 @@
-src/main.o: ../src/main.c \
+src/timers.o: ../src/timers.c \
  /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/device/stm32f3xx.h \
  /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/device/stm32f303xc.h \
  /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/core/core_cm4.h \
@@ -60,10 +60,7 @@ src/main.o: ../src/main.c \
  /home/isthatme/Ac6/Workspace/sonar_CB/HAL_Driver/Inc/stm32f3xx_hal_usart_ex.h \
  /home/isthatme/Ac6/Workspace/sonar_CB/HAL_Driver/Inc/stm32f3xx_hal_wwdg.h \
  /home/isthatme/Ac6/Workspace/sonar_CB/inc/main.h \
- /home/isthatme/Ac6/Workspace/sonar_CB/inc/clocks.h \
- /home/isthatme/Ac6/Workspace/sonar_CB/inc/timers.h \
- /home/isthatme/Ac6/Workspace/sonar_CB/inc/dma.h \
- /home/isthatme/Ac6/Workspace/sonar_CB/inc/adc.h
+ /home/isthatme/Ac6/Workspace/sonar_CB/inc/timers.h
 
 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/device/stm32f3xx.h:
 
@@ -187,10 +184,4 @@ src/main.o: ../src/main.c \
 
 /home/isthatme/Ac6/Workspace/sonar_CB/inc/main.h:
 
-/home/isthatme/Ac6/Workspace/sonar_CB/inc/clocks.h:
-
 /home/isthatme/Ac6/Workspace/sonar_CB/inc/timers.h:
-
-/home/isthatme/Ac6/Workspace/sonar_CB/inc/dma.h:
-
-/home/isthatme/Ac6/Workspace/sonar_CB/inc/adc.h:

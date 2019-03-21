@@ -1,21 +1,5 @@
 Archive member included to satisfy reference by file (symbol)
 
-/home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
-                              src/main.o (arm_rfft_q15)
-/home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
-                              src/main.o (arm_rfft_init_q15)
-/home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
-                              /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o) (arm_cfft_sR_q15_len4096)
-/home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                              /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o) (armBitRevIndexTable_fixed_4096)
-/home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
-                              /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o) (arm_cfft_q15)
-/home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal2.o)
-                              /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o) (arm_bitreversal_16)
-/home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
-                              /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o) (arm_radix4_butterfly_q15)
-/home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
-                              /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o) (arm_bitreversal_q15)
 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-errno.o)
                               src/syscalls.o (__errno)
 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-exit.o)
@@ -42,25 +26,26 @@ Common symbol       size              file
 
 __lock___atexit_recursive_mutex
                     0x1               /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
-hdma2               0x44              src/main.o
+hdma2               0x44              src/adc.o
 __lock___arc4random_mutex
                     0x1               /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
-htim4               0x40              src/main.o
-fft_x_output        0x800             src/main.o
+htim4               0x40              src/adc.o
+hdma1               0x44              src/adc.o
+channel_a_buffer    0x800             src/adc.o
 uwTick              0x4               HAL_Driver/Src/stm32f3xx_hal.o
 pFlash              0x20              HAL_Driver/Src/stm32f3xx_hal_flash.o
 __lock___env_recursive_mutex
                     0x1               /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
 __lock___sinit_recursive_mutex
                     0x1               /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
-htim3               0x40              src/main.o
+htim3               0x40              src/adc.o
 __lock___malloc_recursive_mutex
                     0x1               /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
-hadc3               0x54              src/main.o
-fft_x_buffer        0x800             src/main.o
-fft                 0x18              src/main.o
+hadc3               0x54              src/adc.o
+channel_b_buffer    0x800             src/adc.o
 __lock___at_quick_exit_mutex
                     0x1               /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
+channel_ref_buffer  0x800             src/adc.o
 __lock___dd_hash_mutex
                     0x1               /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
 __lock___tz_mutex   0x1               /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
@@ -9714,6 +9699,8 @@ Discarded input sections
                 0x0000000000000000      0x1c4 HAL_Driver/Src/stm32f3xx_hal_tim.o
  .text.HAL_TIM_ConfigTI1Input
                 0x0000000000000000       0x3c HAL_Driver/Src/stm32f3xx_hal_tim.o
+ .text.HAL_TIM_SlaveConfigSynchronization
+                0x0000000000000000       0x6a HAL_Driver/Src/stm32f3xx_hal_tim.o
  .text.HAL_TIM_SlaveConfigSynchronization_IT
                 0x0000000000000000       0x6a HAL_Driver/Src/stm32f3xx_hal_tim.o
  .text.HAL_TIM_ReadCapturedValue
@@ -9760,16 +9747,24 @@ Discarded input sections
                 0x0000000000000000      0x11c HAL_Driver/Src/stm32f3xx_hal_tim.o
  .text.TIM_OC4_SetConfig
                 0x0000000000000000       0xe0 HAL_Driver/Src/stm32f3xx_hal_tim.o
+ .text.TIM_SlaveTimer_SetConfig
+                0x0000000000000000      0x11a HAL_Driver/Src/stm32f3xx_hal_tim.o
  .text.TIM_TI1_SetConfig
                 0x0000000000000000       0xd8 HAL_Driver/Src/stm32f3xx_hal_tim.o
+ .text.TIM_TI1_ConfigInputStage
+                0x0000000000000000       0x66 HAL_Driver/Src/stm32f3xx_hal_tim.o
  .text.TIM_TI2_SetConfig
                 0x0000000000000000       0x82 HAL_Driver/Src/stm32f3xx_hal_tim.o
+ .text.TIM_TI2_ConfigInputStage
+                0x0000000000000000       0x68 HAL_Driver/Src/stm32f3xx_hal_tim.o
  .text.TIM_TI3_SetConfig
                 0x0000000000000000       0x80 HAL_Driver/Src/stm32f3xx_hal_tim.o
  .text.TIM_TI4_SetConfig
                 0x0000000000000000       0x82 HAL_Driver/Src/stm32f3xx_hal_tim.o
  .text.TIM_ITRx_SetConfig
                 0x0000000000000000       0x40 HAL_Driver/Src/stm32f3xx_hal_tim.o
+ .text.TIM_ETR_SetConfig
+                0x0000000000000000       0x44 HAL_Driver/Src/stm32f3xx_hal_tim.o
  .text.TIM_CCxChannelCmd
                 0x0000000000000000       0x46 HAL_Driver/Src/stm32f3xx_hal_tim.o
  .debug_macro   0x0000000000000000      0xa72 HAL_Driver/Src/stm32f3xx_hal_tim.o
@@ -12077,10 +12072,564 @@ Discarded input sections
  .debug_frame   0x0000000000000000      0x3dc HAL_Driver/Src/stm32f3xx_ll_utils.o
  .ARM.attributes
                 0x0000000000000000       0x39 HAL_Driver/Src/stm32f3xx_ll_utils.o
- .group         0x0000000000000000        0xc src/main.o
- .group         0x0000000000000000        0xc src/main.o
- .group         0x0000000000000000        0xc src/main.o
- .group         0x0000000000000000        0xc src/main.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .group         0x0000000000000000        0xc src/adc.o
+ .text          0x0000000000000000        0x0 src/adc.o
+ .data          0x0000000000000000        0x0 src/adc.o
+ .bss           0x0000000000000000        0x0 src/adc.o
+ .debug_macro   0x0000000000000000      0xa72 src/adc.o
+ .debug_macro   0x0000000000000000       0x29 src/adc.o
+ .debug_macro   0x0000000000000000       0x28 src/adc.o
+ .debug_macro   0x0000000000000000       0x22 src/adc.o
+ .debug_macro   0x0000000000000000       0x87 src/adc.o
+ .debug_macro   0x0000000000000000       0x51 src/adc.o
+ .debug_macro   0x0000000000000000       0xef src/adc.o
+ .debug_macro   0x0000000000000000       0x6a src/adc.o
+ .debug_macro   0x0000000000000000      0x1df src/adc.o
+ .debug_macro   0x0000000000000000       0x35 src/adc.o
+ .debug_macro   0x0000000000000000       0x50 src/adc.o
+ .debug_macro   0x0000000000000000      0xe66 src/adc.o
+ .debug_macro   0x0000000000000000    0x12a4f src/adc.o
+ .debug_macro   0x0000000000000000       0x43 src/adc.o
+ .debug_macro   0x0000000000000000      0x122 src/adc.o
+ .debug_macro   0x0000000000000000       0x58 src/adc.o
+ .debug_macro   0x0000000000000000       0x17 src/adc.o
+ .debug_macro   0x0000000000000000       0x35 src/adc.o
+ .debug_macro   0x0000000000000000       0x9c src/adc.o
+ .debug_macro   0x0000000000000000       0x16 src/adc.o
+ .debug_macro   0x0000000000000000       0x97 src/adc.o
+ .debug_macro   0x0000000000000000      0x330 src/adc.o
+ .debug_macro   0x0000000000000000       0xfd src/adc.o
+ .debug_macro   0x0000000000000000       0x10 src/adc.o
+ .debug_macro   0x0000000000000000       0x58 src/adc.o
+ .debug_macro   0x0000000000000000       0x1f src/adc.o
+ .debug_macro   0x0000000000000000       0x43 src/adc.o
+ .debug_macro   0x0000000000000000       0x20 src/adc.o
+ .debug_macro   0x0000000000000000      0x18e src/adc.o
+ .debug_macro   0x0000000000000000       0x10 src/adc.o
+ .debug_macro   0x0000000000000000       0x1c src/adc.o
+ .debug_macro   0x0000000000000000       0x52 src/adc.o
+ .debug_macro   0x0000000000000000       0x40 src/adc.o
+ .debug_macro   0x0000000000000000       0x10 src/adc.o
+ .debug_macro   0x0000000000000000       0x40 src/adc.o
+ .debug_macro   0x0000000000000000       0xd7 src/adc.o
+ .debug_macro   0x0000000000000000       0x1c src/adc.o
+ .debug_macro   0x0000000000000000       0x3d src/adc.o
+ .debug_macro   0x0000000000000000       0x16 src/adc.o
+ .debug_macro   0x0000000000000000      0x16f src/adc.o
+ .debug_macro   0x0000000000000000       0x50 src/adc.o
+ .debug_macro   0x0000000000000000      0x968 src/adc.o
+ .debug_macro   0x0000000000000000      0x5fe src/adc.o
+ .debug_macro   0x0000000000000000      0x13a src/adc.o
+ .debug_macro   0x0000000000000000      0x1fb src/adc.o
+ .debug_macro   0x0000000000000000      0x1bc src/adc.o
+ .debug_macro   0x0000000000000000       0x31 src/adc.o
+ .debug_macro   0x0000000000000000       0x3c src/adc.o
+ .debug_macro   0x0000000000000000      0x23a src/adc.o
+ .debug_macro   0x0000000000000000      0x9b8 src/adc.o
+ .debug_macro   0x0000000000000000       0x77 src/adc.o
+ .debug_macro   0x0000000000000000      0x40f src/adc.o
+ .debug_macro   0x0000000000000000       0x65 src/adc.o
+ .debug_macro   0x0000000000000000      0x58d src/adc.o
+ .debug_macro   0x0000000000000000       0x12 src/adc.o
+ .debug_macro   0x0000000000000000       0xc7 src/adc.o
+ .debug_macro   0x0000000000000000       0x4d src/adc.o
+ .debug_macro   0x0000000000000000       0x12 src/adc.o
+ .debug_macro   0x0000000000000000      0x172 src/adc.o
+ .debug_macro   0x0000000000000000       0x61 src/adc.o
+ .debug_macro   0x0000000000000000       0xcb src/adc.o
+ .debug_macro   0x0000000000000000      0x22b src/adc.o
+ .debug_macro   0x0000000000000000      0x209 src/adc.o
+ .debug_macro   0x0000000000000000       0x5b src/adc.o
+ .debug_macro   0x0000000000000000       0x90 src/adc.o
+ .debug_macro   0x0000000000000000      0x1ca src/adc.o
+ .debug_macro   0x0000000000000000       0x40 src/adc.o
+ .debug_macro   0x0000000000000000      0x264 src/adc.o
+ .debug_macro   0x0000000000000000       0x2a src/adc.o
+ .debug_macro   0x0000000000000000       0x87 src/adc.o
+ .debug_macro   0x0000000000000000      0x17d src/adc.o
+ .debug_macro   0x0000000000000000       0x28 src/adc.o
+ .debug_macro   0x0000000000000000      0x265 src/adc.o
+ .debug_macro   0x0000000000000000       0x82 src/adc.o
+ .debug_macro   0x0000000000000000       0xd3 src/adc.o
+ .debug_macro   0x0000000000000000      0x30c src/adc.o
+ .debug_macro   0x0000000000000000      0x3e1 src/adc.o
+ .debug_macro   0x0000000000000000       0xeb src/adc.o
+ .debug_macro   0x0000000000000000      0x391 src/adc.o
+ .debug_macro   0x0000000000000000       0x10 src/adc.o
+ .debug_macro   0x0000000000000000      0x356 src/adc.o
+ .debug_macro   0x0000000000000000      0x2e9 src/adc.o
+ .debug_macro   0x0000000000000000      0x6af src/adc.o
+ .debug_macro   0x0000000000000000      0x38a src/adc.o
+ .debug_macro   0x0000000000000000      0x46a src/adc.o
+ .debug_macro   0x0000000000000000      0x566 src/adc.o
+ .debug_macro   0x0000000000000000       0x2b src/adc.o
+ .debug_macro   0x0000000000000000      0x25d src/adc.o
+ .debug_macro   0x0000000000000000       0x2b src/adc.o
+ .debug_macro   0x0000000000000000       0x89 src/adc.o
+ .debug_macro   0x0000000000000000      0x277 src/adc.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .group         0x0000000000000000        0xc src/clocks.o
+ .text          0x0000000000000000        0x0 src/clocks.o
+ .data          0x0000000000000000        0x0 src/clocks.o
+ .bss           0x0000000000000000        0x0 src/clocks.o
+ .debug_macro   0x0000000000000000      0xa72 src/clocks.o
+ .debug_macro   0x0000000000000000       0x29 src/clocks.o
+ .debug_macro   0x0000000000000000       0x28 src/clocks.o
+ .debug_macro   0x0000000000000000       0x22 src/clocks.o
+ .debug_macro   0x0000000000000000       0x87 src/clocks.o
+ .debug_macro   0x0000000000000000       0x51 src/clocks.o
+ .debug_macro   0x0000000000000000       0xef src/clocks.o
+ .debug_macro   0x0000000000000000       0x6a src/clocks.o
+ .debug_macro   0x0000000000000000      0x1df src/clocks.o
+ .debug_macro   0x0000000000000000       0x35 src/clocks.o
+ .debug_macro   0x0000000000000000       0x50 src/clocks.o
+ .debug_macro   0x0000000000000000      0xe66 src/clocks.o
+ .debug_macro   0x0000000000000000    0x12a4f src/clocks.o
+ .debug_macro   0x0000000000000000       0x43 src/clocks.o
+ .debug_macro   0x0000000000000000      0x122 src/clocks.o
+ .debug_macro   0x0000000000000000       0x58 src/clocks.o
+ .debug_macro   0x0000000000000000       0x17 src/clocks.o
+ .debug_macro   0x0000000000000000       0x35 src/clocks.o
+ .debug_macro   0x0000000000000000       0x9c src/clocks.o
+ .debug_macro   0x0000000000000000       0x16 src/clocks.o
+ .debug_macro   0x0000000000000000       0x97 src/clocks.o
+ .debug_macro   0x0000000000000000      0x330 src/clocks.o
+ .debug_macro   0x0000000000000000       0xfd src/clocks.o
+ .debug_macro   0x0000000000000000       0x10 src/clocks.o
+ .debug_macro   0x0000000000000000       0x58 src/clocks.o
+ .debug_macro   0x0000000000000000       0x1f src/clocks.o
+ .debug_macro   0x0000000000000000       0x43 src/clocks.o
+ .debug_macro   0x0000000000000000       0x20 src/clocks.o
+ .debug_macro   0x0000000000000000      0x18e src/clocks.o
+ .debug_macro   0x0000000000000000       0x10 src/clocks.o
+ .debug_macro   0x0000000000000000       0x1c src/clocks.o
+ .debug_macro   0x0000000000000000       0x52 src/clocks.o
+ .debug_macro   0x0000000000000000       0x40 src/clocks.o
+ .debug_macro   0x0000000000000000       0x10 src/clocks.o
+ .debug_macro   0x0000000000000000       0x40 src/clocks.o
+ .debug_macro   0x0000000000000000       0xd7 src/clocks.o
+ .debug_macro   0x0000000000000000       0x1c src/clocks.o
+ .debug_macro   0x0000000000000000       0x3d src/clocks.o
+ .debug_macro   0x0000000000000000       0x16 src/clocks.o
+ .debug_macro   0x0000000000000000      0x16f src/clocks.o
+ .debug_macro   0x0000000000000000       0x50 src/clocks.o
+ .debug_macro   0x0000000000000000      0x968 src/clocks.o
+ .debug_macro   0x0000000000000000      0x5fe src/clocks.o
+ .debug_macro   0x0000000000000000      0x13a src/clocks.o
+ .debug_macro   0x0000000000000000      0x1fb src/clocks.o
+ .debug_macro   0x0000000000000000      0x1bc src/clocks.o
+ .debug_macro   0x0000000000000000       0x31 src/clocks.o
+ .debug_macro   0x0000000000000000       0x3c src/clocks.o
+ .debug_macro   0x0000000000000000      0x23a src/clocks.o
+ .debug_macro   0x0000000000000000      0x9b8 src/clocks.o
+ .debug_macro   0x0000000000000000       0x77 src/clocks.o
+ .debug_macro   0x0000000000000000      0x40f src/clocks.o
+ .debug_macro   0x0000000000000000       0x65 src/clocks.o
+ .debug_macro   0x0000000000000000      0x58d src/clocks.o
+ .debug_macro   0x0000000000000000       0x12 src/clocks.o
+ .debug_macro   0x0000000000000000       0xc7 src/clocks.o
+ .debug_macro   0x0000000000000000       0x4d src/clocks.o
+ .debug_macro   0x0000000000000000       0x12 src/clocks.o
+ .debug_macro   0x0000000000000000      0x172 src/clocks.o
+ .debug_macro   0x0000000000000000       0x61 src/clocks.o
+ .debug_macro   0x0000000000000000       0xcb src/clocks.o
+ .debug_macro   0x0000000000000000      0x22b src/clocks.o
+ .debug_macro   0x0000000000000000      0x209 src/clocks.o
+ .debug_macro   0x0000000000000000       0x5b src/clocks.o
+ .debug_macro   0x0000000000000000       0x90 src/clocks.o
+ .debug_macro   0x0000000000000000      0x1ca src/clocks.o
+ .debug_macro   0x0000000000000000       0x40 src/clocks.o
+ .debug_macro   0x0000000000000000      0x264 src/clocks.o
+ .debug_macro   0x0000000000000000       0x2a src/clocks.o
+ .debug_macro   0x0000000000000000       0x87 src/clocks.o
+ .debug_macro   0x0000000000000000      0x17d src/clocks.o
+ .debug_macro   0x0000000000000000       0x28 src/clocks.o
+ .debug_macro   0x0000000000000000      0x265 src/clocks.o
+ .debug_macro   0x0000000000000000       0x82 src/clocks.o
+ .debug_macro   0x0000000000000000       0xd3 src/clocks.o
+ .debug_macro   0x0000000000000000      0x30c src/clocks.o
+ .debug_macro   0x0000000000000000      0x3e1 src/clocks.o
+ .debug_macro   0x0000000000000000       0xeb src/clocks.o
+ .debug_macro   0x0000000000000000      0x391 src/clocks.o
+ .debug_macro   0x0000000000000000       0x10 src/clocks.o
+ .debug_macro   0x0000000000000000      0x356 src/clocks.o
+ .debug_macro   0x0000000000000000      0x2e9 src/clocks.o
+ .debug_macro   0x0000000000000000      0x6af src/clocks.o
+ .debug_macro   0x0000000000000000      0x38a src/clocks.o
+ .debug_macro   0x0000000000000000      0x46a src/clocks.o
+ .debug_macro   0x0000000000000000      0x566 src/clocks.o
+ .debug_macro   0x0000000000000000       0x2b src/clocks.o
+ .debug_macro   0x0000000000000000      0x25d src/clocks.o
+ .debug_macro   0x0000000000000000       0x2b src/clocks.o
+ .debug_macro   0x0000000000000000       0x89 src/clocks.o
+ .debug_macro   0x0000000000000000      0x277 src/clocks.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .group         0x0000000000000000        0xc src/dma.o
+ .text          0x0000000000000000        0x0 src/dma.o
+ .data          0x0000000000000000        0x0 src/dma.o
+ .bss           0x0000000000000000        0x0 src/dma.o
+ .debug_macro   0x0000000000000000      0xa72 src/dma.o
+ .debug_macro   0x0000000000000000       0x29 src/dma.o
+ .debug_macro   0x0000000000000000       0x28 src/dma.o
+ .debug_macro   0x0000000000000000       0x22 src/dma.o
+ .debug_macro   0x0000000000000000       0x87 src/dma.o
+ .debug_macro   0x0000000000000000       0x51 src/dma.o
+ .debug_macro   0x0000000000000000       0xef src/dma.o
+ .debug_macro   0x0000000000000000       0x6a src/dma.o
+ .debug_macro   0x0000000000000000      0x1df src/dma.o
+ .debug_macro   0x0000000000000000       0x35 src/dma.o
+ .debug_macro   0x0000000000000000       0x50 src/dma.o
+ .debug_macro   0x0000000000000000      0xe66 src/dma.o
+ .debug_macro   0x0000000000000000    0x12a4f src/dma.o
+ .debug_macro   0x0000000000000000       0x43 src/dma.o
+ .debug_macro   0x0000000000000000      0x122 src/dma.o
+ .debug_macro   0x0000000000000000       0x58 src/dma.o
+ .debug_macro   0x0000000000000000       0x17 src/dma.o
+ .debug_macro   0x0000000000000000       0x35 src/dma.o
+ .debug_macro   0x0000000000000000       0x9c src/dma.o
+ .debug_macro   0x0000000000000000       0x16 src/dma.o
+ .debug_macro   0x0000000000000000       0x97 src/dma.o
+ .debug_macro   0x0000000000000000      0x330 src/dma.o
+ .debug_macro   0x0000000000000000       0xfd src/dma.o
+ .debug_macro   0x0000000000000000       0x10 src/dma.o
+ .debug_macro   0x0000000000000000       0x58 src/dma.o
+ .debug_macro   0x0000000000000000       0x1f src/dma.o
+ .debug_macro   0x0000000000000000       0x43 src/dma.o
+ .debug_macro   0x0000000000000000       0x20 src/dma.o
+ .debug_macro   0x0000000000000000      0x18e src/dma.o
+ .debug_macro   0x0000000000000000       0x10 src/dma.o
+ .debug_macro   0x0000000000000000       0x1c src/dma.o
+ .debug_macro   0x0000000000000000       0x52 src/dma.o
+ .debug_macro   0x0000000000000000       0x40 src/dma.o
+ .debug_macro   0x0000000000000000       0x10 src/dma.o
+ .debug_macro   0x0000000000000000       0x40 src/dma.o
+ .debug_macro   0x0000000000000000       0xd7 src/dma.o
+ .debug_macro   0x0000000000000000       0x1c src/dma.o
+ .debug_macro   0x0000000000000000       0x3d src/dma.o
+ .debug_macro   0x0000000000000000       0x16 src/dma.o
+ .debug_macro   0x0000000000000000      0x16f src/dma.o
+ .debug_macro   0x0000000000000000       0x50 src/dma.o
+ .debug_macro   0x0000000000000000      0x968 src/dma.o
+ .debug_macro   0x0000000000000000      0x5fe src/dma.o
+ .debug_macro   0x0000000000000000      0x13a src/dma.o
+ .debug_macro   0x0000000000000000      0x1fb src/dma.o
+ .debug_macro   0x0000000000000000      0x1bc src/dma.o
+ .debug_macro   0x0000000000000000       0x31 src/dma.o
+ .debug_macro   0x0000000000000000       0x3c src/dma.o
+ .debug_macro   0x0000000000000000      0x23a src/dma.o
+ .debug_macro   0x0000000000000000      0x9b8 src/dma.o
+ .debug_macro   0x0000000000000000       0x77 src/dma.o
+ .debug_macro   0x0000000000000000      0x40f src/dma.o
+ .debug_macro   0x0000000000000000       0x65 src/dma.o
+ .debug_macro   0x0000000000000000      0x58d src/dma.o
+ .debug_macro   0x0000000000000000       0x12 src/dma.o
+ .debug_macro   0x0000000000000000       0xc7 src/dma.o
+ .debug_macro   0x0000000000000000       0x4d src/dma.o
+ .debug_macro   0x0000000000000000       0x12 src/dma.o
+ .debug_macro   0x0000000000000000      0x172 src/dma.o
+ .debug_macro   0x0000000000000000       0x61 src/dma.o
+ .debug_macro   0x0000000000000000       0xcb src/dma.o
+ .debug_macro   0x0000000000000000      0x22b src/dma.o
+ .debug_macro   0x0000000000000000      0x209 src/dma.o
+ .debug_macro   0x0000000000000000       0x5b src/dma.o
+ .debug_macro   0x0000000000000000       0x90 src/dma.o
+ .debug_macro   0x0000000000000000      0x1ca src/dma.o
+ .debug_macro   0x0000000000000000       0x40 src/dma.o
+ .debug_macro   0x0000000000000000      0x264 src/dma.o
+ .debug_macro   0x0000000000000000       0x2a src/dma.o
+ .debug_macro   0x0000000000000000       0x87 src/dma.o
+ .debug_macro   0x0000000000000000      0x17d src/dma.o
+ .debug_macro   0x0000000000000000       0x28 src/dma.o
+ .debug_macro   0x0000000000000000      0x265 src/dma.o
+ .debug_macro   0x0000000000000000       0x82 src/dma.o
+ .debug_macro   0x0000000000000000       0xd3 src/dma.o
+ .debug_macro   0x0000000000000000      0x30c src/dma.o
+ .debug_macro   0x0000000000000000      0x3e1 src/dma.o
+ .debug_macro   0x0000000000000000       0xeb src/dma.o
+ .debug_macro   0x0000000000000000      0x391 src/dma.o
+ .debug_macro   0x0000000000000000       0x10 src/dma.o
+ .debug_macro   0x0000000000000000      0x356 src/dma.o
+ .debug_macro   0x0000000000000000      0x2e9 src/dma.o
+ .debug_macro   0x0000000000000000      0x6af src/dma.o
+ .debug_macro   0x0000000000000000      0x38a src/dma.o
+ .debug_macro   0x0000000000000000      0x46a src/dma.o
+ .debug_macro   0x0000000000000000      0x566 src/dma.o
+ .debug_macro   0x0000000000000000       0x2b src/dma.o
+ .debug_macro   0x0000000000000000      0x25d src/dma.o
+ .debug_macro   0x0000000000000000       0x2b src/dma.o
+ .debug_macro   0x0000000000000000       0x89 src/dma.o
+ .debug_macro   0x0000000000000000      0x277 src/dma.o
+ .debug_macro   0x0000000000000000       0x10 src/dma.o
  .group         0x0000000000000000        0xc src/main.o
  .group         0x0000000000000000        0xc src/main.o
  .group         0x0000000000000000        0xc src/main.o
@@ -12176,14 +12725,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 src/main.o
  .data          0x0000000000000000        0x0 src/main.o
  .bss           0x0000000000000000        0x0 src/main.o
- .text.ADC_DMAConvCmplt
-                0x0000000000000000       0x14 src/main.o
- .text.ADC_DMAConvHalfCplt
-                0x0000000000000000       0x14 src/main.o
- .text.ADC_DMALevelOutOfWindow
-                0x0000000000000000       0x14 src/main.o
- .text.ADC_DMAError
-                0x0000000000000000       0x14 src/main.o
  .debug_macro   0x0000000000000000      0xa72 src/main.o
  .debug_macro   0x0000000000000000       0x29 src/main.o
  .debug_macro   0x0000000000000000       0x28 src/main.o
@@ -12275,6 +12816,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x2b src/main.o
  .debug_macro   0x0000000000000000       0x89 src/main.o
  .debug_macro   0x0000000000000000      0x277 src/main.o
+ .debug_macro   0x0000000000000000       0x10 src/main.o
  .group         0x0000000000000000        0xc src/stm32f3xx_it.o
  .group         0x0000000000000000        0xc src/stm32f3xx_it.o
  .group         0x0000000000000000        0xc src/stm32f3xx_it.o
@@ -12769,172 +13311,196 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x2b src/system_stm32f3xx.o
  .debug_macro   0x0000000000000000       0x89 src/system_stm32f3xx.o
  .debug_macro   0x0000000000000000      0x277 src/system_stm32f3xx.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .group         0x0000000000000000        0xc src/timers.o
+ .text          0x0000000000000000        0x0 src/timers.o
+ .data          0x0000000000000000        0x0 src/timers.o
+ .bss           0x0000000000000000        0x0 src/timers.o
+ .debug_macro   0x0000000000000000      0xa72 src/timers.o
+ .debug_macro   0x0000000000000000       0x29 src/timers.o
+ .debug_macro   0x0000000000000000       0x28 src/timers.o
+ .debug_macro   0x0000000000000000       0x22 src/timers.o
+ .debug_macro   0x0000000000000000       0x87 src/timers.o
+ .debug_macro   0x0000000000000000       0x51 src/timers.o
+ .debug_macro   0x0000000000000000       0xef src/timers.o
+ .debug_macro   0x0000000000000000       0x6a src/timers.o
+ .debug_macro   0x0000000000000000      0x1df src/timers.o
+ .debug_macro   0x0000000000000000       0x35 src/timers.o
+ .debug_macro   0x0000000000000000       0x50 src/timers.o
+ .debug_macro   0x0000000000000000      0xe66 src/timers.o
+ .debug_macro   0x0000000000000000    0x12a4f src/timers.o
+ .debug_macro   0x0000000000000000       0x43 src/timers.o
+ .debug_macro   0x0000000000000000      0x122 src/timers.o
+ .debug_macro   0x0000000000000000       0x58 src/timers.o
+ .debug_macro   0x0000000000000000       0x17 src/timers.o
+ .debug_macro   0x0000000000000000       0x35 src/timers.o
+ .debug_macro   0x0000000000000000       0x9c src/timers.o
+ .debug_macro   0x0000000000000000       0x16 src/timers.o
+ .debug_macro   0x0000000000000000       0x97 src/timers.o
+ .debug_macro   0x0000000000000000      0x330 src/timers.o
+ .debug_macro   0x0000000000000000       0xfd src/timers.o
+ .debug_macro   0x0000000000000000       0x10 src/timers.o
+ .debug_macro   0x0000000000000000       0x58 src/timers.o
+ .debug_macro   0x0000000000000000       0x1f src/timers.o
+ .debug_macro   0x0000000000000000       0x43 src/timers.o
+ .debug_macro   0x0000000000000000       0x20 src/timers.o
+ .debug_macro   0x0000000000000000      0x18e src/timers.o
+ .debug_macro   0x0000000000000000       0x10 src/timers.o
+ .debug_macro   0x0000000000000000       0x1c src/timers.o
+ .debug_macro   0x0000000000000000       0x52 src/timers.o
+ .debug_macro   0x0000000000000000       0x40 src/timers.o
+ .debug_macro   0x0000000000000000       0x10 src/timers.o
+ .debug_macro   0x0000000000000000       0x40 src/timers.o
+ .debug_macro   0x0000000000000000       0xd7 src/timers.o
+ .debug_macro   0x0000000000000000       0x1c src/timers.o
+ .debug_macro   0x0000000000000000       0x3d src/timers.o
+ .debug_macro   0x0000000000000000       0x16 src/timers.o
+ .debug_macro   0x0000000000000000      0x16f src/timers.o
+ .debug_macro   0x0000000000000000       0x50 src/timers.o
+ .debug_macro   0x0000000000000000      0x968 src/timers.o
+ .debug_macro   0x0000000000000000      0x5fe src/timers.o
+ .debug_macro   0x0000000000000000      0x13a src/timers.o
+ .debug_macro   0x0000000000000000      0x1fb src/timers.o
+ .debug_macro   0x0000000000000000      0x1bc src/timers.o
+ .debug_macro   0x0000000000000000       0x31 src/timers.o
+ .debug_macro   0x0000000000000000       0x3c src/timers.o
+ .debug_macro   0x0000000000000000      0x23a src/timers.o
+ .debug_macro   0x0000000000000000      0x9b8 src/timers.o
+ .debug_macro   0x0000000000000000       0x77 src/timers.o
+ .debug_macro   0x0000000000000000      0x40f src/timers.o
+ .debug_macro   0x0000000000000000       0x65 src/timers.o
+ .debug_macro   0x0000000000000000      0x58d src/timers.o
+ .debug_macro   0x0000000000000000       0x12 src/timers.o
+ .debug_macro   0x0000000000000000       0xc7 src/timers.o
+ .debug_macro   0x0000000000000000       0x4d src/timers.o
+ .debug_macro   0x0000000000000000       0x12 src/timers.o
+ .debug_macro   0x0000000000000000      0x172 src/timers.o
+ .debug_macro   0x0000000000000000       0x61 src/timers.o
+ .debug_macro   0x0000000000000000       0xcb src/timers.o
+ .debug_macro   0x0000000000000000      0x22b src/timers.o
+ .debug_macro   0x0000000000000000      0x209 src/timers.o
+ .debug_macro   0x0000000000000000       0x5b src/timers.o
+ .debug_macro   0x0000000000000000       0x90 src/timers.o
+ .debug_macro   0x0000000000000000      0x1ca src/timers.o
+ .debug_macro   0x0000000000000000       0x40 src/timers.o
+ .debug_macro   0x0000000000000000      0x264 src/timers.o
+ .debug_macro   0x0000000000000000       0x2a src/timers.o
+ .debug_macro   0x0000000000000000       0x87 src/timers.o
+ .debug_macro   0x0000000000000000      0x17d src/timers.o
+ .debug_macro   0x0000000000000000       0x28 src/timers.o
+ .debug_macro   0x0000000000000000      0x265 src/timers.o
+ .debug_macro   0x0000000000000000       0x82 src/timers.o
+ .debug_macro   0x0000000000000000       0xd3 src/timers.o
+ .debug_macro   0x0000000000000000      0x30c src/timers.o
+ .debug_macro   0x0000000000000000      0x3e1 src/timers.o
+ .debug_macro   0x0000000000000000       0xeb src/timers.o
+ .debug_macro   0x0000000000000000      0x391 src/timers.o
+ .debug_macro   0x0000000000000000       0x10 src/timers.o
+ .debug_macro   0x0000000000000000      0x356 src/timers.o
+ .debug_macro   0x0000000000000000      0x2e9 src/timers.o
+ .debug_macro   0x0000000000000000      0x6af src/timers.o
+ .debug_macro   0x0000000000000000      0x38a src/timers.o
+ .debug_macro   0x0000000000000000      0x46a src/timers.o
+ .debug_macro   0x0000000000000000      0x566 src/timers.o
+ .debug_macro   0x0000000000000000       0x2b src/timers.o
+ .debug_macro   0x0000000000000000      0x25d src/timers.o
+ .debug_macro   0x0000000000000000       0x2b src/timers.o
+ .debug_macro   0x0000000000000000       0x89 src/timers.o
+ .debug_macro   0x0000000000000000      0x277 src/timers.o
+ .debug_macro   0x0000000000000000       0x10 src/timers.o
  .text          0x0000000000000000       0x14 startup/startup_stm32.o
  .data          0x0000000000000000        0x0 startup/startup_stm32.o
  .bss           0x0000000000000000        0x0 startup/startup_stm32.o
- .text          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
- .data          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
- .bss           0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
- .text.arm_split_rifft_q15
-                0x0000000000000000       0x50 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
- .text          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
- .data          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
- .bss           0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
- .text          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .data          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .bss           0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_q31_len512
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_f32_len256
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_f32_len2048
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_q31_len4096
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_f32_len16
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_f32_len32
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_f32_len64
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_q31_len16
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_f32_len1024
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_q31_len32
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_q31_len2048
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_q31_len256
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_f32_len128
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_f32_len512
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_q31_len1024
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_f32_len4096
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_q31_len128
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .rodata.arm_cfft_sR_q31_len64
-                0x0000000000000000       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .text          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .data          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .bss           0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_2048
-                0x0000000000000000     0x4000 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_32_q31
-                0x0000000000000000       0xc0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_rfft_64
-                0x0000000000000000      0x100 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.armBitRevIndexTable64
-                0x0000000000000000       0x70 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_rfft_2048
-                0x0000000000000000     0x2000 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_rfft_4096
-                0x0000000000000000     0x4000 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_256
-                0x0000000000000000      0x800 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_1024_q31
-                0x0000000000000000     0x1800 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_16
-                0x0000000000000000       0x80 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_4096_q31
-                0x0000000000000000     0x6000 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.sinTable_q15
-                0x0000000000000000      0x402 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.sinTable_q31
-                0x0000000000000000      0x804 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_1024
-                0x0000000000000000     0x2000 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_32
-                0x0000000000000000      0x100 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.armBitRevIndexTable1024
-                0x0000000000000000      0xe10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_16_q31
-                0x0000000000000000       0x60 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.armBitRevIndexTable16
-                0x0000000000000000       0x28 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_rfft_32
-                0x0000000000000000       0x80 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.armBitRevIndexTable32
-                0x0000000000000000       0x60 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.armBitRevTable
-                0x0000000000000000      0x800 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.sinTable_f32
-                0x0000000000000000      0x804 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_128
-                0x0000000000000000      0x400 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_64_q31
-                0x0000000000000000      0x180 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_2048_q31
-                0x0000000000000000     0x3000 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_256_q31
-                0x0000000000000000      0x600 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_512
-                0x0000000000000000     0x1000 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_512_q31
-                0x0000000000000000      0xc00 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.armBitRevIndexTable2048
-                0x0000000000000000     0x1dc0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.armRecipTableQ15
-                0x0000000000000000       0x80 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_64
-                0x0000000000000000      0x200 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.armBitRevIndexTable4096
-                0x0000000000000000     0x1f80 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.armRecipTableQ31
-                0x0000000000000000      0x100 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_rfft_512
-                0x0000000000000000      0x800 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.armBitRevIndexTable512
-                0x0000000000000000      0x380 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_rfft_1024
-                0x0000000000000000     0x1000 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_rfft_256
-                0x0000000000000000      0x400 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.armBitRevIndexTable256
-                0x0000000000000000      0x370 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_rfft_128
-                0x0000000000000000      0x200 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.armBitRevIndexTable128
-                0x0000000000000000      0x1a0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_4096
-                0x0000000000000000     0x8000 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .rodata.twiddleCoef_128_q31
-                0x0000000000000000      0x300 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .text          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
- .data          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
- .bss           0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
- .data          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal2.o)
- .bss           0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal2.o)
- .text          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
- .data          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
- .bss           0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
- .text.arm_cfft_radix4_q15
-                0x0000000000000000       0x3c /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
- .text          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .data          0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .bss           0x0000000000000000        0x0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .text.arm_bitreversal_f32
-                0x0000000000000000       0xe0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .text.arm_bitreversal_q31
-                0x0000000000000000       0xa8 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .text.arm_bitreversal_q15
-                0x0000000000000000       0x64 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .debug_info    0x0000000000000000      0x2f7 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .debug_abbrev  0x0000000000000000       0xcc /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .debug_loc     0x0000000000000000      0x356 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .debug_aranges
-                0x0000000000000000       0x30 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .debug_ranges  0x0000000000000000       0x20 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .debug_line    0x0000000000000000      0x358 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .debug_str     0x0000000000000000      0x2d8 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .comment       0x0000000000000000       0x71 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .debug_frame   0x0000000000000000       0x8c /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
- .ARM.attributes
-                0x0000000000000000       0x39 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal.o)
  .text          0x0000000000000000        0x0 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-errno.o)
  .data          0x0000000000000000        0x0 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-errno.o)
  .bss           0x0000000000000000        0x0 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-errno.o)
@@ -13086,10 +13652,14 @@ LOAD HAL_Driver/Src/stm32f3xx_ll_spi.o
 LOAD HAL_Driver/Src/stm32f3xx_ll_tim.o
 LOAD HAL_Driver/Src/stm32f3xx_ll_usart.o
 LOAD HAL_Driver/Src/stm32f3xx_ll_utils.o
+LOAD src/adc.o
+LOAD src/clocks.o
+LOAD src/dma.o
 LOAD src/main.o
 LOAD src/stm32f3xx_it.o
 LOAD src/syscalls.o
 LOAD src/system_stm32f3xx.o
+LOAD src/timers.o
 LOAD startup/startup_stm32.o
 LOAD /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a
 LOAD /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libm.a
@@ -13110,465 +13680,346 @@ LOAD /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-non
                 0x0000000008000000                g_pfnVectors
                 0x0000000008000194                . = ALIGN (0x4)
 
-.text           0x0000000008000194     0x44b0
+.text           0x0000000008000194     0x3780
                 0x0000000008000194                . = ALIGN (0x4)
  *(.text)
  .text          0x0000000008000194       0x40 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
- .text          0x00000000080001d4       0xc0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal2.o)
-                0x00000000080001d4                arm_bitreversal_32
-                0x000000000800023e                arm_bitreversal_16
  *(.text*)
  .text.HAL_InitTick
-                0x0000000008000294       0x60 HAL_Driver/Src/stm32f3xx_hal.o
-                0x0000000008000294                HAL_InitTick
+                0x00000000080001d4       0x60 HAL_Driver/Src/stm32f3xx_hal.o
+                0x00000000080001d4                HAL_InitTick
  .text.HAL_IncTick
-                0x00000000080002f4       0x28 HAL_Driver/Src/stm32f3xx_hal.o
-                0x00000000080002f4                HAL_IncTick
+                0x0000000008000234       0x28 HAL_Driver/Src/stm32f3xx_hal.o
+                0x0000000008000234                HAL_IncTick
  .text.HAL_GetTick
-                0x000000000800031c       0x18 HAL_Driver/Src/stm32f3xx_hal.o
-                0x000000000800031c                HAL_GetTick
+                0x000000000800025c       0x18 HAL_Driver/Src/stm32f3xx_hal.o
+                0x000000000800025c                HAL_GetTick
  .text.HAL_Delay
-                0x0000000008000334       0x44 HAL_Driver/Src/stm32f3xx_hal.o
-                0x0000000008000334                HAL_Delay
+                0x0000000008000274       0x44 HAL_Driver/Src/stm32f3xx_hal.o
+                0x0000000008000274                HAL_Delay
  .text.HAL_ADC_MspInit
-                0x0000000008000378       0x14 HAL_Driver/Src/stm32f3xx_hal_adc.o
-                0x0000000008000378                HAL_ADC_MspInit
+                0x00000000080002b8       0x14 HAL_Driver/Src/stm32f3xx_hal_adc.o
+                0x00000000080002b8                HAL_ADC_MspInit
  .text.HAL_ADC_Init
-                0x000000000800038c      0x3c0 HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
-                0x000000000800038c                HAL_ADC_Init
+                0x00000000080002cc      0x3c0 HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
+                0x00000000080002cc                HAL_ADC_Init
  .text.HAL_ADC_Start
-                0x000000000800074c      0x22c HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
-                0x000000000800074c                HAL_ADC_Start
+                0x000000000800068c      0x22c HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
+                0x000000000800068c                HAL_ADC_Start
  .text.HAL_ADC_ConfigChannel
-                0x0000000008000978      0x5d8 HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
-                0x0000000008000978                HAL_ADC_ConfigChannel
+                0x00000000080008b8      0x5d8 HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
+                0x00000000080008b8                HAL_ADC_ConfigChannel
  .text.HAL_ADCEx_MultiModeConfigChannel
-                0x0000000008000f50      0x1e0 HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
-                0x0000000008000f50                HAL_ADCEx_MultiModeConfigChannel
+                0x0000000008000e90      0x1e0 HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
+                0x0000000008000e90                HAL_ADCEx_MultiModeConfigChannel
  .text.ADC_Enable
-                0x0000000008001130       0xbc HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
+                0x0000000008001070       0xbc HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
  .text.ADC_Disable
-                0x00000000080011ec       0xbe HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
- *fill*         0x00000000080012aa        0x2 
+                0x000000000800112c       0xbe HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
+ *fill*         0x00000000080011ea        0x2 
  .text.NVIC_GetPriorityGrouping
-                0x00000000080012ac       0x1c HAL_Driver/Src/stm32f3xx_hal_cortex.o
+                0x00000000080011ec       0x1c HAL_Driver/Src/stm32f3xx_hal_cortex.o
  .text.NVIC_SetPriority
-                0x00000000080012c8       0x54 HAL_Driver/Src/stm32f3xx_hal_cortex.o
+                0x0000000008001208       0x54 HAL_Driver/Src/stm32f3xx_hal_cortex.o
  .text.NVIC_EncodePriority
-                0x000000000800131c       0x66 HAL_Driver/Src/stm32f3xx_hal_cortex.o
- *fill*         0x0000000008001382        0x2 
+                0x000000000800125c       0x66 HAL_Driver/Src/stm32f3xx_hal_cortex.o
+ *fill*         0x00000000080012c2        0x2 
  .text.SysTick_Config
-                0x0000000008001384       0x44 HAL_Driver/Src/stm32f3xx_hal_cortex.o
+                0x00000000080012c4       0x44 HAL_Driver/Src/stm32f3xx_hal_cortex.o
  .text.HAL_NVIC_SetPriority
-                0x00000000080013c8       0x38 HAL_Driver/Src/stm32f3xx_hal_cortex.o
-                0x00000000080013c8                HAL_NVIC_SetPriority
+                0x0000000008001308       0x38 HAL_Driver/Src/stm32f3xx_hal_cortex.o
+                0x0000000008001308                HAL_NVIC_SetPriority
  .text.HAL_SYSTICK_Config
-                0x0000000008001400       0x18 HAL_Driver/Src/stm32f3xx_hal_cortex.o
-                0x0000000008001400                HAL_SYSTICK_Config
+                0x0000000008001340       0x18 HAL_Driver/Src/stm32f3xx_hal_cortex.o
+                0x0000000008001340                HAL_SYSTICK_Config
  .text.HAL_SYSTICK_IRQHandler
-                0x0000000008001418        0xc HAL_Driver/Src/stm32f3xx_hal_cortex.o
-                0x0000000008001418                HAL_SYSTICK_IRQHandler
+                0x0000000008001358        0xc HAL_Driver/Src/stm32f3xx_hal_cortex.o
+                0x0000000008001358                HAL_SYSTICK_IRQHandler
  .text.HAL_SYSTICK_Callback
-                0x0000000008001424        0xe HAL_Driver/Src/stm32f3xx_hal_cortex.o
-                0x0000000008001424                HAL_SYSTICK_Callback
+                0x0000000008001364        0xe HAL_Driver/Src/stm32f3xx_hal_cortex.o
+                0x0000000008001364                HAL_SYSTICK_Callback
  .text.HAL_DMA_Init
-                0x0000000008001432       0x8e HAL_Driver/Src/stm32f3xx_hal_dma.o
-                0x0000000008001432                HAL_DMA_Init
+                0x0000000008001372       0x8e HAL_Driver/Src/stm32f3xx_hal_dma.o
+                0x0000000008001372                HAL_DMA_Init
  .text.HAL_DMA_Start_IT
-                0x00000000080014c0       0xbe HAL_Driver/Src/stm32f3xx_hal_dma.o
-                0x00000000080014c0                HAL_DMA_Start_IT
+                0x0000000008001400       0xbe HAL_Driver/Src/stm32f3xx_hal_dma.o
+                0x0000000008001400                HAL_DMA_Start_IT
  .text.HAL_DMA_IRQHandler
-                0x000000000800157e      0x146 HAL_Driver/Src/stm32f3xx_hal_dma.o
-                0x000000000800157e                HAL_DMA_IRQHandler
+                0x00000000080014be      0x146 HAL_Driver/Src/stm32f3xx_hal_dma.o
+                0x00000000080014be                HAL_DMA_IRQHandler
  .text.HAL_DMA_RegisterCallback
-                0x00000000080016c4       0x94 HAL_Driver/Src/stm32f3xx_hal_dma.o
-                0x00000000080016c4                HAL_DMA_RegisterCallback
+                0x0000000008001604       0x94 HAL_Driver/Src/stm32f3xx_hal_dma.o
+                0x0000000008001604                HAL_DMA_RegisterCallback
  .text.DMA_SetConfig
-                0x0000000008001758       0x5c HAL_Driver/Src/stm32f3xx_hal_dma.o
+                0x0000000008001698       0x5c HAL_Driver/Src/stm32f3xx_hal_dma.o
  .text.DMA_CalcBaseAndBitshift
-                0x00000000080017b4       0x78 HAL_Driver/Src/stm32f3xx_hal_dma.o
+                0x00000000080016f4       0x78 HAL_Driver/Src/stm32f3xx_hal_dma.o
  .text.HAL_GPIO_Init
-                0x000000000800182c      0x2fc HAL_Driver/Src/stm32f3xx_hal_gpio.o
-                0x000000000800182c                HAL_GPIO_Init
+                0x000000000800176c      0x2fc HAL_Driver/Src/stm32f3xx_hal_gpio.o
+                0x000000000800176c                HAL_GPIO_Init
  .text.HAL_RCC_OscConfig
-                0x0000000008001b28      0xddc HAL_Driver/Src/stm32f3xx_hal_rcc.o
-                0x0000000008001b28                HAL_RCC_OscConfig
+                0x0000000008001a68      0xddc HAL_Driver/Src/stm32f3xx_hal_rcc.o
+                0x0000000008001a68                HAL_RCC_OscConfig
  .text.HAL_RCC_ClockConfig
-                0x0000000008002904      0x2f8 HAL_Driver/Src/stm32f3xx_hal_rcc.o
-                0x0000000008002904                HAL_RCC_ClockConfig
+                0x0000000008002844      0x2f8 HAL_Driver/Src/stm32f3xx_hal_rcc.o
+                0x0000000008002844                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x0000000008002bfc       0xd4 HAL_Driver/Src/stm32f3xx_hal_rcc.o
-                0x0000000008002bfc                HAL_RCC_GetSysClockFreq
+                0x0000000008002b3c       0xd4 HAL_Driver/Src/stm32f3xx_hal_rcc.o
+                0x0000000008002b3c                HAL_RCC_GetSysClockFreq
  .text.HAL_RCCEx_PeriphCLKConfig
-                0x0000000008002cd0      0x360 HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
-                0x0000000008002cd0                HAL_RCCEx_PeriphCLKConfig
+                0x0000000008002c10      0x360 HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
+                0x0000000008002c10                HAL_RCCEx_PeriphCLKConfig
  .text.HAL_TIM_Base_Init
-                0x0000000008003030       0x56 HAL_Driver/Src/stm32f3xx_hal_tim.o
-                0x0000000008003030                HAL_TIM_Base_Init
+                0x0000000008002f70       0x56 HAL_Driver/Src/stm32f3xx_hal_tim.o
+                0x0000000008002f70                HAL_TIM_Base_Init
  .text.HAL_TIM_Base_MspInit
-                0x0000000008003086       0x14 HAL_Driver/Src/stm32f3xx_hal_tim.o
-                0x0000000008003086                HAL_TIM_Base_MspInit
+                0x0000000008002fc6       0x14 HAL_Driver/Src/stm32f3xx_hal_tim.o
+                0x0000000008002fc6                HAL_TIM_Base_MspInit
  .text.HAL_TIM_Base_Start
-                0x000000000800309a       0x36 HAL_Driver/Src/stm32f3xx_hal_tim.o
-                0x000000000800309a                HAL_TIM_Base_Start
+                0x0000000008002fda       0x36 HAL_Driver/Src/stm32f3xx_hal_tim.o
+                0x0000000008002fda                HAL_TIM_Base_Start
  .text.HAL_TIM_Base_Stop
-                0x00000000080030d0       0x56 HAL_Driver/Src/stm32f3xx_hal_tim.o
-                0x00000000080030d0                HAL_TIM_Base_Stop
- .text.HAL_TIM_SlaveConfigSynchronization
-                0x0000000008003126       0x6a HAL_Driver/Src/stm32f3xx_hal_tim.o
-                0x0000000008003126                HAL_TIM_SlaveConfigSynchronization
+                0x0000000008003010       0x56 HAL_Driver/Src/stm32f3xx_hal_tim.o
+                0x0000000008003010                HAL_TIM_Base_Stop
+ *fill*         0x0000000008003066        0x2 
  .text.TIM_Base_SetConfig
-                0x0000000008003190      0x124 HAL_Driver/Src/stm32f3xx_hal_tim.o
-                0x0000000008003190                TIM_Base_SetConfig
- .text.TIM_SlaveTimer_SetConfig
-                0x00000000080032b4      0x11a HAL_Driver/Src/stm32f3xx_hal_tim.o
- .text.TIM_TI1_ConfigInputStage
-                0x00000000080033ce       0x66 HAL_Driver/Src/stm32f3xx_hal_tim.o
- .text.TIM_TI2_ConfigInputStage
-                0x0000000008003434       0x68 HAL_Driver/Src/stm32f3xx_hal_tim.o
- .text.TIM_ETR_SetConfig
-                0x000000000800349c       0x44 HAL_Driver/Src/stm32f3xx_hal_tim.o
-                0x000000000800349c                TIM_ETR_SetConfig
+                0x0000000008003068      0x124 HAL_Driver/Src/stm32f3xx_hal_tim.o
+                0x0000000008003068                TIM_Base_SetConfig
  .text.HAL_TIMEx_MasterConfigSynchronization
-                0x00000000080034e0       0xa8 HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
-                0x00000000080034e0                HAL_TIMEx_MasterConfigSynchronization
+                0x000000000800318c       0xa8 HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
+                0x000000000800318c                HAL_TIMEx_MasterConfigSynchronization
  .text.NVIC_EnableIRQ
-                0x0000000008003588       0x34 src/main.o
+                0x0000000008003234       0x34 src/adc.o
  .text.NVIC_SetPriority
-                0x00000000080035bc       0x54 src/main.o
- .text.clocks   0x0000000008003610       0x90 src/main.o
+                0x0000000008003268       0x54 src/adc.o
  .text.setup_adc_gpio
-                0x00000000080036a0       0x26 src/main.o
- *fill*         0x00000000080036c6        0x2 
- .text.setup_timer
-                0x00000000080036c8       0xb0 src/main.o
- .text.dma_cmplt_callback
-                0x0000000008003778       0x30 src/main.o
-                0x0000000008003778                dma_cmplt_callback
- .text.dma_all_callback
-                0x00000000080037a8       0x1e src/main.o
-                0x00000000080037a8                dma_all_callback
- *fill*         0x00000000080037c6        0x2 
- .text.DMA2_CH5_IRQHandler
-                0x00000000080037c8       0x14 src/main.o
-                0x00000000080037c8                DMA2_CH5_IRQHandler
- .text.ADC3_IRQHandler
-                0x00000000080037dc       0x28 src/main.o
-                0x00000000080037dc                ADC3_IRQHandler
- .text.setup_dma
-                0x0000000008003804       0x80 src/main.o
+                0x00000000080032bc       0x26 src/adc.o
+                0x00000000080032bc                setup_adc_gpio
+ *fill*         0x00000000080032e2        0x2 
  .text.setup_adc
-                0x0000000008003884       0xe0 src/main.o
+                0x00000000080032e4       0xd0 src/adc.o
+                0x00000000080032e4                setup_adc
  .text.systemclock_config
-                0x0000000008003964       0x6e src/main.o
- *fill*         0x00000000080039d2        0x2 
- .text.main     0x00000000080039d4       0x70 src/main.o
-                0x00000000080039d4                main
+                0x00000000080033b4       0x5a src/clocks.o
+                0x00000000080033b4                systemclock_config
+ *fill*         0x000000000800340e        0x2 
+ .text.periph_clocks_init
+                0x0000000008003410       0xb8 src/clocks.o
+                0x0000000008003410                periph_clocks_init
+ .text.NVIC_EnableIRQ
+                0x00000000080034c8       0x34 src/dma.o
+ .text.NVIC_SetPriority
+                0x00000000080034fc       0x54 src/dma.o
+ .text.setup_dma
+                0x0000000008003550       0x74 src/dma.o
+                0x0000000008003550                setup_dma
+ .text.adc1_cmplt_callback
+                0x00000000080035c4       0x1c src/dma.o
+ .text.DMA2_CH5_IRQHandler
+                0x00000000080035e0       0x14 src/dma.o
+                0x00000000080035e0                DMA2_CH5_IRQHandler
+ .text.main     0x00000000080035f4       0x54 src/main.o
+                0x00000000080035f4                main
  .text.SysTick_Handler
-                0x0000000008003a44       0x10 src/stm32f3xx_it.o
-                0x0000000008003a44                SysTick_Handler
+                0x0000000008003648       0x10 src/stm32f3xx_it.o
+                0x0000000008003648                SysTick_Handler
  .text.SystemInit
-                0x0000000008003a54       0x94 src/system_stm32f3xx.o
-                0x0000000008003a54                SystemInit
+                0x0000000008003658       0x94 src/system_stm32f3xx.o
+                0x0000000008003658                SystemInit
+ .text.trigger_timer_init
+                0x00000000080036ec       0x50 src/timers.o
+                0x00000000080036ec                trigger_timer_init
  .text.Reset_Handler
-                0x0000000008003ae8       0x50 startup/startup_stm32.o
-                0x0000000008003ae8                Reset_Handler
+                0x000000000800373c       0x50 startup/startup_stm32.o
+                0x000000000800373c                Reset_Handler
  .text.Default_Handler
-                0x0000000008003b38        0xc startup/startup_stm32.o
-                0x0000000008003b38                TIM8_TRG_COM_IRQHandler
-                0x0000000008003b38                TIM8_CC_IRQHandler
-                0x0000000008003b38                DebugMon_Handler
-                0x0000000008003b38                DMA1_CH4_IRQHandler
-                0x0000000008003b38                SPI4_IRQHandler
-                0x0000000008003b38                TIM1_CC_IRQHandler
-                0x0000000008003b38                HardFault_Handler
-                0x0000000008003b38                USB_HP_IRQHandler
-                0x0000000008003b38                I2C2_EV_EXTI24_IRQHandler
-                0x0000000008003b38                USB_WKUP_EXTI_IRQHandler
-                0x0000000008003b38                PVD_IRQHandler
-                0x0000000008003b38                UART4_EXTI34_IRQHandler
-                0x0000000008003b38                TAMP_STAMP_IRQHandler
-                0x0000000008003b38                PendSV_Handler
-                0x0000000008003b38                NMI_Handler
-                0x0000000008003b38                EXTI3_IRQHandler
-                0x0000000008003b38                I2C3_ER_IRQHandler
-                0x0000000008003b38                TIM6_DACUNDER_IRQHandler
-                0x0000000008003b38                USB_HP_CAN_TX_IRQHandler
-                0x0000000008003b38                EXTI0_IRQHandler
-                0x0000000008003b38                DMA2_CH1_IRQHandler
-                0x0000000008003b38                FPU_IRQHandler
-                0x0000000008003b38                TIM1_UP_TIM16_IRQHandler
-                0x0000000008003b38                UsageFault_Handler
-                0x0000000008003b38                ADC1_2_IRQHandler
-                0x0000000008003b38                SPI1_IRQHandler
-                0x0000000008003b38                CAN_SCE_IRQHandler
-                0x0000000008003b38                DMA1_CH7_IRQHandler
-                0x0000000008003b38                TIM8_UP_IRQHandler
-                0x0000000008003b38                COMP456_IRQHandler
-                0x0000000008003b38                DMA1_CH6_IRQHandler
-                0x0000000008003b38                TIM20_TRG_COM_IRQHandler
-                0x0000000008003b38                TIM4_IRQHandler
-                0x0000000008003b38                CAN_RX1_IRQHandler
-                0x0000000008003b38                USART1_EXTI25_IRQHandler
-                0x0000000008003b38                I2C1_EV_EXTI23_IRQHandler
-                0x0000000008003b38                DMA1_CH3_IRQHandler
-                0x0000000008003b38                TIM3_IRQHandler
-                0x0000000008003b38                RCC_IRQHandler
-                0x0000000008003b38                TIM20_UP_IRQHandler
-                0x0000000008003b38                Default_Handler
-                0x0000000008003b38                EXTI15_10_IRQHandler
-                0x0000000008003b38                USART2_EXTI26_IRQHandler
-                0x0000000008003b38                USART3_EXTI28_IRQHandler
-                0x0000000008003b38                TIM7_IRQHandler
-                0x0000000008003b38                I2C3_EV_IRQHandler
-                0x0000000008003b38                EXTI9_5_IRQHandler
-                0x0000000008003b38                DMA1_CH2_IRQHandler
-                0x0000000008003b38                RTC_WKUP_IRQHandler
-                0x0000000008003b38                SPI2_IRQHandler
-                0x0000000008003b38                DMA1_CH1_IRQHandler
-                0x0000000008003b38                USB_LP_CAN_RX0_IRQHandler
-                0x0000000008003b38                MemManage_Handler
-                0x0000000008003b38                COMP123_IRQHandler
-                0x0000000008003b38                SVC_Handler
-                0x0000000008003b38                USB_LP_IRQHandler
-                0x0000000008003b38                EXTI4_IRQHandler
-                0x0000000008003b38                TIM1_TRG_COM_TIM17_IRQHandler
-                0x0000000008003b38                ADC4_IRQHandler
-                0x0000000008003b38                WWDG_IRQHandler
-                0x0000000008003b38                TIM2_IRQHandler
-                0x0000000008003b38                COMP7_IRQHandler
-                0x0000000008003b38                EXTI1_IRQHandler
-                0x0000000008003b38                RTCAlarm_IRQHandler
-                0x0000000008003b38                UART5_EXTI35_IRQHandler
-                0x0000000008003b38                TIM20_BRK_IRQHandler
-                0x0000000008003b38                I2C2_ER_IRQHandler
-                0x0000000008003b38                TIM8_BRK_IRQHandler
-                0x0000000008003b38                FLASH_IRQHandler
-                0x0000000008003b38                TIM20_CC_IRQHandler
-                0x0000000008003b38                BusFault_Handler
-                0x0000000008003b38                SPI3_IRQHandler
-                0x0000000008003b38                DMA2_CH3_IRQHandler
-                0x0000000008003b38                DMA2_CH2_IRQHandler
-                0x0000000008003b38                I2C1_ER_IRQHandler
-                0x0000000008003b38                FMC_IRQHandler
-                0x0000000008003b38                DMA1_CH5_IRQHandler
-                0x0000000008003b38                DMA2_CH4_IRQHandler
-                0x0000000008003b38                USB_WKUP_IRQHandler
-                0x0000000008003b38                EXTI2_TSC_IRQHandler
-                0x0000000008003b38                TIM1_BRK_TIM15_IRQHandler
- .text.arm_split_rfft_q15
-                0x0000000008003b44       0xb4 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
-                0x0000000008003b44                arm_split_rfft_q15
- .text.arm_rfft_q15
-                0x0000000008003bf8       0xbc /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
-                0x0000000008003bf8                arm_rfft_q15
- .text.arm_rfft_init_q15
-                0x0000000008003cb4      0x110 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
-                0x0000000008003cb4                arm_rfft_init_q15
- .text.arm_cfft_radix4by2_q15
-                0x0000000008003dc4       0xc8 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
-                0x0000000008003dc4                arm_cfft_radix4by2_q15
- .text.arm_cfft_radix4by2_inverse_q15
-                0x0000000008003e8c       0xc8 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
-                0x0000000008003e8c                arm_cfft_radix4by2_inverse_q15
- .text.arm_cfft_q15
-                0x0000000008003f54       0xbc /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
-                0x0000000008003f54                arm_cfft_q15
- .text.arm_radix4_butterfly_q15
-                0x0000000008004010      0x25c /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
-                0x0000000008004010                arm_radix4_butterfly_q15
- .text.arm_radix4_butterfly_inverse_q15
-                0x000000000800426c      0x25c /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
-                0x000000000800426c                arm_radix4_butterfly_inverse_q15
+                0x000000000800378c        0xc startup/startup_stm32.o
+                0x000000000800378c                TIM8_TRG_COM_IRQHandler
+                0x000000000800378c                TIM8_CC_IRQHandler
+                0x000000000800378c                DebugMon_Handler
+                0x000000000800378c                DMA1_CH4_IRQHandler
+                0x000000000800378c                SPI4_IRQHandler
+                0x000000000800378c                TIM1_CC_IRQHandler
+                0x000000000800378c                HardFault_Handler
+                0x000000000800378c                USB_HP_IRQHandler
+                0x000000000800378c                I2C2_EV_EXTI24_IRQHandler
+                0x000000000800378c                USB_WKUP_EXTI_IRQHandler
+                0x000000000800378c                PVD_IRQHandler
+                0x000000000800378c                UART4_EXTI34_IRQHandler
+                0x000000000800378c                TAMP_STAMP_IRQHandler
+                0x000000000800378c                PendSV_Handler
+                0x000000000800378c                NMI_Handler
+                0x000000000800378c                EXTI3_IRQHandler
+                0x000000000800378c                I2C3_ER_IRQHandler
+                0x000000000800378c                TIM6_DACUNDER_IRQHandler
+                0x000000000800378c                USB_HP_CAN_TX_IRQHandler
+                0x000000000800378c                EXTI0_IRQHandler
+                0x000000000800378c                DMA2_CH1_IRQHandler
+                0x000000000800378c                FPU_IRQHandler
+                0x000000000800378c                TIM1_UP_TIM16_IRQHandler
+                0x000000000800378c                UsageFault_Handler
+                0x000000000800378c                ADC1_2_IRQHandler
+                0x000000000800378c                SPI1_IRQHandler
+                0x000000000800378c                CAN_SCE_IRQHandler
+                0x000000000800378c                DMA1_CH7_IRQHandler
+                0x000000000800378c                TIM8_UP_IRQHandler
+                0x000000000800378c                COMP456_IRQHandler
+                0x000000000800378c                DMA1_CH6_IRQHandler
+                0x000000000800378c                TIM20_TRG_COM_IRQHandler
+                0x000000000800378c                ADC3_IRQHandler
+                0x000000000800378c                TIM4_IRQHandler
+                0x000000000800378c                CAN_RX1_IRQHandler
+                0x000000000800378c                USART1_EXTI25_IRQHandler
+                0x000000000800378c                I2C1_EV_EXTI23_IRQHandler
+                0x000000000800378c                DMA1_CH3_IRQHandler
+                0x000000000800378c                TIM3_IRQHandler
+                0x000000000800378c                RCC_IRQHandler
+                0x000000000800378c                TIM20_UP_IRQHandler
+                0x000000000800378c                Default_Handler
+                0x000000000800378c                EXTI15_10_IRQHandler
+                0x000000000800378c                USART2_EXTI26_IRQHandler
+                0x000000000800378c                USART3_EXTI28_IRQHandler
+                0x000000000800378c                TIM7_IRQHandler
+                0x000000000800378c                I2C3_EV_IRQHandler
+                0x000000000800378c                EXTI9_5_IRQHandler
+                0x000000000800378c                DMA1_CH2_IRQHandler
+                0x000000000800378c                RTC_WKUP_IRQHandler
+                0x000000000800378c                SPI2_IRQHandler
+                0x000000000800378c                DMA1_CH1_IRQHandler
+                0x000000000800378c                USB_LP_CAN_RX0_IRQHandler
+                0x000000000800378c                MemManage_Handler
+                0x000000000800378c                COMP123_IRQHandler
+                0x000000000800378c                SVC_Handler
+                0x000000000800378c                USB_LP_IRQHandler
+                0x000000000800378c                EXTI4_IRQHandler
+                0x000000000800378c                TIM1_TRG_COM_TIM17_IRQHandler
+                0x000000000800378c                ADC4_IRQHandler
+                0x000000000800378c                WWDG_IRQHandler
+                0x000000000800378c                TIM2_IRQHandler
+                0x000000000800378c                COMP7_IRQHandler
+                0x000000000800378c                EXTI1_IRQHandler
+                0x000000000800378c                RTCAlarm_IRQHandler
+                0x000000000800378c                UART5_EXTI35_IRQHandler
+                0x000000000800378c                TIM20_BRK_IRQHandler
+                0x000000000800378c                I2C2_ER_IRQHandler
+                0x000000000800378c                TIM8_BRK_IRQHandler
+                0x000000000800378c                FLASH_IRQHandler
+                0x000000000800378c                TIM20_CC_IRQHandler
+                0x000000000800378c                BusFault_Handler
+                0x000000000800378c                SPI3_IRQHandler
+                0x000000000800378c                DMA2_CH3_IRQHandler
+                0x000000000800378c                DMA2_CH2_IRQHandler
+                0x000000000800378c                I2C1_ER_IRQHandler
+                0x000000000800378c                FMC_IRQHandler
+                0x000000000800378c                DMA1_CH5_IRQHandler
+                0x000000000800378c                DMA2_CH4_IRQHandler
+                0x000000000800378c                USB_WKUP_IRQHandler
+                0x000000000800378c                EXTI2_TSC_IRQHandler
+                0x000000000800378c                TIM1_BRK_TIM15_IRQHandler
  .text.__libc_init_array
-                0x00000000080044c8       0x48 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-init.o)
-                0x00000000080044c8                __libc_init_array
+                0x0000000008003798       0x48 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-init.o)
+                0x0000000008003798                __libc_init_array
  .text.startup.register_fini
-                0x0000000008004510       0x14 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-__call_atexit.o)
- .text.atexit   0x0000000008004524        0xc /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-atexit.o)
-                0x0000000008004524                atexit
+                0x00000000080037e0       0x14 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-__call_atexit.o)
+ .text.atexit   0x00000000080037f4        0xc /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-atexit.o)
+                0x00000000080037f4                atexit
  .text.__libc_fini_array
-                0x0000000008004530       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fini.o)
-                0x0000000008004530                __libc_fini_array
+                0x0000000008003800       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fini.o)
+                0x0000000008003800                __libc_fini_array
  .text.__retarget_lock_acquire_recursive
-                0x0000000008004564        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
-                0x0000000008004564                __retarget_lock_acquire_recursive
+                0x0000000008003834        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
+                0x0000000008003834                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x0000000008004568        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
-                0x0000000008004568                __retarget_lock_release_recursive
+                0x0000000008003838        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
+                0x0000000008003838                __retarget_lock_release_recursive
  .text.__register_exitproc
-                0x000000000800456c       0xc0 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-__atexit.o)
-                0x000000000800456c                __register_exitproc
+                0x000000000800383c       0xc0 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-__atexit.o)
+                0x000000000800383c                __register_exitproc
  *(.glue_7)
- .glue_7        0x000000000800462c        0x0 linker stubs
+ .glue_7        0x00000000080038fc        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x000000000800462c        0x0 linker stubs
+ .glue_7t       0x00000000080038fc        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x000000000800462c        0x0 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .eh_frame      0x00000000080038fc        0x0 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
  *(.init)
- .init          0x000000000800462c        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crti.o
-                0x000000000800462c                _init
- .init          0x0000000008004630        0x8 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+ .init          0x00000000080038fc        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+                0x00000000080038fc                _init
+ .init          0x0000000008003900        0x8 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
  *(.fini)
- .fini          0x0000000008004638        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crti.o
-                0x0000000008004638                _fini
- .fini          0x000000000800463c        0x8 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
-                0x0000000008004644                . = ALIGN (0x4)
-                0x0000000008004644                _etext = .
+ .fini          0x0000000008003908        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+                0x0000000008003908                _fini
+ .fini          0x000000000800390c        0x8 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+                0x0000000008003914                . = ALIGN (0x4)
+                0x0000000008003914                _etext = .
 
-.vfp11_veneer   0x0000000008004644        0x0
- .vfp11_veneer  0x0000000008004644        0x0 linker stubs
+.vfp11_veneer   0x0000000008003914        0x0
+ .vfp11_veneer  0x0000000008003914        0x0 linker stubs
 
-.v4_bx          0x0000000008004644        0x0
- .v4_bx         0x0000000008004644        0x0 linker stubs
+.v4_bx          0x0000000008003914        0x0
+ .v4_bx         0x0000000008003914        0x0 linker stubs
 
-.iplt           0x0000000008004644        0x0
- .iplt          0x0000000008004644        0x0 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+.iplt           0x0000000008003914        0x0
+ .iplt          0x0000000008003914        0x0 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 
-.rodata         0x0000000008004644    0x11e94
-                0x0000000008004644                . = ALIGN (0x4)
+.rodata         0x0000000008003914       0x3c
+                0x0000000008003914                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x0000000008004644       0x20 HAL_Driver/Src/stm32f3xx_hal_rcc.o
-                0x0000000008004644                aPLLMULFactorTable
-                0x0000000008004654                aPredivFactorTable
- .rodata        0x0000000008004664       0x18 src/system_stm32f3xx.o
-                0x0000000008004664                AHBPrescTable
-                0x0000000008004674                APBPrescTable
+ .rodata        0x0000000008003914       0x20 HAL_Driver/Src/stm32f3xx_hal_rcc.o
+                0x0000000008003914                aPLLMULFactorTable
+                0x0000000008003924                aPredivFactorTable
+ .rodata        0x0000000008003934       0x18 src/system_stm32f3xx.o
+                0x0000000008003934                AHBPrescTable
+                0x0000000008003944                APBPrescTable
  *(.rodata*)
- .rodata.realCoefAQ15
-                0x000000000800467c     0x4000 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
- .rodata.realCoefBQ15
-                0x000000000800867c     0x4000 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
- .rodata.arm_cfft_sR_q15_len1024
-                0x000000000800c67c       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
-                0x000000000800c67c                arm_cfft_sR_q15_len1024
- .rodata.arm_cfft_sR_q15_len16
-                0x000000000800c68c       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
-                0x000000000800c68c                arm_cfft_sR_q15_len16
- .rodata.arm_cfft_sR_q15_len32
-                0x000000000800c69c       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
-                0x000000000800c69c                arm_cfft_sR_q15_len32
- .rodata.arm_cfft_sR_q15_len4096
-                0x000000000800c6ac       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
-                0x000000000800c6ac                arm_cfft_sR_q15_len4096
- .rodata.arm_cfft_sR_q15_len512
-                0x000000000800c6bc       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
-                0x000000000800c6bc                arm_cfft_sR_q15_len512
- .rodata.arm_cfft_sR_q15_len64
-                0x000000000800c6cc       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
-                0x000000000800c6cc                arm_cfft_sR_q15_len64
- .rodata.arm_cfft_sR_q15_len256
-                0x000000000800c6dc       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
-                0x000000000800c6dc                arm_cfft_sR_q15_len256
- .rodata.arm_cfft_sR_q15_len128
-                0x000000000800c6ec       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
-                0x000000000800c6ec                arm_cfft_sR_q15_len128
- .rodata.arm_cfft_sR_q15_len2048
-                0x000000000800c6fc       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
-                0x000000000800c6fc                arm_cfft_sR_q15_len2048
- .rodata.armBitRevIndexTable_fixed_128
-                0x000000000800c70c       0xe0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x000000000800c70c                armBitRevIndexTable_fixed_128
- .rodata.armBitRevIndexTable_fixed_2048
-                0x000000000800c7ec      0xf80 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x000000000800c7ec                armBitRevIndexTable_fixed_2048
- .rodata.armBitRevIndexTable_fixed_4096
-                0x000000000800d76c     0x1f80 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x000000000800d76c                armBitRevIndexTable_fixed_4096
- .rodata.armBitRevIndexTable_fixed_1024
-                0x000000000800f6ec      0x7c0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x000000000800f6ec                armBitRevIndexTable_fixed_1024
- .rodata.twiddleCoef_1024_q15
-                0x000000000800feac      0xc00 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x000000000800feac                twiddleCoef_1024_q15
- .rodata.twiddleCoef_32_q15
-                0x0000000008010aac       0x60 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x0000000008010aac                twiddleCoef_32_q15
- .rodata.twiddleCoef_4096_q15
-                0x0000000008010b0c     0x3000 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x0000000008010b0c                twiddleCoef_4096_q15
- .rodata.twiddleCoef_16_q15
-                0x0000000008013b0c       0x30 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x0000000008013b0c                twiddleCoef_16_q15
- .rodata.twiddleCoef_64_q15
-                0x0000000008013b3c       0xc0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x0000000008013b3c                twiddleCoef_64_q15
- .rodata.twiddleCoef_2048_q15
-                0x0000000008013bfc     0x1800 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x0000000008013bfc                twiddleCoef_2048_q15
- .rodata.twiddleCoef_256_q15
-                0x00000000080153fc      0x300 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x00000000080153fc                twiddleCoef_256_q15
- .rodata.twiddleCoef_512_q15
-                0x00000000080156fc      0x600 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x00000000080156fc                twiddleCoef_512_q15
- .rodata.armBitRevIndexTable_fixed_512
-                0x0000000008015cfc      0x3c0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x0000000008015cfc                armBitRevIndexTable_fixed_512
- .rodata.armBitRevIndexTable_fixed_16
-                0x00000000080160bc       0x18 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x00000000080160bc                armBitRevIndexTable_fixed_16
- .rodata.twiddleCoef_128_q15
-                0x00000000080160d4      0x180 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x00000000080160d4                twiddleCoef_128_q15
- .rodata.armBitRevIndexTable_fixed_32
-                0x0000000008016254       0x30 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x0000000008016254                armBitRevIndexTable_fixed_32
- .rodata.armBitRevIndexTable_fixed_256
-                0x0000000008016284      0x1e0 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x0000000008016284                armBitRevIndexTable_fixed_256
- .rodata.armBitRevIndexTable_fixed_64
-                0x0000000008016464       0x70 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                0x0000000008016464                armBitRevIndexTable_fixed_64
  .rodata._global_impure_ptr
-                0x00000000080164d4        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-impure.o)
-                0x00000000080164d4                _global_impure_ptr
-                0x00000000080164d8                . = ALIGN (0x4)
+                0x000000000800394c        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-impure.o)
+                0x000000000800394c                _global_impure_ptr
+                0x0000000008003950                . = ALIGN (0x4)
 
-.rel.dyn        0x00000000080164d8        0x0
- .rel.iplt      0x00000000080164d8        0x0 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+.rel.dyn        0x0000000008003950        0x0
+ .rel.iplt      0x0000000008003950        0x0 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 
-.ARM.extab      0x00000000080164d8        0x0
-                0x00000000080164d8                . = ALIGN (0x4)
+.ARM.extab      0x0000000008003950        0x0
+                0x0000000008003950                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000000080164d8                . = ALIGN (0x4)
+                0x0000000008003950                . = ALIGN (0x4)
 
-.ARM            0x00000000080164d8        0x0
-                0x00000000080164d8                . = ALIGN (0x4)
-                0x00000000080164d8                __exidx_start = .
+.ARM            0x0000000008003950        0x0
+                0x0000000008003950                . = ALIGN (0x4)
+                0x0000000008003950                __exidx_start = .
  *(.ARM.exidx*)
-                0x00000000080164d8                __exidx_end = .
-                0x00000000080164d8                . = ALIGN (0x4)
+                0x0000000008003950                __exidx_end = .
+                0x0000000008003950                . = ALIGN (0x4)
 
-.preinit_array  0x00000000080164d8        0x0
-                0x00000000080164d8                . = ALIGN (0x4)
-                0x00000000080164d8                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x0000000008003950        0x0
+                0x0000000008003950                . = ALIGN (0x4)
+                0x0000000008003950                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x00000000080164d8                PROVIDE (__preinit_array_end, .)
-                0x00000000080164d8                . = ALIGN (0x4)
+                0x0000000008003950                PROVIDE (__preinit_array_end, .)
+                0x0000000008003950                . = ALIGN (0x4)
 
-.init_array     0x00000000080164d8        0x8
-                0x00000000080164d8                . = ALIGN (0x4)
-                0x00000000080164d8                PROVIDE (__init_array_start, .)
+.init_array     0x0000000008003950        0x8
+                0x0000000008003950                . = ALIGN (0x4)
+                0x0000000008003950                PROVIDE (__init_array_start, .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00000
-                0x00000000080164d8        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-__call_atexit.o)
+                0x0000000008003950        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-__call_atexit.o)
  *(.init_array*)
- .init_array    0x00000000080164dc        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
-                0x00000000080164e0                PROVIDE (__init_array_end, .)
-                0x00000000080164e0                . = ALIGN (0x4)
+ .init_array    0x0000000008003954        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+                0x0000000008003958                PROVIDE (__init_array_end, .)
+                0x0000000008003958                . = ALIGN (0x4)
 
-.fini_array     0x00000000080164e0        0x4
-                0x00000000080164e0                . = ALIGN (0x4)
-                0x00000000080164e0                PROVIDE (__fini_array_start, .)
+.fini_array     0x0000000008003958        0x4
+                0x0000000008003958                . = ALIGN (0x4)
+                0x0000000008003958                PROVIDE (__fini_array_start, .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x00000000080164e0        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
-                0x00000000080164e4                PROVIDE (__fini_array_end, .)
-                0x00000000080164e4                . = ALIGN (0x4)
-                0x00000000080164e4                _sidata = LOADADDR (.data)
+ .fini_array    0x0000000008003958        0x4 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+                0x000000000800395c                PROVIDE (__fini_array_end, .)
+                0x000000000800395c                . = ALIGN (0x4)
+                0x000000000800395c                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000      0x43c load address 0x00000000080164e4
+.data           0x0000000020000000      0x43c load address 0x000000000800395c
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -13588,11 +14039,11 @@ LOAD /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-non
                 0x000000002000043c                . = ALIGN (0x4)
                 0x000000002000043c                _edata = .
 
-.igot.plt       0x000000002000043c        0x0 load address 0x0000000008016920
+.igot.plt       0x000000002000043c        0x0 load address 0x0000000008003d98
  .igot.plt      0x000000002000043c        0x0 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
                 0x000000002000043c                . = ALIGN (0x4)
 
-.bss            0x000000002000043c     0x1174 load address 0x0000000008016920
+.bss            0x000000002000043c     0x19a0 load address 0x0000000008003d98
                 0x000000002000043c                _sbss = .
                 0x000000002000043c                __bss_start__ = _sbss
  *(.bss)
@@ -13601,38 +14052,40 @@ LOAD /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-non
  *(COMMON)
  COMMON         0x0000000020000458        0x4 HAL_Driver/Src/stm32f3xx_hal.o
                 0x0000000020000458                uwTick
- COMMON         0x000000002000045c     0x1130 src/main.o
+ COMMON         0x000000002000045c     0x195c src/adc.o
                 0x000000002000045c                hdma2
                 0x00000000200004a0                htim4
-                0x00000000200004e0                fft_x_output
-                0x0000000020000ce0                htim3
-                0x0000000020000d20                hadc3
-                0x0000000020000d74                fft_x_buffer
-                0x0000000020001574                fft
- COMMON         0x000000002000158c       0x21 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
-                0x000000002000158c                __lock___atexit_recursive_mutex
-                0x0000000020001590                __lock___arc4random_mutex
-                0x0000000020001594                __lock___env_recursive_mutex
-                0x0000000020001598                __lock___sinit_recursive_mutex
-                0x000000002000159c                __lock___malloc_recursive_mutex
-                0x00000000200015a0                __lock___at_quick_exit_mutex
-                0x00000000200015a4                __lock___dd_hash_mutex
-                0x00000000200015a8                __lock___tz_mutex
-                0x00000000200015ac                __lock___sfp_recursive_mutex
-                0x00000000200015b0                . = ALIGN (0x4)
- *fill*         0x00000000200015ad        0x3 
-                0x00000000200015b0                _ebss = .
-                0x00000000200015b0                __bss_end__ = _ebss
+                0x00000000200004e0                hdma1
+                0x0000000020000524                channel_a_buffer
+                0x0000000020000d24                htim3
+                0x0000000020000d64                hadc3
+                0x0000000020000db8                channel_b_buffer
+                0x00000000200015b8                channel_ref_buffer
+ COMMON         0x0000000020001db8       0x21 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
+                0x0000000020001db8                __lock___atexit_recursive_mutex
+                0x0000000020001dbc                __lock___arc4random_mutex
+                0x0000000020001dc0                __lock___env_recursive_mutex
+                0x0000000020001dc4                __lock___sinit_recursive_mutex
+                0x0000000020001dc8                __lock___malloc_recursive_mutex
+                0x0000000020001dcc                __lock___at_quick_exit_mutex
+                0x0000000020001dd0                __lock___dd_hash_mutex
+                0x0000000020001dd4                __lock___tz_mutex
+                0x0000000020001dd8                __lock___sfp_recursive_mutex
+                0x0000000020001ddc                . = ALIGN (0x4)
+ *fill*         0x0000000020001dd9        0x3 
+                0x0000000020001ddc                _ebss = .
+                0x0000000020001ddc                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x00000000200015b0      0x400 load address 0x0000000008016920
-                0x00000000200015b0                . = ALIGN (0x8)
-                0x00000000200015b0                PROVIDE (end, .)
+                0x0000000020001ddc      0x404 load address 0x0000000008003d98
+                0x0000000020001de0                . = ALIGN (0x8)
+ *fill*         0x0000000020001ddc        0x4 
+                0x0000000020001de0                PROVIDE (end, .)
                 [!provide]                        PROVIDE (_end, .)
-                0x00000000200015b0                . = (. + _Min_Heap_Size)
-                0x00000000200019b0                . = (. + _Min_Stack_Size)
- *fill*         0x00000000200015b0      0x400 
-                0x00000000200019b0                . = ALIGN (0x8)
+                0x0000000020001de0                . = (. + _Min_Heap_Size)
+                0x00000000200021e0                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020001de0      0x400 
+                0x00000000200021e0                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -13667,46 +14120,40 @@ LOAD /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-non
  .ARM.attributes
                 0x0000000000000257       0x39 HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
  .ARM.attributes
-                0x0000000000000290       0x39 src/main.o
+                0x0000000000000290       0x39 src/adc.o
  .ARM.attributes
-                0x00000000000002c9       0x39 src/stm32f3xx_it.o
+                0x00000000000002c9       0x39 src/clocks.o
  .ARM.attributes
-                0x0000000000000302       0x39 src/system_stm32f3xx.o
+                0x0000000000000302       0x39 src/dma.o
  .ARM.attributes
-                0x000000000000033b       0x21 startup/startup_stm32.o
+                0x000000000000033b       0x39 src/main.o
  .ARM.attributes
-                0x000000000000035c       0x39 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
+                0x0000000000000374       0x39 src/stm32f3xx_it.o
  .ARM.attributes
-                0x0000000000000395       0x39 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
+                0x00000000000003ad       0x39 src/system_stm32f3xx.o
  .ARM.attributes
-                0x00000000000003ce       0x39 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
+                0x00000000000003e6       0x39 src/timers.o
  .ARM.attributes
-                0x0000000000000407       0x39 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
+                0x000000000000041f       0x21 startup/startup_stm32.o
  .ARM.attributes
-                0x0000000000000440       0x39 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
+                0x0000000000000440       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-impure.o)
  .ARM.attributes
-                0x0000000000000479       0x25 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal2.o)
+                0x0000000000000474       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-init.o)
  .ARM.attributes
-                0x000000000000049e       0x39 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
+                0x00000000000004a8       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-__call_atexit.o)
  .ARM.attributes
-                0x00000000000004d7       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-impure.o)
+                0x00000000000004dc       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-atexit.o)
  .ARM.attributes
-                0x000000000000050b       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-init.o)
+                0x0000000000000510       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fini.o)
  .ARM.attributes
-                0x000000000000053f       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-__call_atexit.o)
+                0x0000000000000544       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
  .ARM.attributes
-                0x0000000000000573       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-atexit.o)
+                0x0000000000000578       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-__atexit.o)
  .ARM.attributes
-                0x00000000000005a7       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fini.o)
- .ARM.attributes
-                0x00000000000005db       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
- .ARM.attributes
-                0x000000000000060f       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-__atexit.o)
- .ARM.attributes
-                0x0000000000000643       0x22 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+                0x00000000000005ac       0x22 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
 OUTPUT(sonar_CB.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x16c88
+.debug_info     0x0000000000000000    0x16467
  .debug_info    0x0000000000000000      0xff5 HAL_Driver/Src/stm32f3xx_hal.o
  .debug_info    0x0000000000000ff5     0x13c9 HAL_Driver/Src/stm32f3xx_hal_adc.o
  .debug_info    0x00000000000023be     0x1d89 HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
@@ -13717,19 +14164,16 @@ OUTPUT(sonar_CB.elf elf32-littlearm)
  .debug_info    0x0000000000009626      0xed9 HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
  .debug_info    0x000000000000a4ff     0x2b35 HAL_Driver/Src/stm32f3xx_hal_tim.o
  .debug_info    0x000000000000d034     0x1b14 HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
- .debug_info    0x000000000000eb48     0x206e src/main.o
- .debug_info    0x0000000000010bb6      0x9a7 src/stm32f3xx_it.o
- .debug_info    0x000000000001155d      0xc7e src/system_stm32f3xx.o
- .debug_info    0x00000000000121db       0x22 startup/startup_stm32.o
- .debug_info    0x00000000000121fd      0xa9b /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
- .debug_info    0x0000000000012c98      0x356 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
- .debug_info    0x0000000000012fee      0x9f5 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .debug_info    0x00000000000139e3      0x99d /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .debug_info    0x0000000000014380      0xa1f /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
- .debug_info    0x0000000000014d9f       0x85 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal2.o)
- .debug_info    0x0000000000014e24     0x1e64 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
+ .debug_info    0x000000000000eb48     0x1948 src/adc.o
+ .debug_info    0x0000000000010490      0xd3d src/clocks.o
+ .debug_info    0x00000000000111cd     0x17a0 src/dma.o
+ .debug_info    0x000000000001296d     0x1238 src/main.o
+ .debug_info    0x0000000000013ba5      0x9a7 src/stm32f3xx_it.o
+ .debug_info    0x000000000001454c      0xc7e src/system_stm32f3xx.o
+ .debug_info    0x00000000000151ca     0x127b src/timers.o
+ .debug_info    0x0000000000016445       0x22 startup/startup_stm32.o
 
-.debug_abbrev   0x0000000000000000     0x2bde
+.debug_abbrev   0x0000000000000000     0x2b94
  .debug_abbrev  0x0000000000000000      0x2bb HAL_Driver/Src/stm32f3xx_hal.o
  .debug_abbrev  0x00000000000002bb      0x221 HAL_Driver/Src/stm32f3xx_hal_adc.o
  .debug_abbrev  0x00000000000004dc      0x2bf HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
@@ -13740,19 +14184,16 @@ OUTPUT(sonar_CB.elf elf32-littlearm)
  .debug_abbrev  0x0000000000001382      0x304 HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
  .debug_abbrev  0x0000000000001686      0x2ea HAL_Driver/Src/stm32f3xx_hal_tim.o
  .debug_abbrev  0x0000000000001970      0x2c7 HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
- .debug_abbrev  0x0000000000001c37      0x375 src/main.o
- .debug_abbrev  0x0000000000001fac      0x1cb src/stm32f3xx_it.o
- .debug_abbrev  0x0000000000002177      0x21f src/system_stm32f3xx.o
- .debug_abbrev  0x0000000000002396       0x12 startup/startup_stm32.o
- .debug_abbrev  0x00000000000023a8      0x1e9 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
- .debug_abbrev  0x0000000000002591      0x112 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
- .debug_abbrev  0x00000000000026a3       0xa9 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .debug_abbrev  0x000000000000274c       0x84 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .debug_abbrev  0x00000000000027d0      0x1f5 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
- .debug_abbrev  0x00000000000029c5       0x14 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal2.o)
- .debug_abbrev  0x00000000000029d9      0x205 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
+ .debug_abbrev  0x0000000000001c37      0x278 src/adc.o
+ .debug_abbrev  0x0000000000001eaf      0x217 src/clocks.o
+ .debug_abbrev  0x00000000000020c6      0x2b7 src/dma.o
+ .debug_abbrev  0x000000000000237d      0x207 src/main.o
+ .debug_abbrev  0x0000000000002584      0x1cb src/stm32f3xx_it.o
+ .debug_abbrev  0x000000000000274f      0x21f src/system_stm32f3xx.o
+ .debug_abbrev  0x000000000000296e      0x214 src/timers.o
+ .debug_abbrev  0x0000000000002b82       0x12 startup/startup_stm32.o
 
-.debug_aranges  0x0000000000000000      0xcc8
+.debug_aranges  0x0000000000000000      0xc08
  .debug_aranges
                 0x0000000000000000       0xe0 HAL_Driver/Src/stm32f3xx_hal.o
  .debug_aranges
@@ -13774,29 +14215,23 @@ OUTPUT(sonar_CB.elf elf32-littlearm)
  .debug_aranges
                 0x0000000000000940      0x178 HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
  .debug_aranges
-                0x0000000000000ab8       0xa0 src/main.o
+                0x0000000000000ab8       0x38 src/adc.o
  .debug_aranges
-                0x0000000000000b58       0x20 src/stm32f3xx_it.o
+                0x0000000000000af0       0x28 src/clocks.o
  .debug_aranges
-                0x0000000000000b78       0x28 src/system_stm32f3xx.o
+                0x0000000000000b18       0x40 src/dma.o
  .debug_aranges
-                0x0000000000000ba0       0x28 startup/startup_stm32.o
+                0x0000000000000b58       0x20 src/main.o
  .debug_aranges
-                0x0000000000000bc8       0x30 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
+                0x0000000000000b78       0x20 src/stm32f3xx_it.o
  .debug_aranges
-                0x0000000000000bf8       0x20 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
+                0x0000000000000b98       0x28 src/system_stm32f3xx.o
  .debug_aranges
-                0x0000000000000c18       0x18 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
+                0x0000000000000bc0       0x20 src/timers.o
  .debug_aranges
-                0x0000000000000c30       0x18 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .debug_aranges
-                0x0000000000000c48       0x30 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
- .debug_aranges
-                0x0000000000000c78       0x20 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal2.o)
- .debug_aranges
-                0x0000000000000c98       0x30 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
+                0x0000000000000be0       0x28 startup/startup_stm32.o
 
-.debug_ranges   0x0000000000000000      0xbf0
+.debug_ranges   0x0000000000000000      0xaf0
  .debug_ranges  0x0000000000000000       0xd0 HAL_Driver/Src/stm32f3xx_hal.o
  .debug_ranges  0x00000000000000d0       0xb8 HAL_Driver/Src/stm32f3xx_hal_adc.o
  .debug_ranges  0x0000000000000188      0x158 HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
@@ -13807,16 +14242,16 @@ OUTPUT(sonar_CB.elf elf32-littlearm)
  .debug_ranges  0x0000000000000520       0x28 HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
  .debug_ranges  0x0000000000000548      0x368 HAL_Driver/Src/stm32f3xx_hal_tim.o
  .debug_ranges  0x00000000000008b0      0x168 HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
- .debug_ranges  0x0000000000000a18       0x90 src/main.o
- .debug_ranges  0x0000000000000aa8       0x10 src/stm32f3xx_it.o
- .debug_ranges  0x0000000000000ab8       0x18 src/system_stm32f3xx.o
+ .debug_ranges  0x0000000000000a18       0x28 src/adc.o
+ .debug_ranges  0x0000000000000a40       0x18 src/clocks.o
+ .debug_ranges  0x0000000000000a58       0x30 src/dma.o
+ .debug_ranges  0x0000000000000a88       0x10 src/main.o
+ .debug_ranges  0x0000000000000a98       0x10 src/stm32f3xx_it.o
+ .debug_ranges  0x0000000000000aa8       0x18 src/system_stm32f3xx.o
+ .debug_ranges  0x0000000000000ac0       0x10 src/timers.o
  .debug_ranges  0x0000000000000ad0       0x20 startup/startup_stm32.o
- .debug_ranges  0x0000000000000af0       0x50 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
- .debug_ranges  0x0000000000000b40       0x10 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
- .debug_ranges  0x0000000000000b50       0x50 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
- .debug_ranges  0x0000000000000ba0       0x50 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
 
-.debug_macro    0x0000000000000000    0x1fe4c
+.debug_macro    0x0000000000000000    0x20d06
  .debug_macro   0x0000000000000000      0x495 HAL_Driver/Src/stm32f3xx_hal.o
  .debug_macro   0x0000000000000495      0xa72 HAL_Driver/Src/stm32f3xx_hal.o
  .debug_macro   0x0000000000000f07      0x122 HAL_Driver/Src/stm32f3xx_hal.o
@@ -13918,16 +14353,16 @@ OUTPUT(sonar_CB.elf elf32-littlearm)
  .debug_macro   0x000000000001e010      0x471 HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
  .debug_macro   0x000000000001e481      0x471 HAL_Driver/Src/stm32f3xx_hal_tim.o
  .debug_macro   0x000000000001e8f2      0x47d HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
- .debug_macro   0x000000000001ed6f      0x4d7 src/main.o
- .debug_macro   0x000000000001f246       0x12 src/main.o
- .debug_macro   0x000000000001f258       0x16 src/main.o
- .debug_macro   0x000000000001f26e       0x35 src/main.o
- .debug_macro   0x000000000001f2a3      0x1e1 src/main.o
- .debug_macro   0x000000000001f484       0xd6 src/main.o
- .debug_macro   0x000000000001f55a      0x47b src/stm32f3xx_it.o
- .debug_macro   0x000000000001f9d5      0x477 src/system_stm32f3xx.o
+ .debug_macro   0x000000000001ed6f      0x484 src/adc.o
+ .debug_macro   0x000000000001f1f3       0x10 src/adc.o
+ .debug_macro   0x000000000001f203      0x471 src/clocks.o
+ .debug_macro   0x000000000001f674      0x47a src/dma.o
+ .debug_macro   0x000000000001faee      0x4a2 src/main.o
+ .debug_macro   0x000000000001ff90      0x47b src/stm32f3xx_it.o
+ .debug_macro   0x000000000002040b      0x477 src/system_stm32f3xx.o
+ .debug_macro   0x0000000000020882      0x484 src/timers.o
 
-.debug_line     0x0000000000000000     0xdc97
+.debug_line     0x0000000000000000     0xf3a6
  .debug_line    0x0000000000000000      0xc34 HAL_Driver/Src/stm32f3xx_hal.o
  .debug_line    0x0000000000000c34      0xbe6 HAL_Driver/Src/stm32f3xx_hal_adc.o
  .debug_line    0x000000000000181a     0x1d31 HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
@@ -13938,19 +14373,16 @@ OUTPUT(sonar_CB.elf elf32-littlearm)
  .debug_line    0x0000000000006c94      0xd26 HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
  .debug_line    0x00000000000079ba     0x1cf5 HAL_Driver/Src/stm32f3xx_hal_tim.o
  .debug_line    0x00000000000096af     0x11aa HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
- .debug_line    0x000000000000a859      0xc56 src/main.o
- .debug_line    0x000000000000b4af      0xa95 src/stm32f3xx_it.o
- .debug_line    0x000000000000bf44      0xa8f src/system_stm32f3xx.o
- .debug_line    0x000000000000c9d3       0x7f startup/startup_stm32.o
- .debug_line    0x000000000000ca52      0x2a8 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
- .debug_line    0x000000000000ccfa      0x1ee /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
- .debug_line    0x000000000000cee8      0x145 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .debug_line    0x000000000000d02d      0x12e /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .debug_line    0x000000000000d15b      0x340 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
- .debug_line    0x000000000000d49b       0x98 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_bitreversal2.o)
- .debug_line    0x000000000000d533      0x764 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
+ .debug_line    0x000000000000a859      0xaea src/adc.o
+ .debug_line    0x000000000000b343      0xa78 src/clocks.o
+ .debug_line    0x000000000000bdbb      0xae0 src/dma.o
+ .debug_line    0x000000000000c89b      0xacd src/main.o
+ .debug_line    0x000000000000d368      0xa95 src/stm32f3xx_it.o
+ .debug_line    0x000000000000ddfd      0xa8f src/system_stm32f3xx.o
+ .debug_line    0x000000000000e88c      0xa9b src/timers.o
+ .debug_line    0x000000000000f327       0x7f startup/startup_stm32.o
 
-.debug_str      0x0000000000000000    0xc398d
+.debug_str      0x0000000000000000    0xc1e35
  .debug_str     0x0000000000000000    0xbeb13 HAL_Driver/Src/stm32f3xx_hal.o
                                       0xbee83 (size before relaxing)
  .debug_str     0x00000000000beb13      0x61a HAL_Driver/Src/stm32f3xx_hal_adc.o
@@ -13971,28 +14403,24 @@ OUTPUT(sonar_CB.elf elf32-littlearm)
                                       0xbf7a1 (size before relaxing)
  .debug_str     0x00000000000c15ec      0x60b HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
                                       0xbf1d3 (size before relaxing)
- .debug_str     0x00000000000c1bf7     0x1011 src/main.o
-                                      0xc0699 (size before relaxing)
- .debug_str     0x00000000000c2c08       0x38 src/stm32f3xx_it.o
+ .debug_str     0x00000000000c1bf7       0xa2 src/adc.o
+                                      0xbf2ba (size before relaxing)
+ .debug_str     0x00000000000c1c99       0x36 src/clocks.o
+                                      0xbe8e3 (size before relaxing)
+ .debug_str     0x00000000000c1ccf       0x45 src/dma.o
+                                      0xbf22e (size before relaxing)
+ .debug_str     0x00000000000c1d14       0x31 src/main.o
+                                      0xbecb6 (size before relaxing)
+ .debug_str     0x00000000000c1d45       0x38 src/stm32f3xx_it.o
                                       0xbe62e (size before relaxing)
- .debug_str     0x00000000000c2c40       0x64 src/system_stm32f3xx.o
+ .debug_str     0x00000000000c1d7d       0x64 src/system_stm32f3xx.o
                                       0xbe715 (size before relaxing)
- .debug_str     0x00000000000c2ca4       0x2a startup/startup_stm32.o
+ .debug_str     0x00000000000c1de1       0x2a src/timers.o
+                                      0xbed03 (size before relaxing)
+ .debug_str     0x00000000000c1e0b       0x2a startup/startup_stm32.o
                                          0x56 (size before relaxing)
- .debug_str     0x00000000000c2cce      0x222 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
-                                        0x3de (size before relaxing)
- .debug_str     0x00000000000c2ef0      0x1cd /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
-                                        0x491 (size before relaxing)
- .debug_str     0x00000000000c30bd      0x5cd /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
-                                        0x8dc (size before relaxing)
- .debug_str     0x00000000000c368a      0x125 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
-                                        0x704 (size before relaxing)
- .debug_str     0x00000000000c37af       0xe2 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
-                                        0x38a (size before relaxing)
- .debug_str     0x00000000000c3891       0xfc /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
-                                        0x3dc (size before relaxing)
 
-.comment        0x0000000000000000       0xee
+.comment        0x0000000000000000       0x7e
  .comment       0x0000000000000000       0x7e HAL_Driver/Src/stm32f3xx_hal.o
                                          0x7f (size before relaxing)
  .comment       0x000000000000007e       0x7f HAL_Driver/Src/stm32f3xx_hal_adc.o
@@ -14004,18 +14432,15 @@ OUTPUT(sonar_CB.elf elf32-littlearm)
  .comment       0x000000000000007e       0x7f HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
  .comment       0x000000000000007e       0x7f HAL_Driver/Src/stm32f3xx_hal_tim.o
  .comment       0x000000000000007e       0x7f HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
+ .comment       0x000000000000007e       0x7f src/adc.o
+ .comment       0x000000000000007e       0x7f src/clocks.o
+ .comment       0x000000000000007e       0x7f src/dma.o
  .comment       0x000000000000007e       0x7f src/main.o
  .comment       0x000000000000007e       0x7f src/stm32f3xx_it.o
  .comment       0x000000000000007e       0x7f src/system_stm32f3xx.o
- .comment       0x000000000000007e       0x70 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
-                                         0x71 (size before relaxing)
- .comment       0x00000000000000ee       0x71 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
- .comment       0x00000000000000ee       0x71 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_const_structs.o)
- .comment       0x00000000000000ee       0x71 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_common_tables.o)
- .comment       0x00000000000000ee       0x71 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
- .comment       0x00000000000000ee       0x71 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
+ .comment       0x000000000000007e       0x7f src/timers.o
 
-.debug_frame    0x0000000000000000     0x3570
+.debug_frame    0x0000000000000000     0x32b4
  .debug_frame   0x0000000000000000      0x334 HAL_Driver/Src/stm32f3xx_hal.o
  .debug_frame   0x0000000000000334      0x380 HAL_Driver/Src/stm32f3xx_hal_adc.o
  .debug_frame   0x00000000000006b4      0x644 HAL_Driver/Src/stm32f3xx_hal_adc_ex.o
@@ -14026,22 +14451,16 @@ OUTPUT(sonar_CB.elf elf32-littlearm)
  .debug_frame   0x0000000000001714       0xb4 HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
  .debug_frame   0x00000000000017c8      0xffc HAL_Driver/Src/stm32f3xx_hal_tim.o
  .debug_frame   0x00000000000027c4      0x688 HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
- .debug_frame   0x0000000000002e4c      0x28c src/main.o
- .debug_frame   0x00000000000030d8       0x2c src/stm32f3xx_it.o
- .debug_frame   0x0000000000003104       0x58 src/system_stm32f3xx.o
- .debug_frame   0x000000000000315c       0x94 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
- .debug_frame   0x00000000000031f0       0x74 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
- .debug_frame   0x0000000000003264       0xb8 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
- .debug_frame   0x000000000000331c       0x94 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
- .debug_frame   0x00000000000033b0       0x2c /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-init.o)
- .debug_frame   0x00000000000033dc       0x5c /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-__call_atexit.o)
- .debug_frame   0x0000000000003438       0x20 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-atexit.o)
- .debug_frame   0x0000000000003458       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fini.o)
- .debug_frame   0x000000000000348c       0xb0 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
- .debug_frame   0x000000000000353c       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-__atexit.o)
-
-.debug_loc      0x0000000000000000     0x4097
- .debug_loc     0x0000000000000000      0xcaf /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_q15.o)
- .debug_loc     0x0000000000000caf      0x4fd /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_rfft_init_q15.o)
- .debug_loc     0x00000000000011ac      0xc73 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_q15.o)
- .debug_loc     0x0000000000001e1f     0x2278 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/lib/libarm_math.a(arm_cfft_radix4_q15.o)
+ .debug_frame   0x0000000000002e4c       0xa8 src/adc.o
+ .debug_frame   0x0000000000002ef4       0x58 src/clocks.o
+ .debug_frame   0x0000000000002f4c       0xc4 src/dma.o
+ .debug_frame   0x0000000000003010       0x2c src/main.o
+ .debug_frame   0x000000000000303c       0x2c src/stm32f3xx_it.o
+ .debug_frame   0x0000000000003068       0x58 src/system_stm32f3xx.o
+ .debug_frame   0x00000000000030c0       0x34 src/timers.o
+ .debug_frame   0x00000000000030f4       0x2c /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-init.o)
+ .debug_frame   0x0000000000003120       0x5c /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-__call_atexit.o)
+ .debug_frame   0x000000000000317c       0x20 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-atexit.o)
+ .debug_frame   0x000000000000319c       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-fini.o)
+ .debug_frame   0x00000000000031d0       0xb0 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-lock.o)
+ .debug_frame   0x0000000000003280       0x34 /home/isthatme/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc.a(lib_a-__atexit.o)
