@@ -50,6 +50,9 @@ int main(void)
 	 * implement everything in here.
 	 *
 	 * Program flow plan: (why am I writing python?)
+	 * Everything in main should be async, meaning we should be able to do other useful
+	 * stuff if we are waiting for something to complete.
+	 * Maybe implement a state machine? idk
 	 *
 	 * Init
 	 *
