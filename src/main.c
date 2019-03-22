@@ -48,6 +48,27 @@ int main(void)
 	 *
 	 * Once that's verified working, we can pull the peak detector signal and
 	 * implement everything in here.
+	 *
+	 * Program flow plan: (why am I writing python?)
+	 *
+	 * Init
+	 *
+	 * loop:
+	 * 		handle_gain_control
+	 * 		if (ping_complete):
+	 *				for buffer in buffers:
+	 *						wait for previous buffer to finish transferring
+	 *						convert first x samples to float
+	 *						start_sending (sets up CAN_DONE interrupt)
+	 *						finish converting to float
+	 *
+	 * CAN_DONE_IRQ:
+	 * 		send next n values in frame
+	 *
+	 *
+	 * handle_gain_control:
+	 * 			do gain stuff, idk
+	 * 			start sampling once we have stable signal
 	 */
 	while(1) {
 		dma_start_xfer();
