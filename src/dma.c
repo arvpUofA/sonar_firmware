@@ -68,8 +68,8 @@ static void adc1_cmplt_callback(DMA_HandleTypeDef *_hdma) {
 
 void dma_start_xfer(void) {
 	HAL_DMA_Start_IT(&hdma1_ch1, (uint32_t) &(ADC1->DR), (uint32_t) channel_ref_buffer, SAMPLE_LEN); // Set up DMA transfer
-	HAL_DMA_Start_IT(&hdma2_ch1, (uint32_t) &(ADC1->DR), (uint32_t) channel_a_buffer, SAMPLE_LEN); // Set up DMA transfer
-	HAL_DMA_Start_IT(&hdma2_ch5, (uint32_t) &(ADC1->DR), (uint32_t) channel_b_buffer, SAMPLE_LEN); // Set up DMA transfer
+	HAL_DMA_Start_IT(&hdma2_ch1, (uint32_t) &(ADC2->DR), (uint32_t) channel_a_buffer, SAMPLE_LEN); // Set up DMA transfer
+	HAL_DMA_Start_IT(&hdma2_ch5, (uint32_t) &(ADC3->DR), (uint32_t) channel_b_buffer, SAMPLE_LEN); // Set up DMA transfer
 
 	adc_start();
 }
