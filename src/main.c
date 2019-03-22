@@ -45,8 +45,8 @@ int main(void)
 	// TODO change this main loop structure. as of now everything runs in an interrupt,
 	// which isn't ideal
 	while(1) {
-		HAL_DMA_Start_IT(&hdma2, (uint32_t) &(ADC3->DR), (uint32_t) channel_ref_buffer, SAMPLE_LEN); // Set up DMA transfer
-		HAL_TIM_Base_Start(&htim3); // start conversions
+		dma_start_xfer();
+		trigger_timer_start();
 
 		// TODO figure out what exactly this does that I'm not doing by hand
 		HAL_ADC_Start(&hadc3);

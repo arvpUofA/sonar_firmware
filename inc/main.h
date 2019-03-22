@@ -12,13 +12,9 @@
 #define SAMPLE_LEN		1024
 
 // Peripheral handles
-DMA_HandleTypeDef hdma1;
-DMA_HandleTypeDef hdma2;
-
-ADC_HandleTypeDef hadc3;
-
-TIM_HandleTypeDef htim3;
-TIM_HandleTypeDef htim4;
+DMA_HandleTypeDef hdma1_ch1;  // ADC1
+DMA_HandleTypeDef hdma2_ch1;  // ADC2
+DMA_HandleTypeDef hdma2_ch5;  // ADC3
 
 
 // Input buffers

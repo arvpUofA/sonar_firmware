@@ -13,4 +13,14 @@
  */
 void trigger_timer_init(void);
 
+/** @brief Starts trigger timer
+ *
+ */
+void trigger_timer_start(void);
+
+/** @brief Stops trigger timer
+ *
+ */
+void trigger_timer_stop(void);
+
 #endif /* TIMERS_H_ */

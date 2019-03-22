@@ -31,4 +31,15 @@ void setup_adc_gpio(void);
  */
 void setup_adc(void);
 
+/** @brief Starts ADC conversions
+ *
+ */
+void adc_start(void);
+
+/** @brief Stop ADC conversions
+ *
+ * @note Not reaaaallly necessary.
+ */
+void adc_stop(void);
+
 #endif /* ADC_H_ */

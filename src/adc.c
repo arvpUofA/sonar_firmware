@@ -9,6 +9,11 @@
 #include "main.h"
 #include "adc.h"
 
+// TODO get all ADCs running
+
+ADC_HandleTypeDef hadc1;
+ADC_HandleTypeDef hadc2;
+ADC_HandleTypeDef hadc3;
 
 void setup_adc_gpio(void) {
 	// Set up gpio for analog input
@@ -64,4 +69,16 @@ void setup_adc(void) {
 
 	// Enable DMA mode
     SET_BIT(hadc3.Instance->CFGR, ADC_CFGR_DMAEN);
+}
+
+void adc_start(void) {
+	HAL_ADC_Start(&hadc1);
+	HAL_ADC_Start(&hadc2);
+	HAL_ADC_Start(&hadc3);
+}
+
+void adc_stop(void) {
+	HAL_ADC_Stop(&hadc1);
+	HAL_ADC_Stop(&hadc2);
+	HAL_ADC_Stop(&hadc3);
 }

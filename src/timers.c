@@ -10,6 +10,8 @@
 #include "main.h"
 #include "timers.h"
 
+// Peripheral handler
+TIM_HandleTypeDef htim3;
 
 void trigger_timer_init(void) {
 	// Need to set up timer to get the correct update frequency
@@ -30,4 +32,12 @@ void trigger_timer_init(void) {
 	master.MasterOutputTrigger2 = TIM_TRGO2_RESET;
 	master.MasterSlaveMode = TIM_MASTERSLAVEMODE_ENABLE;
 	HAL_TIMEx_MasterConfigSynchronization(&htim3, &master);
+}
+
+void trigger_timer_start(void) {
+	HAL_TIM_Base_Start(&htim3); // start trigger timer
+}
+
+void trigger_timer_stop(void) {
+	HAL_TIM_Base_stop(&htim3); // stop trigger timer
 }

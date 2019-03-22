@@ -15,7 +15,15 @@
  * - that should be it
  *
  * The DMA transfer complete callback should stop TIM3
- */
+ *
+ *
+ * From the STM32F303 Reference manual:
+ *
+ * ADC1 is available on DMA1, channel 1
+ * ADC2 is on DMA1, channels 2 and 3, and DMA2, channels 1 and 2
+ * ADC3 is on DMA2, channel 5
+ * ADC4 is on DMA2, channels 2 and 4
+*/
 
 
 /** @brief Function to set up DMA channels and peripherals for ADC 1, 2, and 3.
@@ -24,6 +32,12 @@
  *  	as long as I verify peripheral init this is fine.
  */
 void setup_dma(void);
+
+/** @brief Sets up DMA transfer
+ *
+ *  @note Does not start trigger timer
+ */
+void dma_start_xfer(void);
 
 
 
