@@ -10,6 +10,7 @@
 #include "adc.h"
 
 // TODO do all ADC GPIO stuff, not just one
+// TODO set up ADC4 for peak detector stuff
 
 ADC_HandleTypeDef hadc1;
 ADC_HandleTypeDef hadc2;

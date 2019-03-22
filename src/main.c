@@ -14,7 +14,6 @@
  * Working for channel 2
  *
  * Overall TODO:
- * - Get 3 DMA ADCs going
  * - Get ADC going for peak detector
  * - Get UAVCAN integrated/working
  * - Re-implement ping detection + gain control
@@ -42,14 +41,17 @@ int main(void)
 	setup_dma();
 
 
-	// TODO change this main loop structure. as of now everything runs in an interrupt,
-	// which isn't ideal
+	/*
+	 * Currently, this will run a transfer every 2s, and do nothing with it
+	 *
+	 * First steps are probably to piggyback and use signals from existing teensy.
+	 *
+	 * Once that's verified working, we can pull the peak detector signal and
+	 * implement everything in here.
+	 */
 	while(1) {
 		dma_start_xfer();
 		trigger_timer_start();
-
-		// TODO figure out what exactly this does that I'm not doing by hand
-		HAL_ADC_Start(&hadc3);
 
 		HAL_Delay(2000); // poll once every 2s
 	}
