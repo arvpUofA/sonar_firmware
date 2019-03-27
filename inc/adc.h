@@ -45,6 +45,8 @@ void adc_stop(void);
 /** @brief Setup ADC4 for single conversions (ping detector, etc.)
  *
  */
-void adc_single_setup(void);
+void adc_peak_setup(void);
+
+int16_t adc_peak_read(void);
 
 #endif /* ADC_H_ */

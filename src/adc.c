@@ -105,6 +105,6 @@ void adc_stop(void) {
 	HAL_ADC_Stop(&hadc3);
 }
 
-void adc_single_setup(void) {
+void adc_peak_setup(void) {
 	hadc4.Instance = ADC4;
 }

@@ -31,12 +31,6 @@ struct {
 	float nudge_gain_value;
 } gain_control_settings_s;
 
-typedef enum {
-	PING_INVALID = 0,
-	PING_VALID = 1,
-	PING_OVER = 2,
-} ping_status_t;
-
 
 /** @brief Initialises gain control.
  *

@@ -8,6 +8,7 @@
 
 #include <stdbool.h>
 #include "gain_control.h"
+#include "peak_detector.h"
 #include "main.h"
 #include "adc.h"
 #include "amplifier.h"
@@ -39,7 +40,7 @@ void gain_control_run(void) {
 
 	// If the gain isn't floored, get the ping status
 	if (!gain_floored_flag) {
-		ping_status = get_ping_status(&peak_level);
+		ping_status = peak_get_ping_status(&peak_level);
 	}
 
 	// If gain is not floored, run our controller
