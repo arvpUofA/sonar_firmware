@@ -11,6 +11,7 @@
 DAC_HandleTypeDef hdac1;
 
 void amplifier_init(void) {
+	// Configure GPIO
 	GPIO_InitTypeDef gpio;
 	gpio.Pin = AMP_OUT_PIN;
 	gpio.Mode = GPIO_MODE_ANALOG;

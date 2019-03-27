@@ -14,9 +14,10 @@
  * Working for channel 2
  *
  * Overall TODO:
- * - Get ADC going for peak detector
  * - Get UAVCAN integrated/working
- * - Re-implement ping detection + gain control
+ * - Finish peak detector stuff
+ * - Finish gain control (initialisation + calibration)
+ * - integrate peak detection into DMA stuff
  */
 #include <stdbool.h>
 
@@ -44,6 +45,7 @@ int main(void)
 	trigger_timer_init();
 	setup_adc();
 	setup_dma();
+	gain_control_init();
 
 
 	/*
@@ -80,6 +82,7 @@ int main(void)
 	 */
 	while(1) {
 		// Start pulling ADC values if we have a ping
+		// This should actually go in peak detection/gain control
 		if (ping_started) {
 			dma_start_xfer();
 			trigger_timer_start();
@@ -89,10 +92,6 @@ int main(void)
 			ping_active = true;
 		}
 
-		if(run_ping_control() && !ping_active) {
-			ping_started = true;
-		}
-
-
+		gain_control_run();
 	}
 }

@@ -42,15 +42,15 @@ void peak_detector_low(void) {
 ping_status_t peak_get_ping_status(uint16_t* peak_level) {
 	float good_level = 2 * peak_detector_settings_s.noise_threshold;
 	static uint16_t valid_counter = 0;
-	static uint16_t ping_offset_time = HAL_GetTick();
+	static uint16_t ping_offset_time = 0;
 
 	// Read ADC
-	peak_level = adc_peak_read();
+	*peak_level = adc_peak_read();
 	// Scale from 12-bit range to -> 0-3v3
-	float peak_input = (peak_level / (2^12 - 1) ) * 3.3;
+	float peak_input = (*peak_level / ((2^12) - 1) ) * 3.3;
 
 	// If The signal is below the noise floor
-	if (peak_level <= good_level) { // spooky
+	if (peak_input <= good_level) { // spooky
 		HAL_GPIO_WritePin(LED_PORT, LED_PIN, 0); // Turn off ping LED
 		return PING_INVALID;
 	}

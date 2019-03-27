@@ -47,6 +47,6 @@ void adc_stop(void);
  */
 void adc_peak_setup(void);
 
-int16_t adc_peak_read(void);
+uint16_t adc_peak_read(void);
 
 #endif /* ADC_H_ */

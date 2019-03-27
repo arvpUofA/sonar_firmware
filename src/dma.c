@@ -16,6 +16,7 @@
 #include "stm32f3xx.h"
 
 #include "main.h"
+#include "dma.h"
 #include "timers.h"
 #include "adc.h"
 
@@ -23,8 +24,6 @@
 static void adc1_cmplt_callback(DMA_HandleTypeDef *_hdma);
 
 void setup_dma(void) {
-	uint32_t rc;
-
 	// Enable DMA IRQ for ADC1, see handler below
 	NVIC_SetPriority(DMA1_Channel1_IRQn, 0);
 	NVIC_EnableIRQ(DMA1_Channel1_IRQn);
@@ -39,19 +38,19 @@ void setup_dma(void) {
 	hdma1_ch1.Init.Mode = DMA_NORMAL; // Shouldn't re-start transfer at the end.
 	hdma1_ch1.Init.Priority = DMA_PRIORITY_VERY_HIGH; // Nothing else should be using this channel anyways
 
-	rc = HAL_DMA_Init(&hdma1_ch1);
+	HAL_DMA_Init(&hdma1_ch1);
 
 	// DMA2, channel 1 setup for ADC2
 	hdma2_ch1.Instance = DMA2_Channel1;
 	hdma2_ch1.Init = hdma1_ch1.Init; // Settings are all the same
 
-	rc = HAL_DMA_Init(&hdma2_ch1);
+	HAL_DMA_Init(&hdma2_ch1);
 
 	// DMA 2, channel 5 setup for ADC3
 	hdma2_ch5.Instance = DMA2_Channel5;
 	hdma2_ch5.Init = hdma1_ch1.Init; // Settings are all the same
 
-	rc = HAL_DMA_Init(&hdma2_ch5);
+	HAL_DMA_Init(&hdma2_ch5);
 
 	/*
 	 * We only need to register one callback (which we'll do for ADC1)

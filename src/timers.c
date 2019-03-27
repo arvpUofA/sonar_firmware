@@ -39,5 +39,5 @@ void trigger_timer_start(void) {
 }
 
 void trigger_timer_stop(void) {
-	HAL_TIM_Base_stop(&htim3); // stop trigger timer
+	HAL_TIM_Base_Stop(&htim3); // stop trigger timer
 }

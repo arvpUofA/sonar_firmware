@@ -19,6 +19,10 @@ void gain_control_init(void) {
 
 }
 
+
+static float gain_controller(uint16_t peak_level,
+		uint64_t* p_average_peak_level_sum, uint16_t* p_average_peak_level_counter);
+
 // TODO maybe break up into smaller, more manageable functions
 void gain_control_run(void) {
 	// Values
@@ -30,9 +34,9 @@ void gain_control_run(void) {
 	static float optimal_gain = 0;
 
 	// Timers
-	static uint16_t nudge_timer = HAL_GetTick();
-	static uint16_t floor_gain_timer = HAL_GetTick();
-	static uint16_t led_timer = HAL_GetTick();
+	static uint16_t nudge_timer = 0;
+	static uint16_t floor_gain_timer = 0;
+	static uint16_t led_timer = 0;
 
 	// Flags
 	static bool gain_floored_flag = false;
@@ -47,7 +51,7 @@ void gain_control_run(void) {
 	// If gain is not floored, run our controller
 	if ((ping_status == PING_VALID) && !gain_floored_flag) {
 		if (!hold_gain_flag) {
-			 optimal_gain = gain_controller(peak_level);
+			 optimal_gain = gain_controller(peak_level, &average_peak_level_sum, &average_peak_level_counter);
 			 amplifier_set_gain(optimal_gain);
 		}
 

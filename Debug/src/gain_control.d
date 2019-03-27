@@ -1,4 +1,5 @@
-src/dma.o: ../src/dma.c \
+src/gain_control.o: ../src/gain_control.c \
+ /home/isthatme/Ac6/Workspace/sonar_CB/inc/gain_control.h \
  /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/device/stm32f3xx.h \
  /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/device/stm32f303xc.h \
  /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/core/core_cm4.h \
@@ -59,10 +60,12 @@ src/dma.o: ../src/dma.c \
  /home/isthatme/Ac6/Workspace/sonar_CB/HAL_Driver/Inc/stm32f3xx_hal_usart.h \
  /home/isthatme/Ac6/Workspace/sonar_CB/HAL_Driver/Inc/stm32f3xx_hal_usart_ex.h \
  /home/isthatme/Ac6/Workspace/sonar_CB/HAL_Driver/Inc/stm32f3xx_hal_wwdg.h \
+ /home/isthatme/Ac6/Workspace/sonar_CB/inc/peak_detector.h \
  /home/isthatme/Ac6/Workspace/sonar_CB/inc/main.h \
- /home/isthatme/Ac6/Workspace/sonar_CB/inc/dma.h \
- /home/isthatme/Ac6/Workspace/sonar_CB/inc/timers.h \
- /home/isthatme/Ac6/Workspace/sonar_CB/inc/adc.h
+ /home/isthatme/Ac6/Workspace/sonar_CB/inc/adc.h \
+ /home/isthatme/Ac6/Workspace/sonar_CB/inc/amplifier.h
+
+/home/isthatme/Ac6/Workspace/sonar_CB/inc/gain_control.h:
 
 /home/isthatme/Ac6/Workspace/sonar_CB/CMSIS/device/stm32f3xx.h:
 
@@ -184,10 +187,10 @@ src/dma.o: ../src/dma.c \
 
 /home/isthatme/Ac6/Workspace/sonar_CB/HAL_Driver/Inc/stm32f3xx_hal_wwdg.h:
 
+/home/isthatme/Ac6/Workspace/sonar_CB/inc/peak_detector.h:
+
 /home/isthatme/Ac6/Workspace/sonar_CB/inc/main.h:
 
-/home/isthatme/Ac6/Workspace/sonar_CB/inc/dma.h:
-
-/home/isthatme/Ac6/Workspace/sonar_CB/inc/timers.h:
-
 /home/isthatme/Ac6/Workspace/sonar_CB/inc/adc.h:
+
+/home/isthatme/Ac6/Workspace/sonar_CB/inc/amplifier.h:

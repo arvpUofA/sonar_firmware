@@ -5,9 +5,14 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../src/adc.c \
+../src/amplifier.c \
 ../src/clocks.c \
+../src/comms.c \
 ../src/dma.c \
+../src/filter.c \
+../src/gain_control.c \
 ../src/main.c \
+../src/peak_detector.c \
 ../src/stm32f3xx_it.c \
 ../src/syscalls.c \
 ../src/system_stm32f3xx.c \
@@ -15,9 +20,14 @@ C_SRCS += \
 
 OBJS += \
 ./src/adc.o \
+./src/amplifier.o \
 ./src/clocks.o \
+./src/comms.o \
 ./src/dma.o \
+./src/filter.o \
+./src/gain_control.o \
 ./src/main.o \
+./src/peak_detector.o \
 ./src/stm32f3xx_it.o \
 ./src/syscalls.o \
 ./src/system_stm32f3xx.o \
@@ -25,9 +35,14 @@ OBJS += \
 
 C_DEPS += \
 ./src/adc.d \
+./src/amplifier.d \
 ./src/clocks.d \
+./src/comms.d \
 ./src/dma.d \
+./src/filter.d \
+./src/gain_control.d \
 ./src/main.d \
+./src/peak_detector.d \
 ./src/stm32f3xx_it.d \
 ./src/syscalls.d \
 ./src/system_stm32f3xx.d \

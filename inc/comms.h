@@ -8,6 +8,8 @@
 #ifndef COMMS_H_
 #define COMMS_H_
 
+#include "stm32f3xx.h"
+
 /*
  * Comms interface.
  *
@@ -39,7 +41,7 @@ static const char* variables[NUM_VARIABLES] = {
 typedef void (*comms_send_message_t) (uint8_t buffer, uint16_t len);
 
 struct {
-	comms_send_message_t* send_message;
+	comms_send_message_t send_message;
 } comms_s;
 
 /** @brief Initialises variables, functions for comms interface.

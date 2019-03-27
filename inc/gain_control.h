@@ -9,6 +9,7 @@
 #define GAIN_CONTROL_H_
 
 #include <stdbool.h>
+#include "stm32f3xx.h"
 
 // Everything here can actually be ints, no real reason to use floats
 struct {
@@ -42,7 +43,7 @@ void gain_control_init(void);
  * @retval 0 No valid ping detected.
  * @retval 1 Valid ping detected.
  */
-bool gain_control_run(void);
+void gain_control_run(void);
 
 
 #endif /* GAIN_CONTROL_H_ */
