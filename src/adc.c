@@ -15,6 +15,7 @@
 ADC_HandleTypeDef hadc1;
 ADC_HandleTypeDef hadc2;
 ADC_HandleTypeDef hadc3;
+ADC_HandleTypeDef hadc4;
 
 void setup_adc_gpio(void) {
 	// Set up gpio for analog input
@@ -102,4 +103,8 @@ void adc_stop(void) {
 	HAL_ADC_Stop(&hadc1);
 	HAL_ADC_Stop(&hadc2);
 	HAL_ADC_Stop(&hadc3);
+}
+
+void adc_single_setup(void) {
+	hadc4.Instance = ADC4;
 }

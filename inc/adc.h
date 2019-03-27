@@ -18,7 +18,7 @@
  * ADC1 -> Hydrophone REF
  * ADC2 -> Hydrophone Channel A
  * ADC3 -> Hydrophone Channel B
- * ADC4 -> Peak Detector
+ * ADC4 -> Peak Detector, etc.
  */
 
 /** @brief Sets up GPIO to use with ADC
@@ -41,5 +41,10 @@ void adc_start(void);
  * @note Not reaaaallly necessary.
  */
 void adc_stop(void);
+
+/** @brief Setup ADC4 for single conversions (ping detector, etc.)
+ *
+ */
+void adc_single_setup(void);
 
 #endif /* ADC_H_ */

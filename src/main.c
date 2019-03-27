@@ -18,6 +18,7 @@
  * - Get UAVCAN integrated/working
  * - Re-implement ping detection + gain control
  */
+#include <stdbool.h>
 
 #include "stm32f3xx.h"
 
@@ -26,6 +27,10 @@
 #include "timers.h"
 #include "dma.h"
 #include "adc.h"
+
+// Flags
+bool ping_started = false;
+bool ping_active = false;
 
 
 int main(void)
@@ -74,9 +79,20 @@ int main(void)
 	 * 			start sampling once we have stable signal
 	 */
 	while(1) {
-		dma_start_xfer();
-		trigger_timer_start();
+		// Start pulling ADC values if we have a ping
+		if (ping_started) {
+			dma_start_xfer();
+			trigger_timer_start();
 
-		HAL_Delay(2000); // poll once every 2s
+			// Don't call this loop again
+			ping_started = false;
+			ping_active = true;
+		}
+
+		if(run_ping_control() && !ping_active) {
+			ping_started = true;
+		}
+
+
 	}
 }

@@ -25,6 +25,10 @@
  * ADC4 is on DMA2, channels 2 and 4
 */
 
+DMA_HandleTypeDef hdma1_ch1;  // ADC1
+DMA_HandleTypeDef hdma2_ch1;  // ADC2
+DMA_HandleTypeDef hdma2_ch5;  // ADC3
+
 
 /** @brief Function to set up DMA channels and peripherals for ADC 1, 2, and 3.
  *
