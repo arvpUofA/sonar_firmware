@@ -107,4 +107,43 @@ void adc_stop(void) {
 
 void adc_peak_setup(void) {
 	hadc4.Instance = ADC4;
+	hadc4.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
+	hadc4.Init.Resolution = ADC_RESOLUTION_12B;
+	hadc4.Init.ScanConvMode = ADC_SCAN_DISABLE;
+	hadc4.Init.ContinuousConvMode = DISABLE;
+	hadc4.Init.DiscontinuousConvMode = DISABLE;
+	hadc4.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+	hadc4.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+	hadc4.Init.DataAlign = ADC_DATAALIGN_LEFT;
+	hadc4.Init.NbrOfConversion = 1;
+	hadc4.Init.DMAContinuousRequests = DISABLE;
+	hadc4.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+	hadc4.Init.LowPowerAutoWait = DISABLE;
+	hadc4.Init.Overrun = ADC_OVR_DATA_OVERWRITTEN;
+
+	// Initialize ADC
+	HAL_ADC_Init(&hadc4);
+
+	ADC_ChannelConfTypeDef channel;
+	channel.Channel = ADC_CHANNEL_1; // TODO make this match hardware
+	channel.Rank = ADC_REGULAR_RANK_1;
+	channel.SamplingTime = ADC_SAMPLETIME_61CYCLES_5; // Picked an arbitrary number that seemed big enough
+	channel.SingleDiff = ADC_SINGLE_ENDED;
+	channel.OffsetNumber = ADC_OFFSET_NONE;
+	channel.Offset = 0;
+
+	// Configure channel
+	HAL_ADC_ConfigChannel(&hadc4, &channel);
+}
+
+uint16_t adc_peak_read(void) {
+	uint16_t value = 0;
+	HAL_ADC_Start(&hadc4);
+	// Only read the value if we don't timeout
+	if (HAL_ADC_PollForConversion(&hadc4, 100) == HAL_OK) {
+		value = HAL_ADC_GetValue(&hadc4);
+	}
+	HAL_ADC_Stop(&hadc4);
+
+	return value;
 }
