@@ -25,8 +25,17 @@ struct {
 	float optimal_gain;
 	float peak_level;
 	float desired_peak;
+
+	uint16_t nudge_gain_duration; // in ms (???)
+	uint16_t floor_gain_duration;
+	float nudge_gain_value;
 } gain_control_settings_s;
 
+typedef enum {
+	PING_INVALID = 0,
+	PING_VALID = 1,
+	PING_OVER = 2,
+} ping_status_t;
 
 
 /** @brief Initialises gain control.
