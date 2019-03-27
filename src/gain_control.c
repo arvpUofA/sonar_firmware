@@ -15,6 +15,7 @@
 
 void gain_control_init(void) {
 	peak_detector_init();
+	amplifier_init();
 
 }
 
