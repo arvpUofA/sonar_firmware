@@ -51,6 +51,7 @@ CMSIS_DEVICE_DIR := $(CMSIS_DIR)/device
 SOURCE_DIRS += \
 		$(HAL_DRIVER_SRC_DIR) \
 		$(PROJ_DIR)/src \
+		$(PROJ_DIR)/adafruit_si5351 \
 
 
 # Find C sources:
@@ -104,22 +105,24 @@ C_DEFS := \
 # Includes for compiling
 AS_INCLUDES := 
 
+#	-I$(LIBCANARD_DIR) \
+	-I$(LIBCANARD_STM32_DIR) \
+	-I$(CANARD_DSDL_COMPILED_DIR) \
+
 # Common to C and C++
 C_INCLUDES := \
 	-I$(PROJ_DIR)/inc \
 	-I$(HAL_DRIVER_INC_DIR) \
 	-I$(CMSIS_CORE_DIR) \
 	-I$(CMSIS_DEVICE_DIR) \
-	-I$(LIBCANARD_DIR) \
-	-I$(LIBCANARD_STM32_DIR) \
-	-I$(CANARD_DSDL_COMPILED_DIR) \
+	-I$(PROJ_DIR)/adafruit_si5351 \
 
 
 # compile gcc flags
 ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
 
-CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -std=gnu99 -fshort-wchar
-CXXFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections -fshort-wchar
+CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -std=gnu99 
+CXXFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections -std=c++11
 
 ifeq ($(DEBUG), 1)
 CFLAGS += -g -gdwarf-2
