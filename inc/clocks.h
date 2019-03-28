@@ -8,6 +8,10 @@
 #ifndef CLOCKS_H_
 #define CLOCKS_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /** @brief Initializes system clocks
  *
  * Currently takes an external 8MHz crystal.
@@ -25,5 +29,8 @@ void systemclock_config(void);
 void periph_clocks_init(void);
 
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* CLOCKS_H_ */

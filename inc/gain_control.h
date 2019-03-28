@@ -11,6 +11,10 @@
 #include <stdbool.h>
 #include "stm32f3xx.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // Everything here can actually be ints, no real reason to use floats
 struct {
 	struct {
@@ -45,5 +49,8 @@ void gain_control_init(void);
  */
 void gain_control_run(void);
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* GAIN_CONTROL_H_ */

@@ -8,6 +8,10 @@
 #ifndef COMMS_H_
 #define COMMS_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "stm32f3xx.h"
 
 /*
@@ -57,5 +61,8 @@ void comms_init(comms_send_message_t* send_message);
  */
 void comms_receive(uint8_t* buffer, uint16_t len);
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* COMMS_H_ */

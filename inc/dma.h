@@ -8,6 +8,10 @@
 #ifndef DMA_H_
 #define DMA_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*
  * Steps required to start conversion:
  * - Set up DMA transfer to memory (HAL_DMA_START_IT()
@@ -44,5 +48,8 @@ void setup_dma(void);
 void dma_start_xfer(void);
 
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* DMA_H_ */

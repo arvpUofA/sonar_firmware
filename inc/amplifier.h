@@ -8,6 +8,11 @@
 #ifndef AMPLIFIER_H_
 #define AMPLIFIER_H_
 
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*
  * Library for setting gain of AD8336 variable gain amplifier (VGA).
  * Uses DAC on STM32.
@@ -32,5 +37,8 @@ void amplifier_init(void);
  */
 void amplifier_set_gain(float gain);
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* AMPLIFIER_H_ */

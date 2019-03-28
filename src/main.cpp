@@ -29,10 +29,10 @@
 #include <stdbool.h>
 
 #include "stm32f3xx.h"
-
 #include "main.h"
 #include "clocks.h"
 #include "timers.h"
+#include "gain_control.h"
 #include "dma.h"
 #include "adc.h"
 
