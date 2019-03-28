@@ -8,6 +8,9 @@
 #ifndef ADC_H_
 #define ADC_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /*
  * ADC config:
@@ -48,5 +51,9 @@ void adc_stop(void);
 void adc_peak_setup(void);
 
 uint16_t adc_peak_read(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* ADC_H_ */
