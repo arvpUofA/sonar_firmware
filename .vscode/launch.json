@@ -6,7 +6,7 @@
             "request": "launch",
             "servertype": "openocd",
             "cwd": "${workspaceRoot}",
-            "executable": "./build/example_project.elf",
+            "executable": "./build/sonar_firmware.elf",
             "name": "Debug (OpenOCD)",
             "device": "STM32F303CB",
             "configFiles": [

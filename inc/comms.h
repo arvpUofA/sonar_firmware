@@ -42,7 +42,7 @@ static const char* variables[NUM_VARIABLES] = {
 		"validVariance"
 };
 
-typedef void (*comms_send_message_t) (uint8_t buffer, uint16_t len);
+typedef void (*comms_send_message_t) (uint8_t* buffer, uint16_t len);
 
 struct {
 	comms_send_message_t send_message;
@@ -52,7 +52,7 @@ struct {
  *
  * @param send_message Function pointer to function that handles sending messages.
  */
-void comms_init(comms_send_message_t* send_message);
+void comms_init(comms_send_message_t send_message);
 
 /** @brief To be called when a message is received.
  *

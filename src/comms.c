@@ -11,7 +11,7 @@
 
 static uint8_t* invalid_message_string = (uint8_t*) "Invalid Message!\n";
 
-void comms_init(comms_send_message_t* send_message) {
+void comms_init(comms_send_message_t send_message) {
 	comms_s.send_message = send_message;
 }
 
@@ -48,10 +48,10 @@ void comms_receive(uint8_t* buffer, uint16_t len) {
  * Returns -1 if no command found, the number of the command otherwise
  */
 static int8_t find_command(uint8_t* buffer, uint16_t* len) {
-	char* command[MAX_COMMAND_LENGTH];
+	char command[MAX_COMMAND_LENGTH];
 
 	// Does sscanf format the string with \0 at the end?
-	sscanf(buffer, "$%s", command); // Find command string
+	sscanf((char*) buffer, "$%s", command); // Find command string
 
 
 	for (uint8_t i = 0; i < NUM_COMMANDS; i++) {
@@ -68,9 +68,9 @@ static int8_t find_command(uint8_t* buffer, uint16_t* len) {
 }
 
 static int8_t find_variable(uint8_t* buffer, uint16_t* len) {
-	char* variable[MAX_VARIABLE_LENGTH];
+	char variable[MAX_VARIABLE_LENGTH];
 
-	sscanf(buffer, "%s", variable); // Pull out variable name
+	sscanf((char*) buffer, "%s", variable); // Pull out variable name
 
 	for (uint8_t i = 0; i < NUM_VARIABLES; i++) {
 		if (strcmp(variables[i], variable) ==0) {
