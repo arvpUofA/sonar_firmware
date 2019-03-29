@@ -19,7 +19,7 @@ void peak_detector_init(void) {
 	gpio.Speed = GPIO_SPEED_FREQ_MEDIUM;
 
 	HAL_GPIO_Init(PEAK_CLEAR_PIN_PORT, &gpio);
-	HAL_GPIO_WritePin(PEAK_CLEAR_PIN_PORT, PEAK_CLEAR_PIN, 1); // Turn BJT off
+	HAL_GPIO_WritePin(PEAK_CLEAR_PIN_PORT, PEAK_CLEAR_PIN, GPIO_PIN_SET); // Turn BJT off
 
 	// set up adc
 	adc_peak_setup();
@@ -51,7 +51,7 @@ ping_status_t peak_get_ping_status(uint16_t* peak_level) {
 
 	// If The signal is below the noise floor
 	if (peak_input <= good_level) { // spooky
-		HAL_GPIO_WritePin(LED_PORT, LED_PIN, 0); // Turn off ping LED
+		HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET); // Turn off ping LED
 		return PING_INVALID;
 	}
 
@@ -70,19 +70,19 @@ ping_status_t peak_get_ping_status(uint16_t* peak_level) {
 
 		// If we are before the valid ping start time
 		if (ping_offset_delta < peak_detector_settings_s.valid_start_time) {
-			HAL_GPIO_WritePin(LED_PORT, LED_PIN, 0); // Turn off ping LED
+			HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET); // Turn off ping LED
 			// Koltin's old code returned a 3 here, but there are no checks for 3, so I'm leaving it like this
 			return PING_INVALID;
 
 		// If we are within the valid times
 		} else if ((ping_offset_delta >= peak_detector_settings_s.valid_start_time)
 				&& (ping_offset_delta < peak_detector_settings_s.valid_end_time)) {
-			HAL_GPIO_WritePin(LED_PORT, LED_PIN, 1); // Turn on ping LED
+			HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET); // Turn on ping LED
 			return PING_VALID;
 
 		// Past valid times
 		} else {
-			HAL_GPIO_WritePin(LED_PORT, LED_PIN, 0); // Turn off ping LED
+			HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET); // Turn off ping LED
 			valid_counter = 0;
 			return PING_OVER;
 		}

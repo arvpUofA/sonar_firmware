@@ -36,10 +36,16 @@
 #include "dma.h"
 #include "adc.h"
 
+Filter band_pass_filter;
+
 // Flags
 bool ping_started = false;
 bool ping_active = false;
 
+// Input buffers
+uint16_t channel_ref_buffer[SAMPLE_LEN];
+uint16_t channel_a_buffer[SAMPLE_LEN];
+uint16_t channel_b_buffer[SAMPLE_LEN];
 
 int main(void)
 {
@@ -53,6 +59,8 @@ int main(void)
 	setup_adc();
 	setup_dma();
 	gain_control_init();
+
+	band_pass_filter.setCenterFreq(27);
 
 
 	/*

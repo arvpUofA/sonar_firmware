@@ -8,10 +8,6 @@
 #ifndef DMA_H_
 #define DMA_H_
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /*
  * Steps required to start conversion:
  * - Set up DMA transfer to memory (HAL_DMA_START_IT()
@@ -29,9 +25,9 @@ extern "C" {
  * ADC4 is on DMA2, channels 2 and 4
 */
 
-DMA_HandleTypeDef hdma1_ch1;  // ADC1
-DMA_HandleTypeDef hdma2_ch1;  // ADC2
-DMA_HandleTypeDef hdma2_ch5;  // ADC3
+extern DMA_HandleTypeDef hdma1_ch1;  // ADC1
+extern DMA_HandleTypeDef hdma2_ch1;  // ADC2
+extern DMA_HandleTypeDef hdma2_ch5;  // ADC3
 
 
 /** @brief Function to set up DMA channels and peripherals for ADC 1, 2, and 3.
@@ -48,8 +44,5 @@ void setup_dma(void);
 void dma_start_xfer(void);
 
 
-#ifdef __cplusplus
-}
-#endif
 
 #endif /* DMA_H_ */

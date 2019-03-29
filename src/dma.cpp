@@ -20,6 +20,10 @@
 #include "timers.h"
 #include "adc.h"
 
+DMA_HandleTypeDef hdma1_ch1;  // ADC1
+DMA_HandleTypeDef hdma2_ch1;  // ADC2
+DMA_HandleTypeDef hdma2_ch5;  // ADC3
+
 // Callbacks
 static void adc1_cmplt_callback(DMA_HandleTypeDef *_hdma);
 

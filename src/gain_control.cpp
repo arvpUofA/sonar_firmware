@@ -13,6 +13,9 @@
 #include "adc.h"
 #include "amplifier.h"
 
+
+gain_control_settings_t gain_control_settings_s;
+
 void gain_control_init(void) {
 	peak_detector_init();
 	amplifier_init();
@@ -30,7 +33,7 @@ void gain_control_run(void) {
 	static uint64_t average_peak_level_sum = 0;
 	static uint16_t average_peak_level_counter = 0;
 	ping_status_t ping_status;
-	static ping_status_t previous_ping_status = 0;
+	static ping_status_t previous_ping_status = PING_INVALID;
 	static float optimal_gain = 0;
 
 	// Timers
@@ -112,7 +115,7 @@ void gain_control_run(void) {
 	// Start blinking LED if ping is valid
 	if ((previous_ping_status == PING_INVALID) && (ping_status == PING_VALID)
 			&& (!led_set_flag)) {
-		HAL_GPIO_WritePin(LED_PORT, LED_PIN, 1); // turn on LED
+		HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET); // turn on LED
 		led_set_flag = true;
 
 		// Reset LED timer
@@ -123,7 +126,7 @@ void gain_control_run(void) {
 	if (led_set_flag) {
 		if (HAL_GetTick() - led_timer > 200) {
 			led_set_flag = false;
-			HAL_GPIO_WritePin(LED_PORT, LED_PIN, 0); // Turn off LED
+			HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET); // Turn off LED
 		}
 	}
 

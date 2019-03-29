@@ -45,6 +45,6 @@ void peak_detector_low();
 
 /** @brief Reads peak detector value and finds the ping status
  */
-ping_status_t peak_get_ping_status();
+ping_status_t peak_get_ping_status(uint16_t* peak_level);
 
 #endif /* PEAK_DETECTOR_H_ */

@@ -10,6 +10,7 @@
 
 #include <stdbool.h>
 #include "stm32f3xx.h"
+#include "filter.h"
 
 // Definitions
 #define SAMPLE_LEN		1024
@@ -21,9 +22,10 @@
 #define LED_PIN		GPIO_PIN_10
 
 // Input buffers
-uint16_t channel_ref_buffer[SAMPLE_LEN];
-uint16_t channel_a_buffer[SAMPLE_LEN];
-uint16_t channel_b_buffer[SAMPLE_LEN];
+extern uint16_t channel_ref_buffer[SAMPLE_LEN];
+extern uint16_t channel_a_buffer[SAMPLE_LEN];
+extern uint16_t channel_b_buffer[SAMPLE_LEN];
 
+extern Filter band_pass_filter;
 
 #endif /* MAIN_H_ */

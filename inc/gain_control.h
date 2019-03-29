@@ -11,12 +11,8 @@
 #include <stdbool.h>
 #include "stm32f3xx.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 // Everything here can actually be ints, no real reason to use floats
-struct {
+typedef struct {
 	struct {
 		float gain;
 	} proportional;
@@ -34,7 +30,9 @@ struct {
 	uint16_t nudge_gain_duration; // in ms (???)
 	uint16_t floor_gain_duration;
 	float nudge_gain_value;
-} gain_control_settings_s;
+} gain_control_settings_t;
+
+extern gain_control_settings_t gain_control_settings_s;
 
 
 /** @brief Initialises gain control.
@@ -49,8 +47,5 @@ void gain_control_init(void);
  */
 void gain_control_run(void);
 
-#ifdef __cplusplus
-}
-#endif
 
 #endif /* GAIN_CONTROL_H_ */
