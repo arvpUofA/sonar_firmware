@@ -62,7 +62,6 @@ int main(void)
 
 	band_pass_filter.setCenterFreq(27);
 
-
 	/*
 	 * Currently, this will run a transfer every 2s, and do nothing with it
 	 *
