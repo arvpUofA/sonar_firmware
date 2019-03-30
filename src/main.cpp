@@ -50,6 +50,8 @@ uint16_t channel_ref_buffer[SAMPLE_LEN];
 uint16_t channel_a_buffer[SAMPLE_LEN];
 uint16_t channel_b_buffer[SAMPLE_LEN];
 
+static void check_incoming_message();
+
 int main(void)
 {
 	// Initialize clocks
@@ -112,6 +114,17 @@ int main(void)
 			ping_active = true;
 		}
 
+		check_incoming_message();
+
 		gain_control_run();
+	}
+}
+
+static void check_incoming_message() {
+	if (receive_finished_flag) {
+		// If we are finished receiving, parse message
+		comm_interface.parseMessage(incoming_message);
+		incoming_message_len = 0; // Reset length so reception can work
+		receive_finished_flag = false; // Done receiving, lower flag
 	}
 }

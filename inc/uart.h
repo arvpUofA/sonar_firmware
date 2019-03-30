@@ -3,10 +3,14 @@
 
 #include "stm32f3xx.h"
 
+extern bool receive_finished_flag;
+extern uint8_t incoming_message_len;
+extern char incoming_message[50];
+
 /** @brief Initialise peripheral, along with GPIO.
  * 
  */
-void uart_init(void);
+void uart_init();
 
 /** @brief Write out UART data
  * 
