@@ -35,6 +35,7 @@
 #include "timers.h"
 #include "gain_control.h"
 #include "dma.h"
+#include "uart.h"
 #include "adc.h"
 
 Filter band_pass_filter;
@@ -64,7 +65,8 @@ int main(void)
 
 	band_pass_filter.setCenterFreq(27);
 	comm_interface.setFilterPointer(band_pass_filter);
-	// Need to set comm_interface writeOut() here.
+	// Set method to write out over communications interface
+	comm_interface.writeOut = uart_send;
 
 	/*
 	 * Currently, this will run a transfer every 2s, and do nothing with it
