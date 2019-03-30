@@ -31,12 +31,14 @@
 #include "stm32f3xx.h"
 #include "main.h"
 #include "clocks.h"
+#include "comms.h"
 #include "timers.h"
 #include "gain_control.h"
 #include "dma.h"
 #include "adc.h"
 
 Filter band_pass_filter;
+CommInterface comm_interface;
 
 // Flags
 bool ping_started = false;
@@ -61,6 +63,8 @@ int main(void)
 	gain_control_init();
 
 	band_pass_filter.setCenterFreq(27);
+	comm_interface.setFilterPointer(band_pass_filter);
+	// Need to set comm_interface writeOut() here.
 
 	/*
 	 * Currently, this will run a transfer every 2s, and do nothing with it

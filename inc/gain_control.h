@@ -27,12 +27,19 @@ typedef struct {
 	float peak_level;
 	float desired_peak;
 
+	uint16_t invalid_ping_duration;
 	uint16_t nudge_gain_duration; // in ms (???)
 	uint16_t floor_gain_duration;
 	float nudge_gain_value;
-} gain_control_settings_t;
 
-extern gain_control_settings_t gain_control_settings_s;
+	bool debug_flag;
+	bool hold_gain;
+
+	float valid_mean;
+	float valid_variance;
+} gain_control_t;
+
+extern gain_control_t gain_control_s;
 
 
 /** @brief Initialises gain control.

@@ -8,33 +8,44 @@
 
 #include <stdbool.h>
 #include "gain_control.h"
+#include "constants.h"
 #include "peak_detector.h"
 #include "main.h"
 #include "adc.h"
 #include "amplifier.h"
 
 
-gain_control_settings_t gain_control_settings_s;
+gain_control_t gain_control_s;
 
 void gain_control_init(void) {
 	peak_detector_init();
 	amplifier_init();
 
+	// Set constants
+	gain_control_s.desired_peak = DESIRED_PEAK;
+	gain_control_s.proportional.gain = P_GAIN;
+	gain_control_s.integral.gain = I_GAIN;
+	gain_control_s.integral.error_max = MAX_I_ERROR;
+	gain_control_s.integral.error_min = -MAX_I_ERROR;
+	gain_control_s.floor_gain_duration = FLOOR_GAIN_DURATION;
+	gain_control_s.nudge_gain_duration = NUDGE_GAIN_DURATION;
+	gain_control_s.invalid_ping_duration = INVALID_PING_DURATION;
+	gain_control_s.nudge_gain_value = NUDGE_VALUE;
+	gain_control_s.valid_mean = DEFAULT_VALIDMEAN;
+	gain_control_s.valid_variance = DEFAULT_VALIDVARIANCE;
 }
 
 
-static float gain_controller(uint16_t peak_level,
-		uint64_t* p_average_peak_level_sum, uint16_t* p_average_peak_level_counter);
+static float gain_controller(uint64_t* p_average_peak_level_sum,
+			uint16_t* p_average_peak_level_counter);
 
 // TODO maybe break up into smaller, more manageable functions
 void gain_control_run(void) {
 	// Values
-	uint16_t peak_level;
 	static uint64_t average_peak_level_sum = 0;
 	static uint16_t average_peak_level_counter = 0;
 	ping_status_t ping_status;
 	static ping_status_t previous_ping_status = PING_INVALID;
-	static float optimal_gain = 0;
 
 	// Timers
 	static uint16_t nudge_timer = 0;
@@ -48,14 +59,14 @@ void gain_control_run(void) {
 
 	// If the gain isn't floored, get the ping status
 	if (!gain_floored_flag) {
-		ping_status = peak_get_ping_status(&peak_level);
+		ping_status = peak_get_ping_status(&gain_control_s.peak_level);
 	}
 
 	// If gain is not floored, run our controller
 	if ((ping_status == PING_VALID) && !gain_floored_flag) {
 		if (!hold_gain_flag) {
-			 optimal_gain = gain_controller(peak_level, &average_peak_level_sum, &average_peak_level_counter);
-			 amplifier_set_gain(optimal_gain);
+			 gain_control_s.optimal_gain = gain_controller(&average_peak_level_sum, &average_peak_level_counter);
+			 amplifier_set_gain(gain_control_s.optimal_gain);
 		}
 
 		nudge_timer = HAL_GetTick();
@@ -80,15 +91,15 @@ void gain_control_run(void) {
 	if (!gain_floored_flag) {
 		if (ping_status == 0) {
 			// Check elapsed time
-			if ((HAL_GetTick() - nudge_timer) > gain_control_settings_s.nudge_gain_duration) {
+			if ((HAL_GetTick() - nudge_timer) > gain_control_s.nudge_gain_duration) {
 				// are we holding gain?
 				if (!hold_gain_flag) {
 					// Nudge value up
-					optimal_gain += gain_control_settings_s.nudge_gain_value;
+					gain_control_s.optimal_gain += gain_control_s.nudge_gain_value;
 				}
 
 				// Set gain
-				amplifier_set_gain(optimal_gain);
+				amplifier_set_gain(gain_control_s.optimal_gain);
 
 				// Reset the nudge timer
 				nudge_timer = HAL_GetTick();
@@ -98,12 +109,12 @@ void gain_control_run(void) {
 
 	// Don't floor the gain for too long
 	if (gain_floored_flag) {
-		if ((HAL_GetTick() - floor_gain_timer) > gain_control_settings_s.floor_gain_duration) {
+		if ((HAL_GetTick() - floor_gain_timer) > gain_control_s.floor_gain_duration) {
 			// lower flag
 			gain_floored_flag = false;
 
 			// Apply calculated optimal gain
-			amplifier_set_gain(optimal_gain);
+			amplifier_set_gain(gain_control_s.optimal_gain);
 		}
 	}
 
@@ -141,32 +152,32 @@ void gain_control_run(void) {
 /** @brief Runs gain control (PID or psuedo-PID) on peak level
  *
  */
-static float gain_controller(uint16_t peak_level,
-		uint64_t* p_average_peak_level_sum, uint16_t* p_average_peak_level_counter) {
+static float gain_controller(uint64_t* p_average_peak_level_sum,
+		uint16_t* p_average_peak_level_counter) {
 	int16_t error; // Can be 16 bits because ADC is 12 bit
 	static int16_t sum_error = 0;
 	float gain = 0;
 
 	// Max peak level to accept
-	error = gain_control_settings_s.desired_peak - peak_level;
+	error = gain_control_s.desired_peak - gain_control_s.peak_level;
 
 	// Summing peak level so we can average
-	*p_average_peak_level_sum += peak_level;
+	*p_average_peak_level_sum += gain_control_s.peak_level;
 	(*p_average_peak_level_counter)++;
 
 	// Add to the integral error
 	sum_error += error;
 
 	// Saturate error
-	if (sum_error > gain_control_settings_s.integral.error_max) {
-		sum_error = gain_control_settings_s.integral.error_max;
-	} else if (sum_error < gain_control_settings_s.integral.error_min) {
-		sum_error = gain_control_settings_s.integral.error_max;
+	if (sum_error > gain_control_s.integral.error_max) {
+		sum_error = gain_control_s.integral.error_max;
+	} else if (sum_error < gain_control_s.integral.error_min) {
+		sum_error = gain_control_s.integral.error_max;
 	}
 
 	// Apply gains
-	gain += gain_control_settings_s.proportional.gain * error;
-	gain += gain_control_settings_s.integral.gain * sum_error;
+	gain += gain_control_s.proportional.gain * error;
+	gain += gain_control_s.integral.gain * sum_error;
 
 	return gain;
 }

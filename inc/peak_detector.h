@@ -27,11 +27,13 @@ typedef enum {
 
 
 // Various settings
-struct {
+typedef struct {
 	uint16_t valid_start_time;
 	uint16_t valid_end_time;
 	float noise_threshold;
-} peak_detector_settings_s;
+} peak_detector_t;
+
+extern peak_detector_t peak_detector_s;
 
 
 void peak_detector_init();
@@ -45,6 +47,6 @@ void peak_detector_low();
 
 /** @brief Reads peak detector value and finds the ping status
  */
-ping_status_t peak_get_ping_status(uint16_t* peak_level);
+ping_status_t peak_get_ping_status(float* peak_level);
 
 #endif /* PEAK_DETECTOR_H_ */

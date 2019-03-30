@@ -7,7 +7,10 @@
 
 #include "peak_detector.h"
 #include "main.h"
+#include "constants.h"
 #include "adc.h"
+
+peak_detector_t peak_detector_s;
 
 
 void peak_detector_init(void) {
@@ -26,9 +29,9 @@ void peak_detector_init(void) {
 
 
 	// Set initial peak detector settings
-	peak_detector_settings_s.valid_start_time = PEAK_VALID_START_TIME;
-	peak_detector_settings_s.valid_end_time = PEAK_VALID_END_TIME;
-	peak_detector_settings_s.noise_threshold = PEAK_NOISE_THRESHOLD;
+	peak_detector_s.valid_start_time = PINGVALIDSTART;
+	peak_detector_s.valid_end_time = PINGVALIDEND;
+	peak_detector_s.noise_threshold = PEAK_NOISE;
 }
 
 void peak_detector_reset(void) {
@@ -39,8 +42,8 @@ void peak_detector_low(void) {
 
 }
 
-ping_status_t peak_get_ping_status(uint16_t* peak_level) {
-	float good_level = 2 * peak_detector_settings_s.noise_threshold;
+ping_status_t peak_get_ping_status(float* peak_level) {
+	float good_level = 2 * peak_detector_s.noise_threshold;
 	static uint16_t valid_counter = 0;
 	static uint16_t ping_offset_time = 0;
 
@@ -69,14 +72,14 @@ ping_status_t peak_get_ping_status(uint16_t* peak_level) {
 		uint16_t ping_offset_delta = HAL_GetTick() - ping_offset_time;
 
 		// If we are before the valid ping start time
-		if (ping_offset_delta < peak_detector_settings_s.valid_start_time) {
+		if (ping_offset_delta < peak_detector_s.valid_start_time) {
 			HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET); // Turn off ping LED
 			// Koltin's old code returned a 3 here, but there are no checks for 3, so I'm leaving it like this
 			return PING_INVALID;
 
 		// If we are within the valid times
-		} else if ((ping_offset_delta >= peak_detector_settings_s.valid_start_time)
-				&& (ping_offset_delta < peak_detector_settings_s.valid_end_time)) {
+		} else if ((ping_offset_delta >= peak_detector_s.valid_start_time)
+				&& (ping_offset_delta < peak_detector_s.valid_end_time)) {
 			HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET); // Turn on ping LED
 			return PING_VALID;
 
