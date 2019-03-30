@@ -19,9 +19,6 @@
  * - Finish gain control (initialisation + calibration)
  * - integrate peak detection into DMA stuff
  * - Write I2C driver
- * - Integrate filter controller library I found
- * - Write UART driver
- * - Finish comms library
  *
  * Long term stuff:
  * - Write USB library and integrate into comms
