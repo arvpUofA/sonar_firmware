@@ -10,15 +10,21 @@
 
 /*
  * CURRENT STATE:
+ * 
+ * Ugh, I started out with just C, then moved to C++ and took some concepts.
+ * It's still better than the old preprocessor firmware, in my opinion,
+ * but I do need to go back through at some point and redefine a
+ * bunch of my interfaces.
  *
- * Working for channel 2
+ * 3-Channel ADC is theoretically working,
+ * need to add capability for 4 now
  *
  * Overall TODO:
+ * - Add 4th ADC capability
  * - Get UAVCAN integrated/working
  * - Finish peak detector stuff
  * - Finish gain control (initialisation + calibration)
  * - integrate peak detection into DMA stuff
- * - Write I2C driver
  *
  * Long term stuff:
  * - Write USB library and integrate into comms
