@@ -10,6 +10,7 @@
 
 #include <stdbool.h>
 #include "stm32f3xx.h"
+#include "mcp3021.h"
 
 // Everything here can actually be ints, no real reason to use floats
 typedef struct {
@@ -45,7 +46,7 @@ extern gain_control_t gain_control_s;
 /** @brief Initialises gain control.
  *
  */
-void gain_control_init(void);
+void gain_control_init(MCP3021* adc);
 
 /** @brief Runs gain control.
  *

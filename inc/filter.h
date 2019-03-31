@@ -4,10 +4,11 @@
 #include <Adafruit_SI5351.h>
 
 #include "constants.h"
+#include "i2c.h"
 
 class Filter {
  public:
-  Filter(void);
+  Filter(I2C i2c);
 
   // Sets the center frequency of the bandpass filter
   void setCenterFreq(int centerFreq);

@@ -35,8 +35,7 @@
 #include "uart.h"
 #include "adc.h"
 
-Filter band_pass_filter;
-CommInterface comm_interface;
+CommInterface* comm_interface;
 
 // Flags
 bool ping_started = false;
@@ -60,12 +59,21 @@ int main(void)
 	trigger_timer_init();
 	setup_adc();
 	setup_dma();
-	gain_control_init();
+
+	I2C i2c(1, 100000, 42);
+
+	MCP3021 peak_adc(i2c.get_i2c_handle(), 72);
+	Filter band_pass_filter(i2c);
+	*comm_interface = CommInterface();
+
+
+	gain_control_init(&peak_adc);
+
 
 	band_pass_filter.setCenterFreq(27);
-	comm_interface.setFilterPointer(band_pass_filter);
+	comm_interface->setFilterPointer(band_pass_filter);
 	// Set method to write out over communications interface
-	comm_interface.writeOut = uart_send;
+	comm_interface->writeOut = uart_send;
 
 	/*
 	 * Currently, this will run a transfer every 2s, and do nothing with it
@@ -120,7 +128,7 @@ int main(void)
 static void check_incoming_message() {
 	if (receive_finished_flag) {
 		// If we are finished receiving, parse message
-		comm_interface.parseMessage(incoming_message);
+		comm_interface->parseMessage(incoming_message);
 		incoming_message_len = 0; // Reset length so reception can work
 		receive_finished_flag = false; // Done receiving, lower flag
 	}

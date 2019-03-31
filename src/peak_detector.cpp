@@ -13,7 +13,7 @@
 peak_detector_t peak_detector_s;
 
 
-void peak_detector_init(void) {
+void peak_detector_init(MCP3021* adc) {
 	// Initialise GPIO
 	GPIO_InitTypeDef gpio;
 	gpio.Pin = PEAK_CLEAR_PIN;
@@ -24,8 +24,7 @@ void peak_detector_init(void) {
 	HAL_GPIO_Init(PEAK_CLEAR_PIN_PORT, &gpio);
 	HAL_GPIO_WritePin(PEAK_CLEAR_PIN_PORT, PEAK_CLEAR_PIN, GPIO_PIN_SET); // Turn BJT off
 
-	// set up adc
-	adc_peak_setup();
+	peak_detector_s.adc = adc;
 
 
 	// Set initial peak detector settings

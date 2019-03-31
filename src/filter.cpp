@@ -1,9 +1,9 @@
 #include "filter.h"
 
 // Initializes the Adafruit_SI5351 library
-Filter::Filter(void) {
+Filter::Filter(I2C i2c) {
   clockgen = Adafruit_SI5351();
-  clockgen.begin();
+  clockgen.begin(i2c);
 }
 
 // Sets the center frequency (in kHz) of the bandpass filter

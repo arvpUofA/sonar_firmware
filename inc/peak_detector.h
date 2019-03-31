@@ -9,6 +9,7 @@
 #define PEAK_DETECTOR_H_
 
 #include "stm32f3xx.h"
+#include "mcp3021.h"
 
 // TODO match these to hardware
 #define PEAK_CLEAR_PIN 		GPIO_PIN_11
@@ -31,12 +32,14 @@ typedef struct {
 	uint16_t valid_start_time;
 	uint16_t valid_end_time;
 	float noise_threshold;
+
+	MCP3021* adc;
 } peak_detector_t;
 
 extern peak_detector_t peak_detector_s;
 
 
-void peak_detector_init();
+void peak_detector_init(MCP3021* adc);
 
 
 void peak_detector_reset();

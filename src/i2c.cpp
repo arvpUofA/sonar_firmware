@@ -46,3 +46,7 @@ void I2C::write_reg(uint8_t addr, uint8_t reg, uint8_t val) {
 void I2C::read_reg(uint8_t addr, uint8_t reg, uint8_t* val) {
     HAL_I2C_Mem_Read(&hi2c, addr, reg, 1, val, 1, 200);
 }
+
+I2C_HandleTypeDef* I2C::get_i2c_handle() {
+    return &hi2c;
+}

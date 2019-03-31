@@ -78,10 +78,10 @@ Adafruit_SI5351::Adafruit_SI5351(void)
     doing anything else)
 */
 /**************************************************************************/
-err_t Adafruit_SI5351::begin(void) 
+err_t Adafruit_SI5351::begin(I2C i2c) 
 {
-  /* Initialise I2C */
-  i2c_ = I2C(1, 100000, 42);
+  // Assign I2C
+  i2c_ = i2c;
 
   /* ToDo: Make sure we're actually connected */
 

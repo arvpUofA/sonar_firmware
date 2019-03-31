@@ -294,7 +294,7 @@ class Adafruit_SI5351
  public:
   Adafruit_SI5351(void);
   
-  err_t begin(void);
+  err_t begin(I2C i2c);
   err_t setClockBuilderData(void);
   err_t setupPLL(si5351PLL_t pll, uint8_t mult, uint32_t num, uint32_t denom);
   err_t setupPLLInt(si5351PLL_t pll, uint8_t mult);

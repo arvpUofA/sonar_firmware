@@ -17,8 +17,8 @@
 
 gain_control_t gain_control_s;
 
-void gain_control_init(void) {
-	peak_detector_init();
+void gain_control_init(MCP3021* adc) {
+	peak_detector_init(adc);
 	amplifier_init();
 
 	// Set constants
