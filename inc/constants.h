@@ -32,6 +32,12 @@
 #define PEAK_NOISE 0.6
 // Power rail noise is 40mV
 
+
+// DMA transfer info
+#define PING_VALID_TIME   (PINGVALIDEND - PINGVALIDSTART) // total ping time (in ms)
+#define SAMPLE_FREQ       1000000   // 1Msps
+#define TOTAL_SAMPLES     (SAMPLE_FREQ * (PING_VALID_TIME / 1000))
+
 // Constants for the filter
 #define CLK0 0
 #define CLK1 1

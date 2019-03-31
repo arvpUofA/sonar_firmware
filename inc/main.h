@@ -28,6 +28,4 @@ extern uint16_t channel_b_buffer[SAMPLE_LEN];
 
 extern Filter band_pass_filter;
 
-I2C_HandleTypeDef hi2c1;
-
 #endif /* MAIN_H_ */

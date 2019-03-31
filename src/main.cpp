@@ -12,24 +12,24 @@
  * CURRENT STATE:
  * 
  * Ugh, I started out with just C, then moved to C++ and took some concepts.
- * It's still better than the old preprocessor firmware, in my opinion,
+ * It's still cleaner than the old preprocessor firmware, in my opinion,
  * but I do need to go back through at some point and redefine a
  * bunch of my interfaces.
  *
  * 3-Channel ADC is theoretically working,
- * need to add capability for 4 now
  *
  * Overall TODO:
- * - Add 4th ADC capability
  * - Get UAVCAN integrated/working
- * - Finish peak detector stuff
- * - Finish gain control (initialisation + calibration)
  * - integrate peak detection into DMA stuff
+ * - Clear out old variable changing stuff (there's only really 4 or 5 necessary ones)
  *
  * Long term stuff:
  * - Write USB library and integrate into comms
  */
 #include <stdbool.h>
+
+// Uncomment for four ADC channels vs 3
+//#define ADC_FOUR_CHANNELS
 
 #include "stm32f3xx.h"
 #include "main.h"
@@ -51,6 +51,9 @@ bool ping_active = false;
 uint16_t channel_ref_buffer[SAMPLE_LEN];
 uint16_t channel_a_buffer[SAMPLE_LEN];
 uint16_t channel_b_buffer[SAMPLE_LEN];
+#ifdef ADC_FOUR_CHANNELS
+uint16_t channel_c_buffer[SAMPLE_LEN];
+#endif
 
 static void check_incoming_message();
 

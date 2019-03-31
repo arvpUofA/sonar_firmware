@@ -47,7 +47,7 @@ ping_status_t peak_get_ping_status(float* peak_level) {
 	static uint16_t ping_offset_time = 0;
 
 	// Read ADC
-	*peak_level = adc_peak_read();
+	*peak_level = peak_detector_s.adc->single_conversion();
 	// Scale from 12-bit range to -> 0-3v3
 	float peak_input = (*peak_level / ((2^12) - 1) ) * 3.3;
 

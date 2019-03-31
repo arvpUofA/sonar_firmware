@@ -38,6 +38,12 @@ typedef struct {
 
 	float valid_mean;
 	float valid_variance;
+
+	uint64_t average_peak_level_sum;
+	uint16_t average_peak_level_counter;
+	uint64_t average_peak_level_squared_sum;
+	uint16_t average_peak_level_squared_counter;
+	
 } gain_control_t;
 
 extern gain_control_t gain_control_s;
@@ -54,6 +60,13 @@ void gain_control_init(MCP3021* adc);
  * @retval 1 Valid ping detected.
  */
 void gain_control_run(void);
+
+/** @brief check gain controller calibration
+ * 
+ *  @retval true calibration is good?
+ *  @retval false calibration is bad?
+ */
+bool gain_control_check_calibration(void);
 
 
 #endif /* GAIN_CONTROL_H_ */

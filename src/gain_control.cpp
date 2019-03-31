@@ -33,17 +33,19 @@ void gain_control_init(MCP3021* adc) {
 	gain_control_s.nudge_gain_value = NUDGE_VALUE;
 	gain_control_s.valid_mean = DEFAULT_VALIDMEAN;
 	gain_control_s.valid_variance = DEFAULT_VALIDVARIANCE;
+
+	gain_control_s.average_peak_level_sum = 0;
+	gain_control_s.average_peak_level_counter = 0;
+	gain_control_s.average_peak_level_squared_sum = 0;
+	gain_control_s.average_peak_level_squared_counter = 0;
 }
 
 
-static float gain_controller(uint64_t* p_average_peak_level_sum,
-			uint16_t* p_average_peak_level_counter);
+static float gain_controller();
 
 // TODO maybe break up into smaller, more manageable functions
 void gain_control_run(void) {
 	// Values
-	static uint64_t average_peak_level_sum = 0;
-	static uint16_t average_peak_level_counter = 0;
 	ping_status_t ping_status;
 	static ping_status_t previous_ping_status = PING_INVALID;
 
@@ -65,7 +67,7 @@ void gain_control_run(void) {
 	// If gain is not floored, run our controller
 	if ((ping_status == PING_VALID) && !gain_floored_flag) {
 		if (!hold_gain_flag) {
-			 gain_control_s.optimal_gain = gain_controller(&average_peak_level_sum, &average_peak_level_counter);
+			 gain_control_s.optimal_gain = gain_controller();
 			 amplifier_set_gain(gain_control_s.optimal_gain);
 		}
 
@@ -152,8 +154,7 @@ void gain_control_run(void) {
 /** @brief Runs gain control (PID or psuedo-PID) on peak level
  *
  */
-static float gain_controller(uint64_t* p_average_peak_level_sum,
-		uint16_t* p_average_peak_level_counter) {
+static float gain_controller() {
 	int16_t error; // Can be 16 bits because ADC is 12 bit
 	static int16_t sum_error = 0;
 	float gain = 0;
@@ -162,8 +163,13 @@ static float gain_controller(uint64_t* p_average_peak_level_sum,
 	error = gain_control_s.desired_peak - gain_control_s.peak_level;
 
 	// Summing peak level so we can average
-	*p_average_peak_level_sum += gain_control_s.peak_level;
-	(*p_average_peak_level_counter)++;
+	gain_control_s.average_peak_level_sum += gain_control_s.peak_level;
+	gain_control_s.average_peak_level_counter++;
+
+	// sum average peak squared
+	gain_control_s.average_peak_level_squared_sum += 
+			gain_control_s.peak_level * gain_control_s.peak_level;
+	gain_control_s.average_peak_level_squared_counter++;
 
 	// Add to the integral error
 	sum_error += error;
@@ -180,4 +186,38 @@ static float gain_controller(uint64_t* p_average_peak_level_sum,
 	gain += gain_control_s.integral.gain * sum_error;
 
 	return gain;
+}
+
+
+bool gain_control_check_calibration(void) {
+	float average_peak_level;
+	float average_peak_level_squared;
+	if (gain_control_s.average_peak_level_counter != 0) {
+		average_peak_level =
+				gain_control_s.average_peak_level_sum / gain_control_s.average_peak_level_counter;
+	} else {
+		average_peak_level = gain_control_s.peak_level;
+	}
+
+	if (gain_control_s.average_peak_level_squared_counter != 0) {
+		average_peak_level_squared = 
+				gain_control_s.average_peak_level_squared_sum / gain_control_s.average_peak_level_squared_counter;
+	} else {
+		average_peak_level_squared = gain_control_s.peak_level * gain_control_s.peak_level;
+	}
+
+	float variance = average_peak_level_squared - (average_peak_level * average_peak_level);
+
+	if ((average_peak_level > (gain_control_s.desired_peak - gain_control_s.valid_mean)) &&
+		(average_peak_level < (gain_control_s.desired_peak + gain_control_s.valid_mean)) &&
+		(variance < gain_control_s.valid_variance) &&
+		(variance > (-1 * gain_control_s.valid_variance))) {
+			if ((variance > 0.0001) || (variance < -0.0001)) {
+				return true;
+			} else {
+				return false;
+			}
+	} else {
+		return false;
+	}
 }
