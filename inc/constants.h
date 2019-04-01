@@ -34,9 +34,9 @@
 
 
 // DMA transfer info
-#define PING_VALID_TIME   (PINGVALIDEND - PINGVALIDSTART) // total ping time (in ms)
+#define PING_VALID_TIME   (PINGVALIDEND - PINGVALIDSTART) // total ping time (in us)
 #define SAMPLE_FREQ       1000000   // 1Msps
-#define TOTAL_SAMPLES     (SAMPLE_FREQ * (PING_VALID_TIME / 1000))
+#define TOTAL_SAMPLES     1300      // Found via math
 
 // Constants for the filter
 #define CLK0 0

@@ -20,7 +20,6 @@
  *
  * Overall TODO:
  * - Get UAVCAN integrated/working
- * - integrate peak detection into DMA stuff
  * - Clear out old variable changing stuff (there's only really 4 or 5 necessary ones)
  *
  * Long term stuff:
