@@ -19,6 +19,7 @@
  * 3-Channel ADC is theoretically working,
  *
  * Overall TODO:
+ * - Change peak detector timing to microseconds from milliseconds
  * - Get UAVCAN integrated/working
  * - Clear out old variable changing stuff (there's only really 4 or 5 necessary ones)
  *
