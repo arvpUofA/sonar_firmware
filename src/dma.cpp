@@ -23,6 +23,9 @@
 DMA_HandleTypeDef hdma1_ch1;  // ADC1
 DMA_HandleTypeDef hdma2_ch1;  // ADC2
 DMA_HandleTypeDef hdma2_ch5;  // ADC3
+#ifdef ADC_FOUR_CHANNELS
+DMA_HandleTypeDef hdma2_ch4;  // ADC4
+#endif
 
 // Callbacks
 static void adc1_cmplt_callback(DMA_HandleTypeDef *_hdma);
@@ -56,6 +59,14 @@ void setup_dma(void) {
 
 	HAL_DMA_Init(&hdma2_ch5);
 
+	#ifdef ADC_FOUR_CHANNELS
+	// DMA 2, channel 4 setup for ADC4, if we do use it
+	hdma2_ch4.Instance = DMA2_Channel4;
+	hdma2_ch4.Init = hdma1_ch1.Init; // Settings are all the same
+
+	HAL_DMA_Init(&hdma2_ch4);
+	#endif
+
 	/*
 	 * We only need to register one callback (which we'll do for ADC1)
 	 * because the ADC conversions are all synced up, and run off one timer,
@@ -73,6 +84,9 @@ void dma_start_xfer(void) {
 	HAL_DMA_Start_IT(&hdma1_ch1, (uint32_t) &(ADC1->DR), (uint32_t) channel_ref_buffer, SAMPLE_LEN); // Set up DMA transfer
 	HAL_DMA_Start_IT(&hdma2_ch1, (uint32_t) &(ADC2->DR), (uint32_t) channel_a_buffer, SAMPLE_LEN); // Set up DMA transfer
 	HAL_DMA_Start_IT(&hdma2_ch5, (uint32_t) &(ADC3->DR), (uint32_t) channel_b_buffer, SAMPLE_LEN); // Set up DMA transfer
+	#ifdef ADC_FOUR_CHANNELS
+	HAL_DMA_Start_IT(&hdma2_ch4, (uint32_t) &(ADC4->dR), (uint32_t) channel_c_buffer, SAMPLE_LEN)
+	#endif
 
 	adc_start();
 }
