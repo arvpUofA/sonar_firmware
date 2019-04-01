@@ -9,6 +9,7 @@
 #include "main.h"
 #include "constants.h"
 #include "adc.h"
+#include "dma.h"
 
 peak_detector_t peak_detector_s;
 
@@ -64,6 +65,8 @@ ping_status_t peak_get_ping_status(float* peak_level) {
 		ping_offset_time = HAL_GetTick();
 
 		valid_counter = 1;
+
+		dma_start_xfer(); // Start sampling!
 	}
 
 	// if we have had previous valid signals
