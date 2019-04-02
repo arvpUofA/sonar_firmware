@@ -32,10 +32,10 @@ LDSCRIPT = $(PROJ_DIR)/LinkerScript.ld
 
 
 # Source and header files are in same directory
-#LIBCANARD_DIR := $(COMMON_DIR)/libcanard
-#LIBCANARD_STM32_DIR := $(LIBCANARD_DIR)/drivers/stm32
+LIBCANARD_DIR := $(PROJ_DIR)/libcanard
+LIBCANARD_STM32_DIR := $(LIBCANARD_DIR)/drivers/stm32
 
-#CANARD_DSDL_COMPILED_DIR := $(COMMON_DIR)/uavcan_dsdl/libcanard_dsdlc_generated
+CANARD_DSDL_COMPILED_DIR := $(PROJ_DIR)/libcanard_dsdlc_generated
 
 HAL_DRIVER_DIR := HAL_Driver
 HAL_DRIVER_INC_DIR := $(HAL_DRIVER_DIR)/Inc
@@ -45,13 +45,13 @@ CMSIS_DIR := CMSIS
 CMSIS_CORE_DIR := $(CMSIS_DIR)/core
 CMSIS_DEVICE_DIR := $(CMSIS_DIR)/device
 
-#		$(LIBCANARD_DIR) \
-		$(LIBCANARD_STM32_DIR) \
 
 SOURCE_DIRS += \
 		$(HAL_DRIVER_SRC_DIR) \
 		$(PROJ_DIR)/src \
 		$(PROJ_DIR)/adafruit_si5351 \
+		$(LIBCANARD_DIR) \
+		$(LIBCANARD_STM32_DIR) \
 
 
 # Find C sources:
@@ -105,9 +105,6 @@ C_DEFS := \
 # Includes for compiling
 AS_INCLUDES := 
 
-#	-I$(LIBCANARD_DIR) \
-	-I$(LIBCANARD_STM32_DIR) \
-	-I$(CANARD_DSDL_COMPILED_DIR) \
 
 # Common to C and C++
 C_INCLUDES := \
@@ -116,6 +113,9 @@ C_INCLUDES := \
 	-I$(CMSIS_CORE_DIR) \
 	-I$(CMSIS_DEVICE_DIR) \
 	-I$(PROJ_DIR)/adafruit_si5351 \
+	-I$(LIBCANARD_DIR) \
+	-I$(LIBCANARD_STM32_DIR) \
+	-I$(CANARD_DSDL_COMPILED_DIR) \
 
 
 # compile gcc flags
@@ -214,7 +214,19 @@ flash: $(BUILD_DIR)/$(TARGET).elf
 
 debug: $(BUILD_DIR)/$(TARGET).elf
 	openocd -f $(COMMON_DIR)/$(MCU_SERIES)_openocd.cfg
-  
+
+
+#########################
+# Generating DSDL
+#########################
+
+.PHONY: dsdl
+
+dsdl:
+	$(LIBCANARD_DIR)/dsdl_compiler/libcanard_dsdlc --outdir $(CANARD_DSDL_COMPILED_DIR) \
+			$(PROJ_DIR)/dsdl/uavcan $(PROJ_DIR)/custom_dsdl/arvp 
+
+
 #######################################
 # dependencies
 #######################################

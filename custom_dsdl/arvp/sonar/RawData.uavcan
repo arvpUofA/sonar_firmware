@@ -1,0 +1,19 @@
+#################
+# RawData message. Used for sonar data from the preprocessor board.
+
+# Some constants for selecting channels
+uint8 CHANNEL_REF = 0
+uint8 CHANNEL_A = 1
+uint8 CHANNEL_B = 2
+uint8 CHANNEL_C = 3
+
+# ID so we know which hydrophone this came from
+uint8 hydrophone_id
+
+# Current gain of the channel
+uint8 gain
+
+# Raw sonar data.
+# max 2048 elements because 2ms @ 1MSPS is 2000 samples
+# and powers of 2 are nice.
+uint16[<=2048] data

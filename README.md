@@ -15,3 +15,11 @@ in the future.
 ## TODO
 
 Described in src/main.c
+
+## Generating DSDL
+
+The custom DSDL should be moved to another repository, but for now, it's just sitting here.
+
+```
+make dsdl
+```
