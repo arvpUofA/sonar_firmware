@@ -22,6 +22,12 @@
  * - Change peak detector timing to microseconds from milliseconds
  * - Get UAVCAN integrated/working
  * - Clear out old variable changing stuff (there's only really 4 or 5 necessary ones)
+ * 
+ * Feature requests from Rumman:
+ * - Add ability to set static gain
+ * - Clearer state (is it not detecting pings at all, ping valid, ping invalid, between pings, etc.) (publish over CAN!)
+ * - Get rid of some command line variables
+ * - Improve valid state detection etc.
  *
  * Long term stuff:
  * - Write USB library and integrate into comms
