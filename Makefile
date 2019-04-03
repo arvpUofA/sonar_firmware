@@ -57,7 +57,7 @@ SOURCE_DIRS += \
 # Find C sources:
 C_SOURCES := $(shell find $(SOURCE_DIRS) -maxdepth 1 ! -name "*template.c" -name "*.c")
 # DSDL compiled sources need to be treated differently
-#C_SOURCES += $(shell find $(CANARD_DSDL_COMPILED_DIR) -name "*.c")
+C_SOURCES += $(shell find $(CANARD_DSDL_COMPILED_DIR) -name "*.c")
 
 # Find C++ sources
 CPP_SOURCES := $(shell find $(SOURCE_DIRS) -maxdepth 1 -name "*.cpp")
