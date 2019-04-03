@@ -7,5 +7,6 @@
 
 
 #define UAVCAN_NODE_ID  100
+#define UAVCAN_SONAR_RAWDATA_DATATYPE_ID    200001 // Idk
 
 #endif
