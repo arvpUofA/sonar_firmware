@@ -68,6 +68,7 @@ int main(void)
 	// Initialize clocks
 	systemclock_config();
 	periph_clocks_init();
+	HAL_Init();
 
 	// Peripheral init
 	setup_adc_gpio();
