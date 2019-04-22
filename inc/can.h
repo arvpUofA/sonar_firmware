@@ -40,4 +40,11 @@ void can_send_raw_data(sonar_channel_t channel,
  */
 void can_periodic(uint64_t current_time_us);
 
+
+/** @brief Starts transmit chain
+ * 
+ * Sends the first message, and then interrupts take over to finish transfer
+ */
+void can_start_transmit(void);
+
 #endif

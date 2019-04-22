@@ -94,12 +94,20 @@ uint64_t usec_timer_read(void) {
 	return usec_counter;
 }
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // Literally just here for a 1ms delay in canard_stm32.c
-int usleep(useconds_t usec) {
-	uint64_t delay_until = usec_timer_read() + usec;
+int usleep(useconds_t __useconds) {
+	uint64_t delay_until = usec_timer_read() + __useconds;
 
 	// Yeah yeah it's a hardloop delay. Who cares.
 	while (delay_until > usec_timer_read());
 
 	return 0;
 }
+
+#ifdef __cplusplus
+}
+#endif

@@ -7,12 +7,7 @@
 
 
 #include <stdbool.h>
-#include "gain_control.h"
-#include "constants.h"
-#include "peak_detector.h"
 #include "main.h"
-#include "adc.h"
-#include "amplifier.h"
 
 
 gain_control_t gain_control_s;
@@ -46,7 +41,7 @@ static float gain_controller();
 // TODO maybe break up into smaller, more manageable functions
 void gain_control_run(void) {
 	// Values
-	ping_status_t ping_status;
+	ping_status_t ping_status = PING_INVALID;
 	static ping_status_t previous_ping_status = PING_INVALID;
 
 	// Timers
@@ -130,6 +125,9 @@ void gain_control_run(void) {
 			&& (!led_set_flag)) {
 		HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET); // turn on LED
 		led_set_flag = true;
+
+		// Ping is valid, so we should start the transfer
+		dma_start_xfer();
 
 		// Reset LED timer
 		led_timer = HAL_GetTick();

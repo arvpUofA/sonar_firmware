@@ -16,9 +16,6 @@
 #include "stm32f3xx.h"
 
 #include "main.h"
-#include "dma.h"
-#include "timers.h"
-#include "adc.h"
 
 DMA_HandleTypeDef hdma1_ch1;  // ADC1
 DMA_HandleTypeDef hdma2_ch1;  // ADC2

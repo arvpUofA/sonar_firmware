@@ -19,7 +19,7 @@
  * 3-Channel ADC is theoretically working,
  *
  * Overall TODO:
- * - Get UAVCAN integrated/working
+ * - Get UAVCAN integrated/working (theoretically finished?)
  * - Clear out old variable changing stuff (there's only really 4 or 5 necessary ones)
  * 
  * Feature requests from Rumman:
@@ -42,8 +42,13 @@
 CommInterface* comm_interface;
 
 // Flags
-bool ping_started = false;
-bool ping_active = false;
+bool sampling_complete = false;
+send_status_t sending_ref_status = SEND_STOPPED;
+send_status_t sending_a_status = SEND_STOPPED;
+send_status_t sending_b_status = SEND_STOPPED;
+#ifdef ADC_FOUR_CHANNELS
+send_status_t sending_c_status = SEND_STOPPED;
+#endif
 
 // Input buffers
 uint16_t channel_ref_buffer[SAMPLE_LEN];
@@ -116,21 +121,64 @@ int main(void)
 	 * 			start sampling once we have stable signal
 	 */
 	while(1) {
-		// Start pulling ADC values if we have a ping
-		// This should actually go in peak detection/gain control
-		if (ping_started) {
-			dma_start_xfer();
-			trigger_timer_start();
-
-			// Don't call this loop again
-			ping_started = false;
-			ping_active = true;
-		}
-
 		check_incoming_message();
 
 		gain_control_run();
+
+		// If our reading is complete.
+		if (sampling_complete) {
+			can_send_raw_data(SONAR_CHANNEL_REF, channel_ref_buffer, SAMPLE_LEN);
+			can_start_transmit();
+			sending_ref_status = SEND_STARTED;
+
+			#ifdef ADC_FOUR_CHANNELS
+			can_send_raw_data(SONAR_CHANNEL_C, channel_c_buffer, SAMPLE_LEN);
+			#endif
+
+			sampling_complete = false;
+		}
+
+		if (sending_ref_status == SEND_COMPLETED) {
+			sending_ref_status = SEND_STOPPED;
+			can_send_raw_data(SONAR_CHANNEL_A, channel_a_buffer, SAMPLE_LEN);
+			can_start_transmit();
+			sending_a_status = SEND_STARTED;
+		}
+
+		if (sending_a_status == SEND_COMPLETED) {
+			sending_a_status = SEND_STOPPED;
+			can_send_raw_data(SONAR_CHANNEL_B, channel_b_buffer, SAMPLE_LEN);
+			can_start_transmit();
+			sending_b_status = SEND_STARTED;
+		}
+
+		#ifdef ADC_FOUR_CHANNELS
+		if (sending_b_status == SEND_COMPLETED) {
+			sending_b_status = SEND_STOPPED;
+			can_send_raw_data(SONAR_CHANNEL_C, channel_c_buffer, SAMPLE_LEN);
+			can_start_transmit();
+			sending_c_status = SEND_STARTED;
+		}
+		#endif
+		
 	}
+}
+
+// Function to check and re-arrange sending status at the end of transmission
+void check_sending_status(void) {
+	if (sending_ref_status == SEND_STARTED) {
+		sending_ref_status = SEND_COMPLETED;
+	} else if (sending_a_status == SEND_STARTED) {
+		sending_a_status = SEND_COMPLETED;
+	} else if (sending_b_status == SEND_STARTED) {
+		sending_b_status = SEND_COMPLETED;
+	#ifdef ADC_FOUR_CHANNELS
+		} else if (sending_c_status == SEND_STARTED) {
+			sending_c_status = SEND_COMPLETED;
+		}
+	#else
+		}
+	#endif
 }
 
 static void check_incoming_message() {

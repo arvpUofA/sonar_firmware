@@ -1,4 +1,4 @@
-#include "can.h"
+#include "main.h"
 
 
 static CanardInstance canard;
@@ -59,6 +59,34 @@ void can_init(void) {
     node_status.health = UAVCAN_PROTOCOL_NODESTATUS_HEALTH_OK;
     node_status.mode = UAVCAN_PROTOCOL_NODESTATUS_MODE_INITIALIZATION;
     node_status.vendor_specific_status_code = UAVCAN_VS_ERROR_OK;
+
+    // Set up interrupts for TX
+}
+
+void USB_HP_CAN_TX_IRQHandler(void) {
+    // TODO handle transmit error somehow
+
+    // If any of the sending is finished
+    if (CAN->TSR & (CAN_TSR_RQCP0 | CAN_TSR_RQCP1 | CAN_TSR_RQCP2)) {
+        // Send next message
+        const CanardCANFrame* out_frame = canardPeekTxQueue(&canard);
+        if (out_frame != NULL) {
+            // Transmit and clear TX queue
+            canardSTM32Transmit(out_frame);
+            canardPopTxQueue(&canard);
+        } else {
+            check_sending_status();
+        }
+
+        // Clear bits
+        if (CAN->TSR & CAN_TSR_RQCP0) {
+            SET_BIT(CAN->TSR, CAN_TSR_RQCP0);
+        } else if (CAN->TSR & CAN_TSR_RQCP1) {
+            SET_BIT(CAN->TSR, CAN_TSR_RQCP1);
+        } else if (CAN->TSR & CAN_TSR_RQCP2) {
+            SET_BIT(CAN->TSR, CAN_TSR_RQCP2);
+        }
+    }
 }
 
 static void can_panic(uint8_t vs_error);
@@ -135,6 +163,16 @@ static void can_publish_node_status() {
 void can_periodic(uint64_t current_time_usec) {
     canardCleanupStaleTransfers(&canard, current_time_usec);
     can_publish_node_status();
+}
+
+void can_start_transmit(void) {
+    // Send message
+    const CanardCANFrame* out_frame = canardPeekTxQueue(&canard);
+    if (out_frame != NULL) {
+        // Transmit and clear TX queue
+        canardSTM32Transmit(out_frame);
+        canardPopTxQueue(&canard);
+    }
 }
 
 
