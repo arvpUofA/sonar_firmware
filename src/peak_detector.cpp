@@ -7,9 +7,6 @@
 
 #include "peak_detector.h"
 #include "main.h"
-#include "constants.h"
-#include "adc.h"
-#include "dma.h"
 
 peak_detector_t peak_detector_s;
 
@@ -62,7 +59,7 @@ ping_status_t peak_get_ping_status(float* peak_level) {
 	// If the first valid signal
 	if (valid_counter == 0) {
 		// Set elapsed time to 0
-		ping_offset_time = HAL_GetTick();
+		ping_offset_time = usec_timer_read();
 
 		valid_counter = 1;
 
@@ -71,7 +68,7 @@ ping_status_t peak_get_ping_status(float* peak_level) {
 
 	// if we have had previous valid signals
 	if (valid_counter > 0) {
-		uint16_t ping_offset_delta = HAL_GetTick() - ping_offset_time;
+		uint16_t ping_offset_delta = usec_timer_read() - ping_offset_time;
 
 		// If we are before the valid ping start time
 		if (ping_offset_delta < peak_detector_s.valid_start_time) {

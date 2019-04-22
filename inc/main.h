@@ -12,6 +12,18 @@
 #include "stm32f3xx.h"
 #include "filter.h"
 #include "constants.h"
+#include "dma.h"
+#include "peak_detector.h"
+#include "gain_control.h"
+#include "i2c.h"
+#include "config.h"
+#include "comms.h"
+#include "clocks.h"
+#include "can.h"
+#include "amplifier.h"
+#include "timers.h"
+#include "uart.h"
+#include "adc.h"
 
 // Definitions
 #define SAMPLE_LEN		TOTAL_SAMPLES

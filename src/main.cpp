@@ -19,7 +19,6 @@
  * 3-Channel ADC is theoretically working,
  *
  * Overall TODO:
- * - Change peak detector timing to microseconds from milliseconds
  * - Get UAVCAN integrated/working
  * - Clear out old variable changing stuff (there's only really 4 or 5 necessary ones)
  * 
@@ -39,13 +38,6 @@
 
 #include "stm32f3xx.h"
 #include "main.h"
-#include "clocks.h"
-#include "comms.h"
-#include "timers.h"
-#include "gain_control.h"
-#include "dma.h"
-#include "uart.h"
-#include "adc.h"
 
 CommInterface* comm_interface;
 
