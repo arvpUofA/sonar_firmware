@@ -1,5 +1,4 @@
-#include "main.h"
-
+#include "can.h"
 
 static CanardInstance canard;
 static uavcan_protocol_NodeStatus node_status;
@@ -180,6 +179,19 @@ static void on_reception(CanardInstance* ins,
                          CanardRxTransfer* transfer) {
 
     // Not receiving anything yet
+    if (transfer->transfer_type == CanardTransferTypeRequest) {
+        switch (transfer->data_type_id) {
+            case (UAVCAN_PROTOCOL_PARAM_GETSET_ID):
+                comms_get_set_id(ins, transfer);
+                break;
+            case (UAVCAN_PROTOCOL_RESTARTNODE_ID):
+                comms_restart_node(ins, transfer);
+                break;
+            case (UAVCAN_PROTOCOL_GETNODEINFO_ID):
+                comms_get_node_info(ins, transfer);
+                break;
+        }
+    }
 }
 
 static bool should_accept(const CanardInstance* ins,
@@ -188,5 +200,18 @@ static bool should_accept(const CanardInstance* ins,
                           CanardTransferType transfer_type,
                           uint8_t source_node_id) {
     // Not receiving anything yet
-    return true;
+    if (transfer_type == CanardTransferTypeRequest) {
+        switch (data_type_id) {
+            case (UAVCAN_PROTOCOL_PARAM_GETSET_ID):
+                *out_data_type_signature = UAVCAN_PROTOCOL_PARAM_GETSET_SIGNATURE;
+                return true;
+            case (UAVCAN_PROTOCOL_RESTARTNODE_ID):
+                return true;
+            case (UAVCAN_PROTOCOL_GETNODEINFO_ID):
+                return true;
+            default:
+                return false;
+        }
+    }
+    return false;
 }

@@ -24,7 +24,7 @@
 #define DEFAULT_VALIDVARIANCE 0.005  // How large the variance can be
 
 // Initializing constants for the peak detector
-#define Vref 2.5            // ADC reference
+#define VREF 2.5            // ADC reference
 #define resolution 65535    // 2^16 -1
 #define PINGVALIDSTART 200  // offset for the start of the ping (microseconds)
 #define PINGVALIDEND 1500   // offset for the end of the ping (microseconds)

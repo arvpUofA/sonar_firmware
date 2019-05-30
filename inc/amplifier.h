@@ -17,6 +17,7 @@
  */
 
 #include "stm32f3xx.h"
+#include "constants.h"
 
 #define AMP_OUT_PIN 	GPIO_PIN_15
 #define AMP_OUT_PORT	GPIOB

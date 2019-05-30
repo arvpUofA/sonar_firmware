@@ -6,7 +6,6 @@
  */
 
 #include "amplifier.h"
-#include "stm32f3xx.h"
 
 DAC_HandleTypeDef hdac1;
 
@@ -45,7 +44,7 @@ void amplifier_set_gain(float gain) {
 		// Formula found in page 21 of datasheet
 		GPOS = (gain - GPRA - 4.4) / 49.9 + GNEG;
 
-		out_val = (GPOS / 3.3) * 4096;
+		out_val = (GPOS / VREF) * 4096;
 		HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, out_val);
 	}
 }

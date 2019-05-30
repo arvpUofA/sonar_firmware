@@ -10,6 +10,7 @@
 
 peak_detector_t peak_detector_s;
 
+#define GOOD_LEVEL 2 * PEAK_NOISE
 
 void peak_detector_init(MCP3021* adc) {
 	// Initialise GPIO
@@ -23,7 +24,6 @@ void peak_detector_init(MCP3021* adc) {
 	HAL_GPIO_WritePin(PEAK_CLEAR_PIN_PORT, PEAK_CLEAR_PIN, GPIO_PIN_SET); // Turn BJT off
 
 	peak_detector_s.adc = adc;
-
 
 	// Set initial peak detector settings
 	peak_detector_s.valid_start_time = PINGVALIDSTART;
@@ -40,7 +40,6 @@ void peak_detector_low(void) {
 }
 
 ping_status_t peak_get_ping_status(float* peak_level) {
-	float good_level = 2 * peak_detector_s.noise_threshold;
 	static uint16_t valid_counter = 0;
 	static uint16_t ping_offset_time = 0;
 
@@ -50,7 +49,7 @@ ping_status_t peak_get_ping_status(float* peak_level) {
 	float peak_input = (*peak_level / ((2^12) - 1) ) * 3.3;
 
 	// If The signal is below the noise floor
-	if (peak_input <= good_level) { // spooky
+	if (peak_input <= GOOD_LEVEL) { // spooky
 		HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET); // Turn off ping LED
 		return PING_INVALID;
 	}
@@ -63,7 +62,7 @@ ping_status_t peak_get_ping_status(float* peak_level) {
 
 		valid_counter = 1;
 
-		dma_start_xfer(); // Start sampling!
+		dma_start_xfer(); // Start transfer
 	}
 
 	// if we have had previous valid signals
@@ -71,14 +70,14 @@ ping_status_t peak_get_ping_status(float* peak_level) {
 		uint16_t ping_offset_delta = usec_timer_read() - ping_offset_time;
 
 		// If we are before the valid ping start time
-		if (ping_offset_delta < peak_detector_s.valid_start_time) {
+		if (ping_offset_delta < PINGVALIDSTART) {
 			HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET); // Turn off ping LED
 			// Koltin's old code returned a 3 here, but there are no checks for 3, so I'm leaving it like this
 			return PING_INVALID;
 
 		// If we are within the valid times
-		} else if ((ping_offset_delta >= peak_detector_s.valid_start_time)
-				&& (ping_offset_delta < peak_detector_s.valid_end_time)) {
+		} else if ((ping_offset_delta >= PINGVALIDSTART)
+				&& (ping_offset_delta < PINGVALIDEND)) {
 			HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET); // Turn on ping LED
 			return PING_VALID;
 

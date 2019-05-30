@@ -2,11 +2,15 @@
 #define CAN_H_
 
 #include "stm32f3xx.h"
+#include "main.h"
 #include "canard.h"
 #include "canard_stm32.h"
 #include "config.h"
 
 #include "uavcan/protocol/NodeStatus.h"
+#include "uavcan/protocol/param/GetSet.h"
+#include "uavcan/protocol/RestartNode.h"
+#include "uavcan/protocol/GetNodeInfo.h"
 #include "arvp/sonar/RawData.h"
 
 // Just a few error codes for us to use over CAN bus

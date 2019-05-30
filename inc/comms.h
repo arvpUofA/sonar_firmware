@@ -53,6 +53,7 @@ class CommInterface {
 
   const char* commands[NUMBER_COMMANDS] = {"set", "get"};
   const char* variables[NUMBER_VARIABLES] = {
+      "gain",           "centerFreqwnecie"
       "desiredPeak",    "holdGain",
       "pGain",          "iGain",
       "iSaturation",    "floorGainDur",
