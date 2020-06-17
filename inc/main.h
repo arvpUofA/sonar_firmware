@@ -26,7 +26,7 @@
 #include "adc.h"
 
 // Definitions
-#define SAMPLE_LEN		(peak_detector_s.valid_end_time - peak_detector_s.valid_start_time)
+#define SAMPLE_LEN		(PEAK_VALID_END_TIME - PEAK_VALID_START_TIME)
 
 #define CLOCKGEN_I2C_ADDR	0b0110000 // Not sure if correct
 

@@ -143,6 +143,7 @@ void gain_control_run(void) {
 
 	// TODO implement serial printing of ping info once it's over
 	if ((ping_status == PING_OVER) && (previous_ping_status == PING_INVALID)) {
+		// use uart_send or something you define on top to write out the debug info
 
 	}
 

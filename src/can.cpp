@@ -175,6 +175,7 @@ void can_start_transmit(void) {
 }
 
 
+// TODO finish CAN
 static void on_reception(CanardInstance* ins,
                          CanardRxTransfer* transfer) {
 
@@ -182,13 +183,13 @@ static void on_reception(CanardInstance* ins,
     if (transfer->transfer_type == CanardTransferTypeRequest) {
         switch (transfer->data_type_id) {
             case (UAVCAN_PROTOCOL_PARAM_GETSET_ID):
-                comms_get_set_id(ins, transfer);
+                //comms_get_set_id(ins, transfer);
                 break;
             case (UAVCAN_PROTOCOL_RESTARTNODE_ID):
-                comms_restart_node(ins, transfer);
+                //comms_restart_node(ins, transfer);
                 break;
             case (UAVCAN_PROTOCOL_GETNODEINFO_ID):
-                comms_get_node_info(ins, transfer);
+                //comms_get_node_info(ins, transfer);
                 break;
         }
     }

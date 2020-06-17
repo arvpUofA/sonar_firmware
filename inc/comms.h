@@ -9,7 +9,7 @@
 #include "constants.h"
 
 #define NUMBER_COMMANDS 2
-#define NUMBER_VARIABLES 19
+#define NUMBER_VARIABLES 21
 
 #define MAX_COMMAND_LEN   10
 #define MAX_VARIABLE_LEN  20

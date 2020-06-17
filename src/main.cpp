@@ -51,11 +51,11 @@ send_status_t sending_c_status = SEND_STOPPED;
 #endif
 
 // Input buffers
-uint16_t channel_ref_buffer[2048];
-uint16_t channel_a_buffer[2048];
-uint16_t channel_b_buffer[2048];
+uint16_t channel_ref_buffer[SAMPLE_LEN];
+uint16_t channel_a_buffer[SAMPLE_LEN];
+uint16_t channel_b_buffer[SAMPLE_LEN];
 #ifdef ADC_FOUR_CHANNELS
-uint16_t channel_c_buffer[2048];
+uint16_t channel_c_buffer[SAMPLE_LEN];
 #endif
 
 static void check_incoming_message();
