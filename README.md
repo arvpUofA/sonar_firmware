@@ -12,6 +12,13 @@ that's not necessary and frankly more work than necessary.
 I'm thinking I might break out USB pins so we could implement USB-FS
 in the future.
 
+# Toolchain installation
+
+Install make tools
+
+Install [ARM GCC](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
+
+
 ## TODO
 
 Described in src/main.c
