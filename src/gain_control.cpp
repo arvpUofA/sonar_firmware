@@ -54,78 +54,58 @@ void gain_control_run(void) {
 	static bool hold_gain_flag = false;
 	static bool led_set_flag = false;
 
+	// If the gain isn't floored, get the ping status
 	if (!gain_floored_flag) {
-		
-		// If the gain isn't floored, get the ping status
 		ping_status = peak_get_ping_status(&gain_control_s.peak_level);
-		
-		switch(ping_status) {
-			
-			// If ping has been invalid for a certain time, and gain is not floored
-			// nudge gain up slightly
-			case PING_INVALID:
-				// Check elapsed time
-				if ((HAL_GetTick() - nudge_timer) > gain_control_s.nudge_gain_duration) {
-					// are we holding gain?
-					if (!hold_gain_flag) {
-						// Nudge value up
-						gain_control_s.optimal_gain += gain_control_s.nudge_gain_value;
-					}
+	}
 
-					// Set gain
-					amplifier_set_gain(gain_control_s.optimal_gain);
+	// If gain is not floored, run our controller
+	if ((ping_status == PING_VALID) && !gain_floored_flag) {
+		if (!hold_gain_flag) {
+			 gain_control_s.optimal_gain = gain_controller();
+			 amplifier_set_gain(gain_control_s.optimal_gain);
+		}
 
-					// Reset the nudge timer
-					nudge_timer = HAL_GetTick();
-				}
-				// Reset peak detector if ping is invalid
-				peak_detector_reset();
+		nudge_timer = HAL_GetTick();
+	}
 
-			// If gain is not floored, run our controller
-			case PING_VALID:
-				if (!hold_gain_flag) {
-					gain_control_s.optimal_gain = gain_controller();
-					amplifier_set_gain(gain_control_s.optimal_gain);
-				}
+	// Ping is over, floor gain
+	if (ping_status == PING_OVER) {
+		if (!gain_floored_flag) {
+			amplifier_set_gain(0); // Floor gain at 0dB
 
-				nudge_timer = HAL_GetTick();
-				
-				// Start blinking LED if ping is valid
-				if ((previous_ping_status == PING_INVALID) && (!led_set_flag)) {
-					HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET); // turn on LED
-					led_set_flag = true;
+			// Reset timers
+			floor_gain_timer = HAL_GetTick();
+			nudge_timer = HAL_GetTick();
 
-					// Ping is valid, so we should start the transfer
-					dma_start_xfer();
-
-					// Reset LED timer
-					led_timer = HAL_GetTick();
-				}
-				break;
-			
-			// Ping is over, floor gain	
-			case PING_OVER:	
-				amplifier_set_gain(0); // Floor gain at 0dB
-
-				// Reset timers
-				floor_gain_timer = HAL_GetTick();
-				nudge_timer = HAL_GetTick();
-
-				// Gain is now floored, set flag
-				gain_floored_flag = true;
-				
-				peak_detector_reset();
-
-				// TODO implement serial printing of ping info once it's over
-				// AsK
-				if (previous_ping_status == PING_INVALID) {
-					// use uart_send or something you define on top to write out the debug info
-				}
-				break;
+			// Gain is now floored, set flag
+			gain_floored_flag = true;
 		}
 	}
-	else {
-		// Don't floor the gain for too long
+
+	// If ping has been invalid for a certain time, and gain is not floored
+	// nudge gain up slightly
+	if (!gain_floored_flag) {
+		if (ping_status == 0) {
+			// Check elapsed time
+			if ((HAL_GetTick() - nudge_timer) > gain_control_s.nudge_gain_duration) {
+				// are we holding gain?
+				if (!hold_gain_flag) {
+					// Nudge value up
+					gain_control_s.optimal_gain += gain_control_s.nudge_gain_value;
+				}
+
+				// Set gain
+				amplifier_set_gain(gain_control_s.optimal_gain);
+
+				// Reset the nudge timer
+				nudge_timer = HAL_GetTick();
+			}
+		}
+	}
+
+	// Don't floor the gain for too long
+	if (gain_floored_flag) {
 		if ((HAL_GetTick() - floor_gain_timer) > gain_control_s.floor_gain_duration) {
 			// lower flag
 			gain_floored_flag = false;
@@ -135,7 +115,23 @@ void gain_control_run(void) {
 		}
 	}
 
-	previous_ping_status = ping_status;
+	// Reset peak detector if ping is invalid
+	if ((ping_status == PING_INVALID) || (ping_status == PING_OVER)) {
+			peak_detector_reset();
+	}
+
+	// Start blinking LED if ping is valid
+	if ((previous_ping_status == PING_INVALID) && (ping_status == PING_VALID)
+			&& (!led_set_flag)) {
+		HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_SET); // turn on LED
+		led_set_flag = true;
+
+		// Ping is valid, so we should start the transfer
+		dma_start_xfer();
+
+		// Reset LED timer
+		led_timer = HAL_GetTick();
+	}
 
 	// Turn off LED if more than 200ms has elapsed
 	if (led_set_flag) {
@@ -144,6 +140,14 @@ void gain_control_run(void) {
 			HAL_GPIO_WritePin(LED_PORT, LED_PIN, GPIO_PIN_RESET); // Turn off LED
 		}
 	}
+
+	// TODO implement serial printing of ping info once it's over
+	if ((ping_status == PING_OVER) && (previous_ping_status == PING_INVALID)) {
+		// use uart_send or something you define on top to write out the debug info
+
+	}
+
+	previous_ping_status = ping_status;
 }
 
 /** @brief Runs gain control (PID or psuedo-PID) on peak level
